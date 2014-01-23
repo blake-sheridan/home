@@ -1,0 +1,208 @@
+{
+    "folders": [
+        {
+            "folders": [], 
+            "usageCount": 66, 
+            "modes": [
+                3
+            ], 
+            "abbreviation": {
+                "ignoreCase": false, 
+                "wordChars": "[\\w]", 
+                "immediate": false, 
+                "abbreviation": null, 
+                "backspace": true, 
+                "triggerInside": false
+            }, 
+            "title": "codez", 
+            "hotkey": {
+                "hotKey": "<f7>", 
+                "modifiers": [
+                    "<ctrl>"
+                ]
+            }, 
+            "items": [
+                {
+                    "usageCount": 37, 
+                    "omitTrigger": false, 
+                    "code": "CONSOLE = 'Console'\n\n# prev = window.get_active_title()\nprev = window.mediator.interface.get_window_title()\n \nwindow.activate(CONSOLE)\n \nkeyboard.send_keys('<ctrl>c<up><enter>')\n \nwindow.activate(prev)\n", 
+                    "prompt": false, 
+                    "description": "build", 
+                    "abbreviation": {
+                        "ignoreCase": false, 
+                        "wordChars": "[\\w]", 
+                        "immediate": false, 
+                        "abbreviation": null, 
+                        "backspace": true, 
+                        "triggerInside": false
+                    }, 
+                    "hotkey": {
+                        "hotKey": "<f4>", 
+                        "modifiers": []
+                    }, 
+                    "modes": [
+                        3
+                    ], 
+                    "showInTrayMenu": false, 
+                    "filter": "Primary", 
+                    "type": "script", 
+                    "store": {}
+                }, 
+                {
+                    "usageCount": 18, 
+                    "omitTrigger": false, 
+                    "code": "window.activate('Primary')\n", 
+                    "prompt": false, 
+                    "description": "go to primary", 
+                    "abbreviation": {
+                        "ignoreCase": false, 
+                        "wordChars": "[\\w]", 
+                        "immediate": false, 
+                        "abbreviation": null, 
+                        "backspace": true, 
+                        "triggerInside": false
+                    }, 
+                    "hotkey": {
+                        "hotKey": "<f1>", 
+                        "modifiers": []
+                    }, 
+                    "modes": [
+                        3
+                    ], 
+                    "showInTrayMenu": false, 
+                    "filter": null, 
+                    "type": "script", 
+                    "store": {}
+                }, 
+                {
+                    "usageCount": 0, 
+                    "omitTrigger": false, 
+                    "code": "PRIMARY = 'Primary'\nSECONDARY = 'Secondary'\nCONSOLE = 'Console'\n\ndef spawn(title):\n    system.exec_command('gnome-terminal --title=' + title, False)\n    return window.wait_for_exist(title)\n\nspawn(PRIMARY)\nspawn(SECONDARY)\nspawn(CONSOLE)\n", 
+                    "prompt": false, 
+                    "description": "begin", 
+                    "abbreviation": {
+                        "ignoreCase": false, 
+                        "wordChars": "[\\w]", 
+                        "immediate": false, 
+                        "abbreviation": null, 
+                        "backspace": true, 
+                        "triggerInside": false
+                    }, 
+                    "hotkey": {
+                        "hotKey": "<f5>", 
+                        "modifiers": [
+                            "<ctrl>"
+                        ]
+                    }, 
+                    "modes": [
+                        3
+                    ], 
+                    "showInTrayMenu": false, 
+                    "filter": null, 
+                    "type": "script", 
+                    "store": {}
+                }, 
+                {
+                    "usageCount": 7, 
+                    "omitTrigger": false, 
+                    "code": "window.activate('Secondary')\n", 
+                    "prompt": false, 
+                    "description": "go to secondary", 
+                    "abbreviation": {
+                        "ignoreCase": false, 
+                        "wordChars": "[\\w]", 
+                        "immediate": false, 
+                        "abbreviation": null, 
+                        "backspace": true, 
+                        "triggerInside": false
+                    }, 
+                    "hotkey": {
+                        "hotKey": "<f2>", 
+                        "modifiers": []
+                    }, 
+                    "modes": [
+                        3
+                    ], 
+                    "showInTrayMenu": false, 
+                    "filter": null, 
+                    "type": "script", 
+                    "store": {}
+                }, 
+                {
+                    "usageCount": 4, 
+                    "omitTrigger": false, 
+                    "code": "window.activate('Console')\n", 
+                    "prompt": false, 
+                    "description": "go to console", 
+                    "abbreviation": {
+                        "ignoreCase": false, 
+                        "wordChars": "[\\w]", 
+                        "immediate": false, 
+                        "abbreviation": null, 
+                        "backspace": true, 
+                        "triggerInside": false
+                    }, 
+                    "hotkey": {
+                        "hotKey": "<f3>", 
+                        "modifiers": []
+                    }, 
+                    "modes": [
+                        3
+                    ], 
+                    "showInTrayMenu": false, 
+                    "filter": null, 
+                    "type": "script", 
+                    "store": {}
+                }
+            ], 
+            "filter": null, 
+            "type": "folder", 
+            "showInTrayMenu": true
+        }
+    ], 
+    "toggleServiceHotkey": {
+        "hotKey": "k", 
+        "modifiers": [
+            "<shift>", 
+            "<super>"
+        ], 
+        "enabled": true
+    }, 
+    "settings": {
+        "showTrayIcon": true, 
+        "windowDefaultSize": [
+            1118, 
+            552
+        ], 
+        "undoUsingBackspace": true, 
+        "enableQT4Workaround": false, 
+        "promptToSave": true, 
+        "interfaceType": "XRecord", 
+        "showToolbar": true, 
+        "serviceRunning": true, 
+        "columnWidths": [
+            150, 
+            50, 
+            100
+        ], 
+        "isFirstRun": false, 
+        "sortByUsageCount": true, 
+        "notificationIcon": "/usr/share/pixmaps/akicon.png", 
+        "hPanePosition": 281, 
+        "menuTakesFocus": false
+    }, 
+    "userCodeDir": null, 
+    "version": "0.71.2", 
+    "showPopupHotkey": {
+        "hotKey": null, 
+        "modifiers": [], 
+        "enabled": false
+    }, 
+    "configHotkey": {
+        "hotKey": "k", 
+        "modifiers": [
+            "<super>"
+        ], 
+        "enabled": true
+    }
+}
