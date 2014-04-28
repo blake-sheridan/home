@@ -5,14 +5,15 @@
 (autoload 'js2-mode      "js2-mode"      "JavaScript2 mode" t)
 (autoload 'markdown-mode "markdown-mode" "Markdown files"   t)
 
-(setq debug-on-error           t)
 (setq font-lock-maximum-decoration t)
-(setq indent-tabs-mode         nil)
-(setq make-backup-files        nil) ; no ~ files
-(setq show-trailing-whitespace t)
+(setq make-backup-files            nil) ; no ~ files
+
+(setq-default indent-tabs-mode             nil)
+(setq-default show-trailing-whitespace     t)
 
 (global-set-key "\C-l" `goto-line) ; ctrl + l for goto line
 
+(add-to-list 'auto-mode-alist '("[.]hpp$"      . c++-mode))
 (add-to-list 'auto-mode-alist '("[.]js$"       . js2-mode))
 (add-to-list 'auto-mode-alist '("[.]json$"     . js-mode))
 (add-to-list 'auto-mode-alist '("[.]emacs$"    . lisp-mode))
@@ -22,17 +23,18 @@
 (add-to-list 'auto-mode-alist '("[.]wsgi$"     . python-mode))
 
 (add-hook
-  'c++-mode-hook
+  'c-mode-common-hook
   (lambda()
-    (setq c++-tab-always-indent t)
-
     (setq c-basic-offset 4)
     (setq c-indent-level 4)
 
     (c-set-offset 'access-label       -2)
+    (c-set-offset 'arglist-close       0)
+    (c-set-offset 'arglist-intro       4)
     (c-set-offset 'case-label          2)
     (c-set-offset 'inclass             4)
     (c-set-offset 'innamespace         0)
+    (c-set-offset 'label               2)
     (c-set-offset 'substatement-open   0)
     (c-set-offset 'statement-case-open 4)
     (c-set-offset 'statement-cont      4)
@@ -42,8 +44,19 @@
     (font-lock-add-keywords nil
       '(
 	 ("\\<\\(FIXME\\|XXX\\):" 1 font-lock-warning-face t)
-	 ("\\<\\(bool\\|char\\|double\\|float\\|int\\|long\\|short\\|unsigned\\|void\\)\\>" . font-lock-keyword-face)
-	 ("\\<\\(alignof\\|alignas\\|constexpr\\|decltype\\|final\\|noexcept\\|nullptr\\|override\\|static_assert\\|thread_local\\)\\>" . font-lock-keyword-face)
+	 )
+      )
+    )
+  )
+
+(add-hook
+  'c++-mode-hook
+  (lambda()
+    (font-lock-add-keywords nil
+      '(
+	 "\\<\\(bool\\|char\\|double\\|float\\|int\\|long\\|short\\|unsigned\\|void\\)\\>"
+	 "\\<\\(alignof\\|alignas\\|constexpr\\|decltype\\|final\\|noexcept\\|nullptr\\|override\\|static_assert\\|thread_local\\)\\>"
+	 "\\<sizeof\\.\\.\\."
 	 )
       )
     )
