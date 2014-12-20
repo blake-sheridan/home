@@ -53,8 +53,8 @@ if [ -z "$_BLAKE_BASHRC" ] ; then
     export PATH=~/scripts:$PATH
 fi
 
-# change directory colors
-eval `dircolors -b ~/.dircolors`
+# `dircolors` output I've used for years
+export LS_COLORS='no=00:fi=00:di=1;33:ln=1;33;40:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ex=1;31:';
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
