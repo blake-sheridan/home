@@ -1,7 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
 (add-to-list 'load-path "~/.emacs.d/b-mode")
-(add-to-list 'load-path "~/.emacs.d/cc-mode")
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
@@ -51,25 +50,6 @@
     (c-set-offset 'statement-cont      0)
     (c-set-offset 'topmost-intro       0)
     (c-set-offset 'topmost-intro-cont  0)
-
-    (font-lock-add-keywords nil
-      '(
-	 ("\\<\\(FIXME\\|XXX\\):" 1 font-lock-warning-face t)
-	 )
-      )
-    )
-  )
-
-(add-hook
-  'c++-mode-hook
-  (lambda()
-    (font-lock-add-keywords nil
-      '(
-	 "\\<\\(bool\\|char\\|double\\|float\\|int\\|long\\|short\\|unsigned\\|void\\)\\>"
-	 "\\<\\(alignof\\|alignas\\|constexpr\\|decltype\\|final\\|noexcept\\|nullptr\\|override\\|static_assert\\|thread_local\\)\\>"
-	 "\\<sizeof\\.\\.\\."
-	 )
-      )
     )
   )
 
