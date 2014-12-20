@@ -37,9 +37,9 @@ alias ssh-scan="nmap -p 22 --open -sV 192.168.2.0/24"
 if [ -z "$_BLAKE_BASHRC" ] ; then
     export _BLAKE_BASHRC=1
 
-    function mycd(){
-        if [[ "$1" = "" ]]
-        then
+    function mycd()
+    {
+        if [[ "$1" = "" ]] ; then
             cd ~/
             ls
         else
