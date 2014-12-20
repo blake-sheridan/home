@@ -58,8 +58,34 @@ if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
-# `dircolors` output I've used for years
-export LS_COLORS='di=1;33:ln=1;33;40:pi=40;33:so=1;35:do=1;35:bd=40;33;1:cd=40;33;1:or=40;31;1:su=37;41:sg=30;43:ex=1;31';
+# Types
+BLOCK_DEVICE='1;33;40'     # bold -- yellow / black
+CHARACTER_DEVICE='1;33;40' # bold -- yellow / black
+DIRECTORY='1;33'           # bold -- yellow
+FILE='0'
+NAMED_PIPE='1;33;40'       # bold -- yellow / black
+SOCKET='1;35'              # bold -- purple
+SYMBOLIC_LINK='1;33;40'    # bold -- yellow / black
+
+# Permissions
+EXECUTABLE='1;31'          # bold --    red
+SETUID='37;41'             #           gray / red
+SETGID='30;43'             #              ? / yellow
+
+# Attributes
+ORPHANED_LINK='1;31;40'    # bold --    red / black
+
+export LS_COLORS="\
+bd=${BLOCK_DEVICE}:\
+cd=${CHARACTER_DEVICE}:\
+di=${DIRECTORY}:\
+ex=${EXECUTABLE}:\
+ln=${SYMBOLIC_LINK}:\
+or=${ORPHANED_LINK}:\
+pi=${NAMED_PIPE}:\
+so=${SOCKET}:\
+sg=${SETGID}:\
+su=${SETUID}"\
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
