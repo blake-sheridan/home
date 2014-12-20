@@ -1,3 +1,5 @@
+# -*- Shell-script -*-
+
 # terminal prompt
 PS1="\[\e[1;32m\]\A \u@\h \w>\[\e[0;0m\] "
 

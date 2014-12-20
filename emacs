@@ -1,3 +1,5 @@
+;; -*- Emacs-Lisp -*-
+
 (add-to-list 'load-path "~/.emacs.d/b-mode")
 (add-to-list 'load-path "~/.emacs.d/cc-mode")
 (add-to-list 'load-path "~/.emacs.d/lisp")
