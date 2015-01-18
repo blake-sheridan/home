@@ -1,0 +1,7 @@
+[core]
+        editor = emacs -nw
+[user]
+	email = blake.m.sheridan@gmail.com
+	name = Blake Sheridan
+[push]
+	default = simple
