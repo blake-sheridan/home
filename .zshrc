@@ -29,6 +29,7 @@ alias st='git status'
 
 alias sudo='sudo '
 alias sshscan='nmap -p 22 --open -sV 192.168.2.0/24'
+alias tmux='TERM=xterm-256color tmux'
 
 if [ -z "$_BLAKE_ZSHRC" ] ; then
     export _BLAKE_ZSHRC=1
