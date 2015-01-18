@@ -19,7 +19,7 @@ alias .....='cd ../../../..'
 
 # emacs
 alias e='emacs'
-alias emacs='emacs -nw'
+alias emacs='TERM=xterm-256color emacs -nw'
 
 # git
 alias ad='git add -p'
@@ -48,8 +48,6 @@ if [ -z "$_BLAKE_ZSHRC" ] ; then
 
     export PATH=~/scripts:$PATH
 fi
-
-export TERM=xterm-256color
 
 # Solarized colors
 BASE03='234'
