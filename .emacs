@@ -12,6 +12,7 @@
 (autoload 'js2-mode      "js2-mode"      "JavaScript2 mode" t)
 (autoload 'llvm-mode     "llvm-mode"     "LLVM mode"        t)
 (autoload 'markdown-mode "markdown-mode" "Markdown files"   t)
+(autoload 'tablegen-mode "tablegen-mode" "LLVM table gen"   t)
 
 (setq font-lock-support-mode nil)
 (setq font-lock-maximum-decoration t)
@@ -31,6 +32,7 @@
 (add-to-list 'auto-mode-alist '("[.]ll$"       . llvm-mode))
 (add-to-list 'auto-mode-alist '("[.]markdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("[.]md$"       . markdown-mode))
+(add-to-list 'auto-mode-alist '("[.]td$"       . tablegen-mode))
 (add-to-list 'auto-mode-alist '("[.]text$"     . markdown-mode))
 (add-to-list 'auto-mode-alist '("[.]wsgi$"     . python-mode))
 
