@@ -1,0 +1,27 @@
+!     altIsNotMeta: false
+!     altSendsEscape: false
+!     borderWidth: 0
+!     cursorBlink: true
+!     cursorColor: yellow
+!     deleteIsDEL: maybe
+xterm*dynamicColors: true
+xterm*eightBitInput: true
+!     eightBitMeta: locale
+!     faceName: Terminus:style=Regular:size=10
+!     fullscreen: never
+xterm*jumpScroll: true
+xterm*metaSendsEscape: true
+xterm*multiScroll: true
+!     pointerColor: white
+!     pointerColorBackground: black
+xterm*rightScrollBar: true
+xterm*saveLines: 512
+!     scaleHeight: 1.0
+xterm*scrollBar: true
+xterm*scrollKey: true
+xterm*scrollTtyOutput: false
+xterm*termName: xterm-256color
+xterm*toolBar: false
+xterm*utf8: always ! false/true/always/default
+!     veryBoldColors: 0
+!     wideFont:
