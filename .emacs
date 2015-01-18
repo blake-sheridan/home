@@ -18,7 +18,6 @@
 (setq font-lock-maximum-decoration t)
 (setq make-backup-files            nil) ; no ~ files
 
-(global-set-key "\C-l"     `goto-line)
 (global-set-key "\C-u"     `insert-char)
 (global-set-key "\C-v"     `align-current)
 (global-set-key "\C-x\C-t" `delete-trailing-whitespace)
