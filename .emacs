@@ -1,9 +1,11 @@
 ;; -*- Emacs-Lisp -*-
 
-(add-to-list 'load-path "~/.emacs.d/b-mode")
-(add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'load-path "~/lisp")
+(add-to-list 'load-path "~/lisp/b-mode")
+(add-to-list 'load-path "~/lisp/cc-mode")
+(add-to-list 'load-path "~/lisp/llvm-mode")
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
+(add-to-list 'custom-theme-load-path "~/lisp/emacs-color-theme-solarized")
 (load-theme 'solarized-dark t)
 
 (autoload 'b-mode        "b-mode"        "B mode"           t)
