@@ -49,6 +49,8 @@ if [ -z "$_BLAKE_ZSHRC" ] ; then
     export PATH=~/scripts:$PATH
 fi
 
+export TERM=xterm-256color
+
 # Solarized colors
 BASE03='234'
 BASE02='235'
