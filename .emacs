@@ -18,11 +18,18 @@
 (setq font-lock-maximum-decoration t)
 (setq make-backup-files            nil) ; no ~ files
 
-(global-set-key [(meta    ?.)   ] "…")
-(global-set-key [(control ?v)   ] `align-current)
-(global-set-key [(control ?x) ?t] `delete-trailing-whitespace)
-(global-set-key [(control ?l)   ] `goto-line)
-(global-set-key [(control ?u)   ] `insert-char)
+(global-set-key "\C-l"     `goto-line)
+(global-set-key "\C-u"     `insert-char)
+(global-set-key "\C-v"     `align-current)
+(global-set-key "\C-x\C-t" `delete-trailing-whitespace)
+
+(global-set-key "\M-["     "∧")
+(global-set-key "\M-]"     "∨")
+(global-set-key "\M-;"     "…")
+(global-set-key "\M-,"     "⟨")
+(global-set-key "\M-."     "⟩")
+(global-set-key "\M-o"     (lambda () (interactive) (insert "¬"))) ; NOT SIGN dunn' work as a string?
+(global-set-key "\M-p"     "→")
 
 (add-to-list 'auto-mode-alist '("[.]b$"        . b-mode))
 (add-to-list 'auto-mode-alist '("[.]hpp$"      . c++-mode))
