@@ -22,6 +22,8 @@
 (global-set-key "\C-v"     `align-current)
 (global-set-key "\C-x\C-t" `delete-trailing-whitespace)
 
+(global-set-key "\C-\M-e"  `eval-expression)
+
 (global-set-key "\M-["     "∧")
 (global-set-key "\M-]"     "∨")
 (global-set-key "\M-;"     "…")
