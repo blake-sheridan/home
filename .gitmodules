@@ -1,0 +1,33 @@
+[submodule "src/linux"]
+	path = src/linux
+	url = https://github.com/torvalds/linux.git
+[submodule "src/find-replace"]
+	path = src/find-replace
+	url = https://github.com/blake-sheridan/find-replace.git
+[submodule "src/emacs"]
+	path = src/emacs
+	url = https://github.com/emacs-mirror/emacs.git
+[submodule "src/auctex"]
+	path = src/auctex
+	url = git://git.sv.gnu.org/auctext.git
+[submodule "src/cc-mode"]
+	path = src/cc-mode
+	url = https://github.com/blake-sheridan/cc-mode.git
+[submodule "src/ack2"]
+	path = src/ack2
+	url = https://github.com/petdance/ack2.git
+[submodule "src/cpython"]
+	path = src/cpython
+	url = https://github.com/python/cpython.git
+[submodule "src/emacs-color-theme-solarized"]
+	path = src/emacs-color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized.git
+[submodule "src/binutils-gdb"]
+	path = src/binutils-gdb
+	url = git://sourceware.org/git/binutils-gdb.git
+[submodule "src/glibc"]
+	path = src/glibc
+	url = git://sourceware.org/git/glibc.git
+[submodule "src/b"]
+	path = src/b
+	url = https://github.com/blake-sheridan/b-lang.git
