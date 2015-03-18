@@ -1,12 +1,13 @@
-*
+.*
 !.Xresources
 !.ackrc
 !.bashrc
 !.common-initialization.sh
+!.emacs.d
 !.gitconfig
 !.tmux.conf
 !.zshrc
 
-!.emacs.d/
-!bin
-!src
+Downloads
+VirtualBox VMs
+tmp
