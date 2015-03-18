@@ -1,13 +1,26 @@
-.*
-!.Xresources
-!.ackrc
-!.bashrc
-!.common-initialization.sh
-!.emacs.d
-!.gitconfig
-!.tmux.conf
-!.zshrc
+#!.Xresources
+#!.ackrc
+#!.bashrc
+#!.common-initialization.sh
+#!.emacs.d
+#!.gitconfig
+#!.tmux.conf
+#!.zshrc
 
-Downloads
-VirtualBox VMs
-tmp
+.ICEauthority
+.Xauthority
+.bash_history
+.bash_logout
+.cache
+.cpanm
+.dbus
+.histfile
+.lesshst
+.pki
+.python_history
+.xsession-errors*
+.zcompdump
+
+Downloads/
+VirtualBox VMs/
+tmp/
