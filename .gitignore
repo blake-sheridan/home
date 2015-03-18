@@ -1,20 +1,22 @@
-.ICEauthority
-.Xauthority
-.bash_history
-.bash_logout
-.cache/
-.cpanm
-.dbus/
-.histfile
-.lesshst
-.mozilla/
-.pki/
-.python_history
-.xsession-errors*
-.zcompdump
+/.ICEauthority
+/.VirtualBox\ VMs/
+/.Xauthority
+
+/.bash_history
+/.bash_logout
+/.cache/
+/.cpanm
+/.dbus/
+/.histfile
+/.lesshst
+/.mozilla/
+/.pki/
+/.python_history
+/.xsession-errors*
+/.zcompdump
 
 /Downloads/
 /Makefile*
-/VirtualBox VMs/
+
 /test.*
 /tmp*
