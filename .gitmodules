@@ -17,7 +17,7 @@
 	path = src/cpython
 	url = https://github.com/python/cpython.git
 [submodule "src/emacs-color-theme-solarized"]
-	path = src/emacs-color-theme-solarized
+	path = .emacs.d/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
 [submodule "src/binutils-gdb"]
 	path = src/binutils-gdb
