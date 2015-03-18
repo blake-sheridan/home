@@ -15,8 +15,7 @@
 /.xsession-errors*
 /.zcompdump
 
-/Downloads/
 /Makefile*
 
 /test.*
-/tmp*
+/todo/
