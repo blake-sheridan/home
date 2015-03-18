@@ -43,3 +43,6 @@
 [submodule "src/clang"]
 	path = src/clang
 	url = http://llvm.org/git/clang.git
+[submodule "mojo"]
+	path = mojo
+	url = git@github.com:blake-sheridan/mojo.git
