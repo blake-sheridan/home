@@ -14,6 +14,7 @@
 .zcompdump
 
 /Downloads/
+/Makefile*
 /VirtualBox VMs/
 /test.*
 /tmp*
