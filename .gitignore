@@ -2,13 +2,13 @@
 .Xauthority
 .bash_history
 .bash_logout
-.cache
+.cache/
 .cpanm
-.dbus
+.dbus/
 .histfile
 .lesshst
 .mozilla/
-.pki
+.pki/
 .python_history
 .xsession-errors*
 .zcompdump
