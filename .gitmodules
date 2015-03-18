@@ -37,3 +37,12 @@
 [submodule "src/libcxx"]
 	path = src/libcxx
 	url = http://llvm.org/git/libcxx.git
+[submodule "src/llvm"]
+	path = src/llvm
+	url = http://llvm.org/git/llvm.git
+[submodule "src/lld"]
+	path = src/lld
+	url = http://llvm.org/git/lld.git
+[submodule "src/clang"]
+	path = src/clang
+	url = http://llvm.org/git/clang.git
