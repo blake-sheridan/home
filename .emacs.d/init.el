@@ -26,7 +26,7 @@
 
 (add-to-list
   'load-path
-  "~/src/cc-mode")
+  "~/.emacs.d/cc-mode")
 
 (add-to-list
   'auto-mode-alist
