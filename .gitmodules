@@ -34,3 +34,6 @@
 [submodule "src/freebsd"]
 	path = src/freebsd
 	url = https://github.com/freebsd/freebsd.git
+[submodule "src/libcxx"]
+	path = src/libcxx
+	url = http://llvm.org/git/libcxx.git
