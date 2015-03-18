@@ -77,7 +77,7 @@
 
 (add-to-list
   'custom-theme-load-path
-  "~/src/emacs-color-theme-solarized")
+  "~/.emacs.d/emacs-color-theme-solarized")
 
 (load-theme
   'solarized-dark
