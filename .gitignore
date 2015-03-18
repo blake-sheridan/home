@@ -13,8 +13,7 @@
 .xsession-errors*
 .zcompdump
 
-Downloads/
-VirtualBox VMs/
-tmp/
-
+/Downloads/
+/VirtualBox VMs/
 /test.*
+/tmp*
