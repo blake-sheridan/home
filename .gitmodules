@@ -10,9 +10,6 @@
 [submodule "src/auctex"]
 	path = src/auctex
 	url = git://git.sv.gnu.org/auctext.git
-[submodule "src/cc-mode"]
-	path = src/cc-mode
-	url = https://github.com/blake-sheridan/cc-mode.git
 [submodule "src/ack2"]
 	path = src/ack2
 	url = https://github.com/petdance/ack2.git
@@ -46,3 +43,6 @@
 [submodule "mojo"]
 	path = mojo
 	url = git@github.com:blake-sheridan/mojo.git
+[submodule ".emacs.d/cc-mode"]
+	path = .emacs.d/cc-mode
+	url = git@github.com:blake-sheridan/cc-mode.git
