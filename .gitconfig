@@ -1,7 +1,18 @@
 [core]
-        editor = emacs -nw
-[user]
-	email = blake.m.sheridan@gmail.com
-	name = Blake Sheridan
+editor = emacs -nw
+
+[diff]
+algorithm = minimal
+#ignoreSubmodules = dirty
+mnemonicprefix = true
+renames = true
+
+[log]
+abbrevCommit = true
+
 [push]
-	default = simple
+default = simple
+
+[user]
+email = blake.m.sheridan@gmail.com
+name = Blake Sheridan
