@@ -28,9 +28,6 @@
 [submodule "src/glibc"]
 	path = src/glibc
 	url = git://sourceware.org/git/glibc.git
-[submodule "src/b"]
-	path = src/b
-	url = https://github.com/blake-sheridan/b-lang.git
 [submodule "src/freebsd"]
 	path = src/freebsd
 	url = https://github.com/freebsd/freebsd.git
