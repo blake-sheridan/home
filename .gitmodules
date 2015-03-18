@@ -31,3 +31,6 @@
 [submodule "src/b"]
 	path = src/b
 	url = https://github.com/blake-sheridan/b-lang.git
+[submodule "src/freebsd"]
+	path = src/freebsd
+	url = https://github.com/freebsd/freebsd.git
