@@ -52,48 +52,48 @@ if [ -z "$_BLAKE_ZSHRC" ] ; then
     export PATH=~/bin:$PATH
 fi
 
-# Solarized colors
-BASE03='234'
-BASE02='235'
-BASE01='240'
-BASE00='241'
-BASE0='244'
-BASE1='245'
-BASE2='254'
-BASE3='230'
-YELLOW='136'
-ORANGE='166'
-RED='160'
-MAGENTA='125'
-VIOLET='61'
-BLUE='33'
-CYAN='37'
-GREEN='64'
+## LS_COLORS
 
-# Types
-BLOCK_DEVICE='38;5;'$MAGENTA
-CHARACTER_DEVICE='38;5;'$CYAN
-DIRECTORY='38;5;226'
-FILE='38;5;'$BASE1
-NAMED_PIPE='38;5;'$GREEN
-SOCKET='38;5;'$VIOLET
-SYMBOLIC_LINK='38;5;'$YELLOW
+bold='1'
+italic='3'
+underline='4'
+invert='7'
+conceal='8'
+strikethrough='9'
 
-# Attributes
-EXECUTABLE='38;5;'$RED
-ORPHANED_LINK='48;5;'$RED
-SETUID='48;5;'$VIOLET
-SETGID='48;5;'$MAGENTA
+foreground_='3'
+background_='4'
+
+_black='0'
+_red='1'
+_green='2'
+_yellow='3'
+_blue='4'
+_magenta='5'
+_cyan='6'
+_white='7'
+_8_bit_='8;5;'  # n
+_24_bit_='8;2;' # r;g;b
+
+bd=$foreground_$_magenta      # block device
+cd=$foreground_$_cyan         # character device
+di=$foreground_$_8_bit_'226'  # directory
+ex=$foreground_$_red          # executable
+ln=$foreground_$_yellow       # symbolic link
+ol=$background_$_red          # orphaned link
+pi=$foreground_$_cyan         # named pipe
+sg=$background_$_magenta      # setgid
+so=$foreground_$_magenta      # socket
+su=$background_$_magenta      # setuid
 
 export LS_COLORS="\
-bd=${BLOCK_DEVICE}:\
-cd=${CHARACTER_DEVICE}:\
-di=${DIRECTORY}:\
-ex=${EXECUTABLE}:\
-pi=${NAMED_PIPE}:\
-so=${SOCKET}:\
-ln=${SYMBOLIC_LINK}:\
-ex=${EXECUTABLE}:\
-or=${ORPHANED_LINK}:\
-sg=${SETGID}:\
-su=${SETUID}"
+bd=${bd}:\
+cd=${cd}:\
+di=${di}:\
+ex=${ex}:\
+ln=${ln}:\
+or=${or}:\
+pi=${pi}:\
+sg=${sg}:\
+so=${so}:\
+su=${su}"
