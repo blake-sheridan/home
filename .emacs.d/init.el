@@ -68,18 +68,6 @@
   'auto-mode-alist
   '("[.]wsgi$" . python-mode))
 
-(add-hook
-  'electric-indent-functions
-  '(lambda() (char)
-    (if (equal major-mode 'python-mode)
-      `no-indent'
-      nil)))
-
-(add-hook
-  'python-mode-hook
-  (lambda() ()
-    (local-set-key (kbd "RET") 'newline-and-indent)))
-
 ;;------------------------------------------------------------------------------------------------;;
 
 (add-to-list
