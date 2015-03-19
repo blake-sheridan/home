@@ -128,7 +128,17 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 4)
- '(c-offsets-alist (quote ((topmost-intro-cont . 0) (statement-cont . 0) (statement-case-open . 4) (substatement-open . 0) (access-label . -2) (arglist-intro . +) (arglist-close . 0) (inextern-lang . 0) (innamespace . 0))))
+  '(c-offsets-alist
+     (quote
+       ((topmost-intro-cont . 0)
+         (statement-cont . 0)
+         (statement-case-open . 4)
+         (substatement-open . 0)
+         (access-label . -2)
+         (arglist-intro . +)
+         (arglist-close . 0)
+         (inextern-lang . 0)
+         (innamespace . 0))))
  '(csv-separators (quote ("," ";")))
  '(electric-indent-mode t)
  '(font-lock-maximum-decoration t)
@@ -139,6 +149,7 @@
  '(lisp-body-indent 2)
  '(lisp-indent-offset 2)
  '(make-backup-files nil)
+ '(menu-bar-mode nil)
  '(show-trailing-whitespace t)
  '(tab-width 4))
 
