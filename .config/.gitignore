@@ -1,6 +1,9 @@
-# data, not configuration
-google-chrome/
-libreoffice/
-pulse/
+# Gtk accelerator map dump
+accels
 
-Trolltech.conf
+# data, not configuration
+/google-chrome/
+/libreoffice/
+/pulse/
+
+/Trolltech.conf
