@@ -69,9 +69,16 @@
   '("[.]wsgi$" . python-mode))
 
 (add-hook
+  'electric-indent-functions
+  '(lambda() (char)
+    (if (equal major-mode 'python-mode)
+      `no-indent'
+      nil)))
+
+(add-hook
   'python-mode-hook
   (lambda() ()
-    (setq electric-indent-inhibit t)))
+    (local-set-key (kbd "RET") 'newline-and-indent)))
 
 ;;------------------------------------------------------------------------------------------------;;
 
