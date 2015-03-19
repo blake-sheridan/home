@@ -2,7 +2,8 @@
 
 ####################################################################################################
 
-ack := ack2/ack-standalone
+ack-root := ack2
+ack      := $(ack-root)/ack-standalone
 
 $(ack):
 	cd $(@D) && perl Makefile.PL
@@ -12,6 +13,27 @@ $(ack):
 ack: $(ack)
 
 __all__ += ack
+
+####################################################################################################
+
+emacs-root      := emacs
+emacs-configure := $(emacs-root)/configure
+emacs-makefile  := $(emacs-root)/Makefile
+emacs           := $(emacs-root)/src/emacs
+
+$(emacs-configure):
+	cd $(@D) && ./autogen.sh
+
+$(emacs-makefile): $(emacs-configure)
+	cd $(@D) && $(emacs-configure) --without-makeinfo --without-x
+
+$(emacs): $(emacs-makefile)
+	cd $(@D) && make
+
+.PHONY: emacs
+emacs: $(emacs)
+
+__all__ += emacs
 
 ####################################################################################################
 
