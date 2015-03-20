@@ -8,7 +8,7 @@ llvm-root  := $(src)/llvm
 
 ####################################################################################################
 
-llvm-build := $(src)/_build/llvm
+llvm-build := $(src)/__build__/llvm
 
 $(llvm-build):
 	mkdir -p $@
