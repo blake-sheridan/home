@@ -17,5 +17,6 @@
 
 /Makefile*
 
+/media/
 /test.*
 /todo/
