@@ -19,9 +19,6 @@
 [submodule "src/emacs-color-theme-solarized"]
 	path = .emacs.d/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
-[submodule "src/binutils-gdb"]
-	path = src/binutils-gdb
-	url = git://sourceware.org/git/binutils-gdb.git
 [submodule "src/glibc"]
 	path = src/glibc
 	url = git://sourceware.org/git/glibc.git
