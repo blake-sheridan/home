@@ -26,7 +26,7 @@
 
 (add-to-list
   'load-path
-  "~/.emacs.d/cc-mode")
+  "~/src/cc-mode")
 
 (add-to-list
   'auto-mode-alist
@@ -72,7 +72,7 @@
 
 (add-to-list
   'custom-theme-load-path
-  "~/.emacs.d/emacs-color-theme-solarized")
+  "~/src/emacs-color-theme-solarized")
 
 (load-theme
   'solarized-dark

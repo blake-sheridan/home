@@ -17,7 +17,7 @@
 	path = src/cpython
 	url = https://github.com/python/cpython.git
 [submodule "src/emacs-color-theme-solarized"]
-	path = .emacs.d/emacs-color-theme-solarized
+	path = src/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
 [submodule "src/glibc"]
 	path = src/glibc
@@ -41,5 +41,5 @@
 	path = src/mojo
 	url = git@github.com:blake-sheridan/mojo.git
 [submodule ".emacs.d/cc-mode"]
-	path = .emacs.d/cc-mode
+	path = src/cc-mode
 	url = git@github.com:blake-sheridan/cc-mode.git
