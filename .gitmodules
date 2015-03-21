@@ -37,9 +37,6 @@
 [submodule "src/clang"]
 	path = .local/src/clang
 	url = http://llvm.org/git/clang.git
-[submodule "mojo"]
-	path = .local/src/mojo
-	url = git@github.com:blake-sheridan/mojo.git
 [submodule ".emacs.d/cc-mode"]
 	path = .emacs.d/cc-mode
 	url = git@github.com:blake-sheridan/cc-mode.git
