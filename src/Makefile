@@ -82,5 +82,19 @@ __all__ += clang lld
 
 ####################################################################################################
 
+python-root     := $(ROOT)/cpython
+python-makefile := $(python-root)/Makefile
+python          := $(python-root)/python
+
+$(python-makefile):
+	cd $(@D) && ./configure
+
+$(python): $(python-makefile)
+	cd $(@D) && $(MAKE)
+
+__all__ := $(python)
+
+####################################################################################################
+
 .PHONY: all
 all: $(__all__)
