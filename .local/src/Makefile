@@ -5,7 +5,7 @@ BUILD := $(ROOT)/build
 
 ####################################################################################################
 
-ack-root := ack2
+ack-root := $(ROOT)/ack2
 ack      := $(ack-root)/ack-standalone
 
 $(ack):
@@ -19,7 +19,7 @@ __all__ += ack
 
 ####################################################################################################
 
-emacs-root      := emacs
+emacs-root      := $(ROOT)/emacs
 emacs-configure := $(emacs-root)/configure
 emacs-makefile  := $(emacs-root)/Makefile
 emacs           := $(emacs-root)/src/emacs
