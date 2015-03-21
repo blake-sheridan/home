@@ -1,5 +1,5 @@
 ROOT  := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
-BUILD := $(ROOT)/__build__
+BUILD := $(ROOT)/build
 
 .DEFAULT_GOAL := all
 
