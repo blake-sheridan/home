@@ -18,8 +18,5 @@
 /.xsession-errors.old
 /.zcompdump
 
-# Anything else, if visible, is ignored...
+# Anything else, if visible, is ignored
 /[!.]*
-
-# ...except:
-!/src/
