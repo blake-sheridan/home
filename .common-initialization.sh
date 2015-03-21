@@ -49,7 +49,7 @@ if [ -z "$_BLAKE_ZSHRC" ] ; then
 
     alias cd='mycd'
 
-    export PATH=~/.local/bin:$PATH
+    export PATH=~/bin:$PATH
 fi
 
 ## LS_COLORS
