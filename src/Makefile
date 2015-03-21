@@ -28,7 +28,7 @@ $(emacs-makefile): $(emacs-configure)
 	cd $(@D) && $(emacs-configure) --without-makeinfo --without-x
 
 $(emacs): $(emacs-makefile)
-	cd $(@D) && make
+	cd $(@D) && $(MAKE)
 
 .PHONY: emacs
 emacs: $(emacs)
