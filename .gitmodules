@@ -8,7 +8,7 @@
 	path = .local/src/emacs
 	url = https://github.com/emacs-mirror/emacs.git
 [submodule "src/auctex"]
-	path = src/auctex
+	path = .emacs.d/auctex
 	url = git://git.sv.gnu.org/auctext.git
 [submodule "src/ack2"]
 	path = .local/src/ack2
@@ -17,7 +17,7 @@
 	path = .local/src/cpython
 	url = https://github.com/python/cpython.git
 [submodule "src/emacs-color-theme-solarized"]
-	path = src/emacs-color-theme-solarized
+	path = .emacs.d/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
 [submodule "src/glibc"]
 	path = src/glibc
@@ -41,5 +41,5 @@
 	path = src/mojo
 	url = git@github.com:blake-sheridan/mojo.git
 [submodule ".emacs.d/cc-mode"]
-	path = src/cc-mode
+	path = .emacs.d/cc-mode
 	url = git@github.com:blake-sheridan/cc-mode.git
