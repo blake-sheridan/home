@@ -5,16 +5,16 @@
 	path = src/find-replace
 	url = https://github.com/blake-sheridan/find-replace.git
 [submodule "src/emacs"]
-	path = src/emacs
+	path = .local/src/emacs
 	url = https://github.com/emacs-mirror/emacs.git
 [submodule "src/auctex"]
 	path = src/auctex
 	url = git://git.sv.gnu.org/auctext.git
 [submodule "src/ack2"]
-	path = src/ack2
+	path = .local/src/ack2
 	url = https://github.com/petdance/ack2.git
 [submodule "src/cpython"]
-	path = src/cpython
+	path = .local/src/cpython
 	url = https://github.com/python/cpython.git
 [submodule "src/emacs-color-theme-solarized"]
 	path = src/emacs-color-theme-solarized
@@ -29,13 +29,13 @@
 	path = src/libcxx
 	url = http://llvm.org/git/libcxx.git
 [submodule "src/llvm"]
-	path = src/llvm
+	path = .local/src/llvm
 	url = http://llvm.org/git/llvm.git
 [submodule "src/lld"]
-	path = src/lld
+	path = .local/src/lld
 	url = http://llvm.org/git/lld.git
 [submodule "src/clang"]
-	path = src/clang
+	path = .local/src/clang
 	url = http://llvm.org/git/clang.git
 [submodule "mojo"]
 	path = src/mojo
