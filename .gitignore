@@ -1,21 +1,25 @@
-/.ICEauthority
+# Dot directories
 /.VirtualBox\ VMs/
-/.Xauthority
-
-/.bash_history
-/.bash_logout
 /.cache/
-/.cpanm
+/.cpanm/
 /.dbus/
-/.histfile
-/.lesshst
 /.mozilla/
 /.pki/
+
+# Dot files
+/.ICEauthority
+/.Xauthority
+/.bash_history
+/.bash_logout
+/.histfile
+/.lesshst
 /.python_history
-/.xsession-errors*
+/.xsession-errors
+/.xsession-errors.old
 /.zcompdump
 
-/Makefile*
+# Anything else, if visible, is ignored...
+/[!.]*
 
-/media/
-/test.*
+# ...except:
+!/src/
