@@ -1,3 +1,6 @@
+ROOT  := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
+BUILD := $(ROOT)/__build__
+
 .DEFAULT_GOAL := all
 
 ####################################################################################################
@@ -37,7 +40,37 @@ __all__ += emacs
 
 ####################################################################################################
 
-include _llvm.mk
+llvm-root     := $(ROOT)/llvm
+llvm-build    := $(BUILD)/llvm
+llvm-makefile := $(llvm-build)/Makefile
+
+clang-root    := $(ROOT)/clang
+clang         := $(llvm-build)/bin/clang
+
+lld-root      := $(ROOT)/lld
+lld           := $(llvm-build)/bin/lld
+
+$(llvm-build):
+	mkdir -p $@
+
+$(llvm-makefile): | $(llvm-build)
+	cd $(@D) && \
+		cmake \
+			-D CMAKE_BUILD_TYPE:STRING=Release \
+			-D CLANG_INCLUDE_DOCS:BOOL=OFF \
+			-D CLANG_INCLUDE_TESTS:BOOL=OFF \
+			-D LLVM_ENABLE_PIC:BOOL=OFF \
+			-D LLVM_EXTERNAL_CLANG_SOURCE_DIR:PATH=$(clang-root) \
+			-D LLVM_EXTERNAL_LLD_SOURCE_DIR:PATH=$(lld-root) \
+			-D LLVM_INCLUDE_EXAMPLES:BOOL=OFF \
+			-D LLVM_INCLUDE_TESTS:BOOL=OFF \
+			 $(llvm-root)
+
+$(clang): $(llvm-build)/Makefile
+	cd $(llvm-build) && $(MAKE) clang
+
+$(lld): $(llvm-build)/Makefile
+	cd $(llvm-build) && $(MAKE) lld
 
 .PHONY: clang
 clang: $(clang)
