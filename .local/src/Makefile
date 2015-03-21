@@ -1,11 +1,13 @@
-ROOT  := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
-BUILD := $(ROOT)/build
+SRC := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
+
+PREFIX := $(realpath $(SRC)/..)
+BUILD := $(SRC)/build
 
 .DEFAULT_GOAL := all
 
 ####################################################################################################
 
-ack-root := $(ROOT)/ack2
+ack-root := $(SRC)/ack2
 ack      := $(ack-root)/ack-standalone
 
 $(ack):
@@ -19,7 +21,7 @@ __all__ += ack
 
 ####################################################################################################
 
-emacs-root      := $(ROOT)/emacs
+emacs-root      := $(SRC)/emacs
 emacs-configure := $(emacs-root)/configure
 emacs-makefile  := $(emacs-root)/Makefile
 emacs           := $(emacs-root)/src/emacs
@@ -28,7 +30,11 @@ $(emacs-configure):
 	cd $(@D) && ./autogen.sh
 
 $(emacs-makefile): $(emacs-configure)
-	cd $(@D) && $(emacs-configure) --without-makeinfo --without-x
+	cd $(@D) && \
+		$(emacs-configure) \
+			--prefix=$(PREFIX)
+			--without-makeinfo \
+			--without-x
 
 $(emacs): $(emacs-makefile)
 	cd $(@D) && $(MAKE)
@@ -40,14 +46,14 @@ __all__ += emacs
 
 ####################################################################################################
 
-llvm-root     := $(ROOT)/llvm
+llvm-root     := $(SRC)/llvm
 llvm-build    := $(BUILD)/llvm
 llvm-makefile := $(llvm-build)/Makefile
 
-clang-root    := $(ROOT)/clang
+clang-root    := $(SRC)/clang
 clang         := $(llvm-build)/bin/clang
 
-lld-root      := $(ROOT)/lld
+lld-root      := $(SRC)/lld
 lld           := $(llvm-build)/bin/lld
 
 $(llvm-build):
@@ -82,12 +88,14 @@ __all__ += clang lld
 
 ####################################################################################################
 
-python-root     := $(ROOT)/cpython
+python-root     := $(SRC)/cpython
 python-makefile := $(python-root)/Makefile
 python          := $(python-root)/python
 
 $(python-makefile):
-	cd $(@D) && ./configure
+	cd $(@D) && \
+		./configure \
+			--prefix=$(PREFIX)
 
 $(python): $(python-makefile)
 	cd $(@D) && $(MAKE)
