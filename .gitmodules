@@ -1,5 +1,5 @@
 [submodule "src/linux"]
-	path = .local/src/linux
+	path = linux
 	url = https://github.com/torvalds/linux.git
 [submodule "src/find-replace"]
 	path = .local/src/find-replace
@@ -23,7 +23,7 @@
 	path = .local/src/glibc
 	url = git://sourceware.org/git/glibc.git
 [submodule "src/freebsd"]
-	path = .local/src/freebsd
+	path = freebsd
 	url = https://github.com/freebsd/freebsd.git
 [submodule "src/libcxx"]
 	path = .local/src/libcxx
