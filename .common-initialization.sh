@@ -33,24 +33,20 @@ alias sudo='sudo '
 alias sshscan='nmap -p 22 --open -sV 192.168.2.0/24'
 alias tmux='TERM=xterm-256color tmux'
 
-if [ -z "$_BLAKE_ZSHRC" ] ; then
-    export _BLAKE_ZSHRC=1
+function cd-ls()
+{
+    if [[ "$1" = "" ]] ; then
+        cd ~/
+        ls
+    else
+        cd "$1"
+        ls
+    fi
+}
 
-    function mycd()
-    {
-        if [[ "$1" = "" ]] ; then
-            cd ~/
-            ls
-        else
-            cd "$1"
-            ls
-        fi
-    }
+alias cd='cd-ls'
 
-    alias cd='mycd'
-
-    export PATH=~/.local/bin:$PATH
-fi
+export PATH=~/.local/bin:$PATH
 
 ## LS_COLORS
 
