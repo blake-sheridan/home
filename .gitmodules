@@ -40,3 +40,6 @@
 [submodule ".emacs.d/cc-mode"]
 	path = .emacs.d/cc-mode
 	url = git@github.com:blake-sheridan/cc-mode.git
+[submodule ".local/src/gcc"]
+	path = .local/src/gcc
+	url = git://gcc.gnu.org/git/gcc.git
