@@ -155,6 +155,15 @@ $(libtool): $(libtool-makefile)
 
 $(eval $(call target,libtool))
 
+#---------------------------------------------------------------------------------------------------
+
+libtoolize := $(libtool-root)/libtoolize
+$(libtoolize): $(libtool-makefile)
+	cd $(@D) && \
+		$(MAKE)
+
+$(eval $(call target,libtoolize))
+
 ####################################################################################################
 
 clang-root    := $(SRC)/clang
