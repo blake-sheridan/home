@@ -7,8 +7,10 @@ BUILD  := $(ROOT)/build
 ####################################################################################################
 
 ack-root := $(ROOT)/ack2
-ack      := $(ack-root)/ack-standalone
 
+#---------------------------------------------------------------------------------------------------
+
+ack := $(ack-root)/ack-standalone
 $(ack):
 	cd $(@D) && perl Makefile.PL
 	cd $(@D) && $(MAKE) ack-standalone
@@ -20,14 +22,17 @@ __all__ += ack
 
 ####################################################################################################
 
-emacs-root      := $(ROOT)/emacs
-emacs-configure := $(emacs-root)/configure
-emacs-makefile  := $(emacs-root)/Makefile
-emacs           := $(emacs-root)/src/emacs
+emacs-root := $(ROOT)/emacs
 
+#---------------------------------------------------------------------------------------------------
+
+emacs-configure := $(emacs-root)/configure
 $(emacs-configure):
 	cd $(@D) && ./autogen.sh
 
+#---------------------------------------------------------------------------------------------------
+
+emacs-makefile := $(emacs-root)/Makefile
 $(emacs-makefile): $(emacs-configure)
 	cd $(@D) && \
 		$(emacs-configure) \
@@ -35,6 +40,9 @@ $(emacs-makefile): $(emacs-configure)
 			--without-makeinfo \
 			--without-x
 
+#---------------------------------------------------------------------------------------------------
+
+emacs := $(emacs-root)/src/emacs
 $(emacs): $(emacs-makefile)
 	cd $(@D) && $(MAKE)
 
@@ -81,19 +89,19 @@ __all__ += help2man
 
 ####################################################################################################
 
-llvm-root     := $(ROOT)/llvm
-llvm-build    := $(BUILD)/llvm
-llvm-makefile := $(llvm-build)/Makefile
-
 clang-root    := $(ROOT)/clang
-clang         := $(llvm-build)/bin/clang
-
 lld-root      := $(ROOT)/lld
-lld           := $(llvm-build)/bin/lld
+llvm-root     := $(ROOT)/llvm
 
+#---------------------------------------------------------------------------------------------------
+
+llvm-build := $(BUILD)/llvm
 $(llvm-build):
 	mkdir -p $@
 
+#---------------------------------------------------------------------------------------------------
+
+llvm-makefile := $(llvm-build)/Makefile
 $(llvm-makefile): | $(llvm-build)
 	cd $(@D) && \
 		cmake \
@@ -107,14 +115,22 @@ $(llvm-makefile): | $(llvm-build)
 			-D LLVM_INCLUDE_TESTS:BOOL=OFF \
 			 $(llvm-root)
 
+#---------------------------------------------------------------------------------------------------
+
+clang := $(llvm-build)/bin/clang
 $(clang): $(llvm-build)/Makefile
 	cd $(llvm-build) && $(MAKE) clang
 
-$(lld): $(llvm-build)/Makefile
-	cd $(llvm-build) && $(MAKE) lld
-
 .PHONY: clang
 clang: $(clang)
+
+__all__ += clang
+
+#---------------------------------------------------------------------------------------------------
+
+lld := $(llvm-build)/bin/lld
+$(lld): $(llvm-build)/Makefile
+	cd $(llvm-build) && $(MAKE) lld
 
 .PHONY: lld
 lld: $(lld)
@@ -123,15 +139,19 @@ __all__ += clang lld
 
 ####################################################################################################
 
-python-root     := $(ROOT)/cpython
-python-makefile := $(python-root)/Makefile
-python          := $(python-root)/python
+python-root := $(ROOT)/cpython
 
+#---------------------------------------------------------------------------------------------------
+
+python-makefile := $(python-root)/Makefile
 $(python-makefile):
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
 
+#---------------------------------------------------------------------------------------------------
+
+python := $(python-root)/python
 $(python): $(python-makefile)
 	cd $(@D) && $(MAKE)
 
