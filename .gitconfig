@@ -1,3 +1,6 @@
+[clean]
+requireForce = false
+
 [core]
 editor = emacs -nw
 
