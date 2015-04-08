@@ -3,9 +3,6 @@ PS1='%F{green}%* %n@%m %~> %f'
 
 # aliases
 alias ls='LC_COLLATE=C ls --color=auto'
-alias lsa='ls -a'
-alias lsl='ls -lh'
-alias lsla='ls -lha'
 alias ls-symbols='ls -lfd [\!_]* _*'
 
 alias cb='cd $OLDPWD'
