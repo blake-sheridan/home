@@ -135,7 +135,10 @@ $(python-makefile):
 $(python): $(python-makefile)
 	cd $(@D) && $(MAKE)
 
-__all__ := $(python)
+.PHONY: python
+python: $(python)
+
+__all__ := python
 
 ####################################################################################################
 
