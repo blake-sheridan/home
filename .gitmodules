@@ -43,3 +43,6 @@
 [submodule ".local/src/gcc"]
 	path = .local/src/gcc
 	url = git://gcc.gnu.org/git/gcc.git
+[submodule ".local/src/libtool"]
+	path = .local/src/libtool
+	url = git://git.savannah.gnu.org/libtool.git

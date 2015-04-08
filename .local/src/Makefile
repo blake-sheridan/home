@@ -124,6 +124,33 @@ $(eval $(call target,makeinfo))
 
 ####################################################################################################
 
+libtool-root := $(ROOT)/libtool
+
+#---------------------------------------------------------------------------------------------------
+
+libtool-configure := $(libtool-root)/configure
+$(libtool-configure): | $(help2man) $(makeinfo)
+	cd $(@D) && \
+		./bootstrap
+
+#---------------------------------------------------------------------------------------------------
+
+libtool-makefile := $(libtool-root)/Makefile
+$(libtool-makefile): $(libtool-configure)
+	cd $(@D) && \
+		./configure
+
+#---------------------------------------------------------------------------------------------------
+
+libtool := $(libtool-root)/libtool
+$(libtool): $(libtool-makefile)
+	cd $(@D) && \
+		$(MAKE)
+
+$(eval $(call target,libtool))
+
+####################################################################################################
+
 clang-root    := $(ROOT)/clang
 lld-root      := $(ROOT)/lld
 llvm-root     := $(ROOT)/llvm
