@@ -91,6 +91,39 @@ $(eval $(call target,help2man))
 
 ####################################################################################################
 
+texinfo-version := 5.2
+
+#---------------------------------------------------------------------------------------------------
+
+texinfo-root := $(ROOT)/texinfo-$(texinfo-version)
+$(texinfo-root):
+	curl \
+		http://ftp.gnu.org/gnu/texinfo/texinfo-$(texinfo-version).tar.xz \
+	| tar \
+		--directory=$(@D) \
+		--file - \
+		--extract \
+		--xz
+
+#---------------------------------------------------------------------------------------------------
+
+texinfo-makefile := $(texinfo-root)/Makefile
+$(texinfo-makefile): | $(texinfo-root)
+	cd $(@D) && \
+		./configure \
+			--prefix=$(PREFIX)
+
+#---------------------------------------------------------------------------------------------------
+
+makeinfo := $(texinfo-root)/tp/texi2any
+$(makeinfo): $(texinfo-makefile)
+	cd $(@D) && \
+		$(MAKE)
+
+$(eval $(call target,makeinfo))
+
+####################################################################################################
+
 clang-root    := $(ROOT)/clang
 lld-root      := $(ROOT)/lld
 llvm-root     := $(ROOT)/llvm
