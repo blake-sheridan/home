@@ -46,6 +46,42 @@ __all__ += emacs
 
 ####################################################################################################
 
+help2man-version := 1.46.5
+
+#---------------------------------------------------------------------------------------------------
+
+help2man-root := $(SRC)/help2man-$(help2man-version)
+$(help2man-root):
+	curl \
+		http://mirrors.syringanetworks.net/gnu/help2man/help2man-$(help2man-version).tar.xz \
+	| tar \
+		--directory=$(@D) \
+		--file - \
+		--extract \
+		--xz
+
+#---------------------------------------------------------------------------------------------------
+
+help2man-makefile := $(help2man-root)/Makefile
+$(help2man-makefile): | $(help2man-root)
+	cd $(@D) && \
+		./configure \
+			--prefix=$(PREFIX)
+
+#---------------------------------------------------------------------------------------------------
+
+help2man := $(help2man-root)/help2man
+$(help2man): $(help2man-makefile)
+	cd $(@D) && \
+		$(MAKE)
+
+.PHONY: help2man
+help2man: $(help2man)
+
+__all__ += help2man
+
+####################################################################################################
+
 llvm-root     := $(SRC)/llvm
 llvm-build    := $(BUILD)/llvm
 llvm-makefile := $(llvm-build)/Makefile
