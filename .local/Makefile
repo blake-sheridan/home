@@ -1,7 +1,7 @@
-PREFIX  := $(realpath $(dir $(firstword $(MAKEFILE_LIST)))/..)
+PREFIX  := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
 
 BIN     := $(PREFIX)/bin
-BUILD   := $(PREFIX)/src/build
+BUILD   := $(PREFIX)/.build
 INCLUDE := $(PREFIX)/include
 LIB     := $(PREFIX)/lib
 SHARE   := $(PREFIX)/share

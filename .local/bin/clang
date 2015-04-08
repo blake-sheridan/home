@@ -1,1 +1,1 @@
-../src/build/llvm/bin/clang
+../.build/llvm/bin/clang
