@@ -32,7 +32,7 @@ $(emacs-configure):
 $(emacs-makefile): $(emacs-configure)
 	cd $(@D) && \
 		$(emacs-configure) \
-			--prefix=$(PREFIX)
+			--prefix=$(PREFIX) \
 			--without-makeinfo \
 			--without-x
 
