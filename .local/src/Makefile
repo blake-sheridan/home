@@ -2,7 +2,18 @@ ROOT   := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
 PREFIX := $(realpath $(ROOT)/..)
 BUILD  := $(ROOT)/build
 
+####################################################################################################
+
 .DEFAULT_GOAL := all
+
+define target
+
+.PHONY: $(1)
+$(1): $$($(1))
+
+__all__ += $(1)
+
+endef
 
 ####################################################################################################
 
@@ -15,10 +26,7 @@ $(ack):
 	cd $(@D) && perl Makefile.PL
 	cd $(@D) && $(MAKE) ack-standalone
 
-.PHONY: ack
-ack: $(ack)
-
-__all__ += ack
+$(eval $(call target,ack))
 
 ####################################################################################################
 
@@ -46,10 +54,7 @@ emacs := $(emacs-root)/src/emacs
 $(emacs): $(emacs-makefile)
 	cd $(@D) && $(MAKE)
 
-.PHONY: emacs
-emacs: $(emacs)
-
-__all__ += emacs
+$(eval $(call target,emacs))
 
 ####################################################################################################
 
@@ -82,10 +87,7 @@ $(help2man): $(help2man-makefile)
 	cd $(@D) && \
 		$(MAKE)
 
-.PHONY: help2man
-help2man: $(help2man)
-
-__all__ += help2man
+$(eval $(call target,help2man))
 
 ####################################################################################################
 
@@ -121,10 +123,7 @@ clang := $(llvm-build)/bin/clang
 $(clang): $(llvm-build)/Makefile
 	cd $(llvm-build) && $(MAKE) clang
 
-.PHONY: clang
-clang: $(clang)
-
-__all__ += clang
+$(eval $(call target,clang))
 
 #---------------------------------------------------------------------------------------------------
 
@@ -132,10 +131,7 @@ lld := $(llvm-build)/bin/lld
 $(lld): $(llvm-build)/Makefile
 	cd $(llvm-build) && $(MAKE) lld
 
-.PHONY: lld
-lld: $(lld)
-
-__all__ += clang lld
+$(eval $(call target,lld))
 
 ####################################################################################################
 
@@ -155,10 +151,7 @@ python := $(python-root)/python
 $(python): $(python-makefile)
 	cd $(@D) && $(MAKE)
 
-.PHONY: python
-python: $(python)
-
-__all__ := python
+$(eval $(call target,python))
 
 ####################################################################################################
 
