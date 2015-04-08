@@ -1,13 +1,12 @@
-SRC := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
-
-PREFIX := $(realpath $(SRC)/..)
-BUILD := $(SRC)/build
+ROOT   := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
+PREFIX := $(realpath $(ROOT)/..)
+BUILD  := $(ROOT)/build
 
 .DEFAULT_GOAL := all
 
 ####################################################################################################
 
-ack-root := $(SRC)/ack2
+ack-root := $(ROOT)/ack2
 ack      := $(ack-root)/ack-standalone
 
 $(ack):
@@ -21,7 +20,7 @@ __all__ += ack
 
 ####################################################################################################
 
-emacs-root      := $(SRC)/emacs
+emacs-root      := $(ROOT)/emacs
 emacs-configure := $(emacs-root)/configure
 emacs-makefile  := $(emacs-root)/Makefile
 emacs           := $(emacs-root)/src/emacs
@@ -50,7 +49,7 @@ help2man-version := 1.46.5
 
 #---------------------------------------------------------------------------------------------------
 
-help2man-root := $(SRC)/help2man-$(help2man-version)
+help2man-root := $(ROOT)/help2man-$(help2man-version)
 $(help2man-root):
 	curl \
 		http://mirrors.syringanetworks.net/gnu/help2man/help2man-$(help2man-version).tar.xz \
@@ -82,14 +81,14 @@ __all__ += help2man
 
 ####################################################################################################
 
-llvm-root     := $(SRC)/llvm
+llvm-root     := $(ROOT)/llvm
 llvm-build    := $(BUILD)/llvm
 llvm-makefile := $(llvm-build)/Makefile
 
-clang-root    := $(SRC)/clang
+clang-root    := $(ROOT)/clang
 clang         := $(llvm-build)/bin/clang
 
-lld-root      := $(SRC)/lld
+lld-root      := $(ROOT)/lld
 lld           := $(llvm-build)/bin/lld
 
 $(llvm-build):
@@ -124,7 +123,7 @@ __all__ += clang lld
 
 ####################################################################################################
 
-python-root     := $(SRC)/cpython
+python-root     := $(ROOT)/cpython
 python-makefile := $(python-root)/Makefile
 python          := $(python-root)/python
 
