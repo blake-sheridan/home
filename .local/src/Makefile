@@ -1,10 +1,15 @@
-ROOT   := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
-PREFIX := $(realpath $(ROOT)/..)
-BUILD  := $(ROOT)/build
+PREFIX  := $(realpath $(dir $(firstword $(MAKEFILE_LIST)))/..)
 
-####################################################################################################
+BIN     := $(PREFIX)/bin
+BUILD   := $(PREFIX)/src/build
+INCLUDE := $(PREFIX)/include
+LIB     := $(PREFIX)/lib
+SHARE   := $(PREFIX)/share
+SRC     := $(PREFIX)/src
 
 .DEFAULT_GOAL := all
+
+####################################################################################################
 
 define target
 
@@ -17,7 +22,7 @@ endef
 
 ####################################################################################################
 
-ack-root := $(ROOT)/ack2
+ack-root := $(SRC)/ack2
 
 #---------------------------------------------------------------------------------------------------
 
@@ -30,7 +35,7 @@ $(eval $(call target,ack))
 
 ####################################################################################################
 
-emacs-root := $(ROOT)/emacs
+emacs-root := $(SRC)/emacs
 
 #---------------------------------------------------------------------------------------------------
 
@@ -62,7 +67,7 @@ help2man-version := 1.46.5
 
 #---------------------------------------------------------------------------------------------------
 
-help2man-root := $(ROOT)/help2man-$(help2man-version)
+help2man-root := $(SRC)/help2man-$(help2man-version)
 $(help2man-root):
 	curl \
 		http://mirrors.syringanetworks.net/gnu/help2man/help2man-$(help2man-version).tar.xz \
@@ -95,7 +100,7 @@ texinfo-version := 5.2
 
 #---------------------------------------------------------------------------------------------------
 
-texinfo-root := $(ROOT)/texinfo-$(texinfo-version)
+texinfo-root := $(SRC)/texinfo-$(texinfo-version)
 $(texinfo-root):
 	curl \
 		http://ftp.gnu.org/gnu/texinfo/texinfo-$(texinfo-version).tar.xz \
@@ -124,7 +129,7 @@ $(eval $(call target,makeinfo))
 
 ####################################################################################################
 
-libtool-root := $(ROOT)/libtool
+libtool-root := $(SRC)/libtool
 
 #---------------------------------------------------------------------------------------------------
 
@@ -151,9 +156,9 @@ $(eval $(call target,libtool))
 
 ####################################################################################################
 
-clang-root    := $(ROOT)/clang
-lld-root      := $(ROOT)/lld
-llvm-root     := $(ROOT)/llvm
+clang-root    := $(SRC)/clang
+lld-root      := $(SRC)/lld
+llvm-root     := $(SRC)/llvm
 
 #---------------------------------------------------------------------------------------------------
 
@@ -195,7 +200,7 @@ $(eval $(call target,lld))
 
 ####################################################################################################
 
-python-root := $(ROOT)/cpython
+python-root := $(SRC)/cpython
 
 #---------------------------------------------------------------------------------------------------
 
