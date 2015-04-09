@@ -34,10 +34,10 @@ alias tmux='TERM=xterm-256color tmux'
 function cd-ls()
 {
     if [[ "$1" = "" ]] ; then
-        cd ~/
+        \cd ~/
         ls
     else
-        cd "$1"
+        \cd "$1"
         ls
     fi
 }
