@@ -17,6 +17,3 @@
 /.xsession-errors
 /.xsession-errors.old
 /.zcompdump
-
-# Anything else, if visible, is ignored
-/[!.]*
