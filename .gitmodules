@@ -1,12 +1,16 @@
 [submodule ".emacs.d"]
+	branch = master
 	path = .emacs.d
 	url = git@github.com:blake-sheridan/.emacs.d.git
 [submodule "src"]
+	branch = master
 	path = src
 	url = git@github.com:blake-sheridan/src.git
 [submodule "include"]
+	branch = master
 	path = include
 	url = git@github.com:blake-sheridan/include.git
 [submodule "tools"]
+	branch = master
 	path = tools
 	url = git@github.com:blake-sheridan/tools.git

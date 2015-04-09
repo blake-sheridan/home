@@ -1,3 +1,16 @@
+[alias]
+a = add -p
+ad = add
+c = checkout -p
+ci = commit
+co = checkout
+d = diff
+ds = diff --staged
+l = log
+lp = log -p
+r = reset HEAD --
+s = status
+
 [clean]
 requireForce = false
 

@@ -21,6 +21,7 @@ alias emacs='TERM=xterm-256color emacs -nw'
 alias ad='git add -p'
 alias d='git diff'
 alias co='git checkout -p'
+alias g='git'
 alias st='git status'
 
 # make
