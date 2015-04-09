@@ -22,11 +22,11 @@ endef
 
 ####################################################################################################
 
-ack-root := $(SRC)/ack2
+ack-source := $(SRC)/ack2
 
 #---------------------------------------------------------------------------------------------------
 
-ack := $(ack-root)/ack-standalone
+ack := $(ack-source)/ack-standalone
 $(ack):
 	cd $(@D) && perl Makefile.PL
 	cd $(@D) && $(MAKE) ack-standalone
@@ -35,17 +35,17 @@ $(eval $(call target,ack))
 
 ####################################################################################################
 
-emacs-root := $(SRC)/emacs
+emacs-source := $(SRC)/emacs
 
 #---------------------------------------------------------------------------------------------------
 
-emacs-configure := $(emacs-root)/configure
+emacs-configure := $(emacs-source)/configure
 $(emacs-configure):
 	cd $(@D) && ./autogen.sh
 
 #---------------------------------------------------------------------------------------------------
 
-emacs-makefile := $(emacs-root)/Makefile
+emacs-makefile := $(emacs-source)/Makefile
 $(emacs-makefile): $(emacs-configure)
 	cd $(@D) && \
 		$(emacs-configure) \
@@ -55,7 +55,7 @@ $(emacs-makefile): $(emacs-configure)
 
 #---------------------------------------------------------------------------------------------------
 
-emacs := $(emacs-root)/src/emacs
+emacs := $(emacs-source)/src/emacs
 $(emacs): $(emacs-makefile)
 	cd $(@D) && $(MAKE)
 
@@ -67,8 +67,8 @@ help2man-version := 1.46.5
 
 #---------------------------------------------------------------------------------------------------
 
-help2man-root := $(SRC)/help2man-$(help2man-version)
-$(help2man-root):
+help2man-source := $(SRC)/help2man-$(help2man-version)
+$(help2man-source):
 	curl \
 		http://mirrors.syringanetworks.net/gnu/help2man/help2man-$(help2man-version).tar.xz \
 	| tar \
@@ -79,15 +79,15 @@ $(help2man-root):
 
 #---------------------------------------------------------------------------------------------------
 
-help2man-makefile := $(help2man-root)/Makefile
-$(help2man-makefile): | $(help2man-root)
+help2man-makefile := $(help2man-source)/Makefile
+$(help2man-makefile): | $(help2man-source)
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
 
 #---------------------------------------------------------------------------------------------------
 
-help2man := $(help2man-root)/help2man
+help2man := $(help2man-source)/help2man
 $(help2man): $(help2man-makefile)
 	cd $(@D) && \
 		$(MAKE)
@@ -100,8 +100,8 @@ texinfo-version := 5.2
 
 #---------------------------------------------------------------------------------------------------
 
-texinfo-root := $(SRC)/texinfo-$(texinfo-version)
-$(texinfo-root):
+texinfo-source := $(SRC)/texinfo-$(texinfo-version)
+$(texinfo-source):
 	curl \
 		http://ftp.gnu.org/gnu/texinfo/texinfo-$(texinfo-version).tar.xz \
 	| tar \
@@ -112,15 +112,15 @@ $(texinfo-root):
 
 #---------------------------------------------------------------------------------------------------
 
-texinfo-makefile := $(texinfo-root)/Makefile
-$(texinfo-makefile): | $(texinfo-root)
+texinfo-makefile := $(texinfo-source)/Makefile
+$(texinfo-makefile): | $(texinfo-source)
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
 
 #---------------------------------------------------------------------------------------------------
 
-makeinfo := $(texinfo-root)/tp/texi2any
+makeinfo := $(texinfo-source)/tp/texi2any
 $(makeinfo): $(texinfo-makefile)
 	cd $(@D) && \
 		$(MAKE)
@@ -129,18 +129,18 @@ $(eval $(call target,makeinfo))
 
 ####################################################################################################
 
-libtool-root := $(SRC)/libtool
+libtool-source := $(SRC)/libtool
 
 #---------------------------------------------------------------------------------------------------
 
-libtool-configure := $(libtool-root)/configure
+libtool-configure := $(libtool-source)/configure
 $(libtool-configure): | $(help2man) $(makeinfo)
 	cd $(@D) && \
 		./bootstrap
 
 #---------------------------------------------------------------------------------------------------
 
-libtool-makefile := $(libtool-root)/Makefile
+libtool-makefile := $(libtool-source)/Makefile
 $(libtool-makefile): $(libtool-configure)
 	cd $(@D) && \
 		./configure \
@@ -148,7 +148,7 @@ $(libtool-makefile): $(libtool-configure)
 
 #---------------------------------------------------------------------------------------------------
 
-libtool := $(libtool-root)/libtool
+libtool := $(libtool-source)/libtool
 $(libtool): $(libtool-makefile)
 	cd $(@D) && \
 		$(MAKE)
@@ -157,7 +157,7 @@ $(eval $(call target,libtool))
 
 #---------------------------------------------------------------------------------------------------
 
-libtoolize := $(libtool-root)/libtoolize
+libtoolize := $(libtool-source)/libtoolize
 $(libtoolize): $(libtool-makefile)
 	cd $(@D) && \
 		$(MAKE)
@@ -166,9 +166,9 @@ $(eval $(call target,libtoolize))
 
 ####################################################################################################
 
-clang-root    := $(SRC)/clang
-lld-root      := $(SRC)/lld
-llvm-root     := $(SRC)/llvm
+clang-source := $(SRC)/clang
+lld-source   := $(SRC)/lld
+llvm-source  := $(SRC)/llvm
 
 #---------------------------------------------------------------------------------------------------
 
@@ -186,11 +186,11 @@ $(llvm-makefile): | $(llvm-build)
 			-D CLANG_INCLUDE_DOCS:BOOL=OFF \
 			-D CLANG_INCLUDE_TESTS:BOOL=OFF \
 			-D LLVM_ENABLE_PIC:BOOL=OFF \
-			-D LLVM_EXTERNAL_CLANG_SOURCE_DIR:PATH=$(clang-root) \
-			-D LLVM_EXTERNAL_LLD_SOURCE_DIR:PATH=$(lld-root) \
+			-D LLVM_EXTERNAL_CLANG_SOURCE_DIR:PATH=$(clang-source) \
+			-D LLVM_EXTERNAL_LLD_SOURCE_DIR:PATH=$(lld-source) \
 			-D LLVM_INCLUDE_EXAMPLES:BOOL=OFF \
 			-D LLVM_INCLUDE_TESTS:BOOL=OFF \
-			 $(llvm-root)
+			 $(llvm-source)
 
 #---------------------------------------------------------------------------------------------------
 
@@ -210,11 +210,11 @@ $(eval $(call target,lld))
 
 ####################################################################################################
 
-python-root := $(SRC)/cpython
+python-source := $(SRC)/cpython
 
 #---------------------------------------------------------------------------------------------------
 
-python-makefile := $(python-root)/Makefile
+python-makefile := $(python-source)/Makefile
 $(python-makefile):
 	cd $(@D) && \
 		./configure \
@@ -222,7 +222,7 @@ $(python-makefile):
 
 #---------------------------------------------------------------------------------------------------
 
-python := $(python-root)/python
+python := $(python-source)/python
 $(python): $(python-makefile)
 	cd $(@D) && $(MAKE)
 
