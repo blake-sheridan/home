@@ -3,10 +3,10 @@
 	url = git@github.com:sellout/emacs-color-theme-solarized.git
 [submodule "cc-mode"]
 	path = cc-mode
-	url = git@github.com:blake-sheridan/.emacs.d-cc-mode.git
+	url = git@github.com:blake-sheridan/cc-mode.git
 [submodule "llvm-mode"]
 	path = llvm-mode
-	url = git@github.com:blake-sheridan/.emacs.d-llvm-mode.git
+	url = git@github.com:blake-sheridan/llvm-mode.git
 [submodule "auctex"]
 	path = auctex
 	url = git://git.savannah.gnu.org/auctex.git
