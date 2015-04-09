@@ -4,3 +4,6 @@
 [submodule "src"]
 	path = src
 	url = git@github.com:blake-sheridan/src.git
+[submodule "include"]
+	path = include
+	url = git@github.com:blake-sheridan/include.git
