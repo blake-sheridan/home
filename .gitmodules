@@ -46,3 +46,27 @@
 [submodule ".local/src/libtool"]
 	path = .local/src/libtool
 	url = git://git.savannah.gnu.org/libtool.git
+[submodule ".local/src/coreutils"]
+	path = .local/src/coreutils
+	url = git://git.sv.gnu.org/coreutils
+[submodule ".local/src/gettext"]
+	path = .local/src/gettext
+	url = git://git.savannah.gnu.org/gettext.git
+[submodule ".local/src/autoconf"]
+	path = .local/src/autoconf
+	url = git://git.savannah.gnu.org/autoconf.git
+[submodule ".local/src/m4"]
+	path = .local/src/m4
+	url = git://git.savannah.gnu.org/m4.git
+	ignore = untracked
+[submodule ".local/src/bison"]
+	path = .local/src/bison
+	url = git://git.savannah.gnu.org/bison.git
+	ignore = untracked
+[submodule ".local/src/gperf"]
+	path = .local/src/gperf
+	url = git://git.savannah.gnu.org/gperf.git
+	ignore = untracked
+[submodule ".local/src/gnulib"]
+	path = .local/src/gnulib
+	url = git://git.savannah.gnu.org/gnulib.git
