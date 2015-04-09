@@ -16,7 +16,7 @@
 
 (add-to-list
   'auto-mode-alist
-  '(".git\\(?:config\\|modules\\)" . conf-unix-mode))
+  '(".git\\(?:config\\|ignore\\|modules\\)" . conf-unix-mode))
 
 ;;------------------------------------------------------------------------------------------------;;
 ;; LLVM
