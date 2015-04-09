@@ -7,18 +7,12 @@
 [submodule "src/emacs"]
 	path = .local/src/emacs
 	url = https://github.com/emacs-mirror/emacs.git
-[submodule "src/auctex"]
-	path = .emacs.d/auctex
-	url = git://git.sv.gnu.org/auctext.git
 [submodule "src/ack2"]
 	path = .local/src/ack2
 	url = https://github.com/petdance/ack2.git
 [submodule "src/cpython"]
 	path = .local/src/cpython
 	url = https://github.com/python/cpython.git
-[submodule "src/emacs-color-theme-solarized"]
-	path = .emacs.d/emacs-color-theme-solarized
-	url = https://github.com/sellout/emacs-color-theme-solarized.git
 [submodule "src/glibc"]
 	path = .local/src/glibc
 	url = git://sourceware.org/git/glibc.git
@@ -37,9 +31,6 @@
 [submodule "src/clang"]
 	path = .local/src/clang
 	url = http://llvm.org/git/clang.git
-[submodule ".emacs.d/cc-mode"]
-	path = .emacs.d/cc-mode
-	url = git@github.com:blake-sheridan/cc-mode.git
 [submodule ".local/src/gcc"]
 	path = .local/src/gcc
 	url = git://gcc.gnu.org/git/gcc.git
@@ -71,3 +62,6 @@
 [submodule ".local/src/gnulib"]
 	path = .local/src/gnulib
 	url = git://git.savannah.gnu.org/gnulib.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = git@github.com:blake-sheridan/.emacs.d.git
