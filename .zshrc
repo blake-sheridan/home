@@ -98,17 +98,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt \
-    appendhistory \
-    autocd \
-    autopushd \
-    correct \
-    notify \
-    nullglob
-
-unsetopt \
-    beep
-
 bindkey -e
 
 # The following lines were added by compinstall
@@ -121,8 +110,8 @@ compinit
 ####################################################################################################
 # Changing Directories
 
-# AUTO_CD # (-J)
-# AUTO_PUSHD # (-N)
+setopt AUTO_CD # (-J)
+setopt AUTO_PUSHD # (-N)
 # CDABLE_VARS (-T)
 # CHASE_DOTS
 # CHASE_LINKS # (-w)
@@ -177,7 +166,7 @@ compinit
 # MARK_DIRS (-8, ksh: -X)
 # MULTIBYTE <C> <K> <Z>
 # NOMATCH (+3) <C> <Z>
-# NULL_GLOB (-G)
+setopt NULL_GLOB # (-G)
 # NUMERIC_GLOB_SORT
 # RC_EXPAND_PARAM (-P)
 # REMATCH_PCRE <Z>
@@ -221,7 +210,7 @@ compinit
 
 # ALIASES <D>
 # CLOBBER (+C, ksh: +C) <D>
-# CORRECT (-0)
+setopt CORRECT # (-0)
 # CORRECT_ALL (-O)
 # DVORAK
 # FLOW_CONTROL <D>
@@ -249,7 +238,7 @@ compinit
 # HUP <Z>
 # LONG_LIST_JOBS (-R)
 # MONITOR (-m, ksh: -m)
-# NOTIFY (-5, ksh: -b) <Z>
+setopt NOTIFY # (-5, ksh: -b) <Z>
 
 ####################################################################################################
 # Prompting
@@ -317,7 +306,7 @@ compinit
 ####################################################################################################
 # Zle
 
-# BEEP (+B) <D>
+unsetopt BEEP # (+B) <D>
 # COMBINING_CHARS
 # EMACS
 # OVERSTRIKE
