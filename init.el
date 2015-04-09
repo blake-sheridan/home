@@ -18,6 +18,10 @@
   'auto-mode-alist
   '(".git\\(?:config\\|ignore\\|modules\\)" . conf-unix-mode))
 
+(add-to-list
+  'auto-mode-alist
+  '("COMMIT_EDITMSG" . conf-unix-mode)) ; `log-edit-mode`, maybe
+
 ;;------------------------------------------------------------------------------------------------;;
 ;; LLVM
 
