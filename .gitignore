@@ -13,9 +13,9 @@
 # Dot files
 /.ICEauthority
 /.Xauthority
-/.histfile
 /.lesshst
 /.python_history
 /.xsession-errors
 /.xsession-errors.old
 /.zcompdump
+/.zsh_history

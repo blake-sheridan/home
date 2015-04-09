@@ -94,7 +94,7 @@ su=${su}"
 # tab width
 tabs -4
 
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
