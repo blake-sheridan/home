@@ -4,3 +4,6 @@
 [submodule "cc-mode"]
 	path = cc-mode
 	url = git@github.com:blake-sheridan/.emacs.d-cc-mode.git
+[submodule "llvm-mode"]
+	path = llvm-mode
+	url = git@github.com:blake-sheridan/.emacs.d-llvm-mode.git
