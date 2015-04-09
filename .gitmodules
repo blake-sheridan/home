@@ -1,12 +1,16 @@
 [submodule "emacs-color-theme-solarized"]
+	branch = master
 	path = emacs-color-theme-solarized
 	url = git@github.com:sellout/emacs-color-theme-solarized.git
 [submodule "cc-mode"]
+	branch = master
 	path = cc-mode
 	url = git@github.com:blake-sheridan/cc-mode.git
 [submodule "llvm-mode"]
+	branch = master
 	path = llvm-mode
 	url = git@github.com:blake-sheridan/llvm-mode.git
 [submodule "auctex"]
+	branch = master
 	path = auctex
 	url = git://git.savannah.gnu.org/auctex.git
