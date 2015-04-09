@@ -1,4 +1,3 @@
-# Dot directories
 /.VirtualBox\ VMs/
 /.cache/
 /.compiz/
@@ -10,7 +9,6 @@
 /.ssh/
 /.subversion/
 
-# Dot files
 /.ICEauthority
 /.Xauthority
 /.lesshst
@@ -20,3 +18,5 @@
 /.xsession-errors.old
 /.zcompdump
 /.zsh_history
+
+/tmp/
