@@ -1,3 +1,6 @@
 [submodule "emacs-color-theme-solarized"]
 	path = emacs-color-theme-solarized
 	url = git@github.com:sellout/emacs-color-theme-solarized.git
+[submodule "cc-mode"]
+	path = cc-mode
+	url = git@github.com:blake-sheridan/.emacs.d-cc-mode.git
