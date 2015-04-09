@@ -90,3 +90,6 @@ pi=${pi}:\
 sg=${sg}:\
 so=${so}:\
 su=${su}"
+
+# tab width
+tabs -4
