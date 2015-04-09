@@ -106,9 +106,6 @@ path=(~/.local/bin ~/tools $path)
 
 ####################################################################################################
 
-# tab width
-tabs -4
-
 HISTFILE=~/.zsh_history
 HISTSIZE=99999
 SAVEHIST=$HISTSIZE
