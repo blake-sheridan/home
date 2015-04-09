@@ -13,8 +13,6 @@
 # Dot files
 /.ICEauthority
 /.Xauthority
-/.bash_history
-/.bash_logout
 /.histfile
 /.lesshst
 /.python_history
