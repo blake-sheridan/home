@@ -43,7 +43,7 @@ function cd-ls()
 
 alias cd='cd-ls'
 
-export PATH=~/.local/bin:$PATH
+PATH=$HOME/.local/bin:$HOME/scripts:$PATH
 
 ## LS_COLORS
 

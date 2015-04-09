@@ -7,3 +7,6 @@
 [submodule "include"]
 	path = include
 	url = git@github.com:blake-sheridan/include.git
+[submodule "scripts"]
+	path = scripts
+	url = git@github.com:blake-sheridan/scripts.git
