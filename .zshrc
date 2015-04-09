@@ -45,41 +45,44 @@ function cd-ls()
 alias cd='cd-ls'
 
 ####################################################################################################
-# LS_COLORS
+# Special variables ################################################################################
+# LS_COLORS ----------------------------------------------------------------------------------------
 
-bold='1'
-italic='3'
-underline='4'
-invert='7'
-conceal='8'
-strikethrough='9'
+lambda()
+{
+    typeset bold='1'
+    typeset italic='3'
+    typeset underline='4'
+    typeset invert='7'
+    typeset conceal='8'
+    typeset strikethrough='9'
 
-foreground_='3'
-background_='4'
+    typeset foreground_='3'
+    typeset background_='4'
 
-_black='0'
-_red='1'
-_green='2'
-_yellow='3'
-_blue='4'
-_magenta='5'
-_cyan='6'
-_white='7'
-_8_bit_='8;5;'  # n
-_24_bit_='8;2;' # r;g;b
+    typeset _black='0'
+    typeset _red='1'
+    typeset _green='2'
+    typeset _yellow='3'
+    typeset _blue='4'
+    typeset _magenta='5'
+    typeset _cyan='6'
+    typeset _white='7'
+    typeset _8_bit_='8;5;'  # n
+    typeset _24_bit_='8;2;' # r;g;b
 
-bd=$foreground_$_magenta      # block device
-cd=$foreground_$_cyan         # character device
-di=$foreground_$_8_bit_'226'  # directory
-ex=$foreground_$_red          # executable
-ln=$foreground_$_yellow       # symbolic link
-or=$background_$_red          # orphaned link
-pi=$foreground_$_cyan         # named pipe
-sg=$background_$_magenta      # setgid
-so=$foreground_$_magenta      # socket
-su=$background_$_magenta      # setuid
+    typeset bd=$foreground_$_magenta      # block device
+    typeset cd=$foreground_$_cyan         # character device
+    typeset di=$foreground_$_8_bit_'226'  # directory
+    typeset ex=$foreground_$_red          # executable
+    typeset ln=$foreground_$_yellow       # symbolic link
+    typeset or=$background_$_red          # orphaned link
+    typeset pi=$foreground_$_cyan         # named pipe
+    typeset sg=$background_$_magenta      # setgid
+    typeset so=$foreground_$_magenta      # socket
+    typeset su=$background_$_magenta      # setuid
 
-export LS_COLORS="\
+    export LS_COLORS="\
 bd=${bd}:\
 cd=${cd}:\
 di=${di}:\
@@ -90,6 +93,9 @@ pi=${pi}:\
 sg=${sg}:\
 so=${so}:\
 su=${su}"
+}
+lambda()
+unset -f lambda
 
 ####################################################################################################
 # PATH
