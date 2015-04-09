@@ -7,3 +7,6 @@
 [submodule "llvm-mode"]
 	path = llvm-mode
 	url = git@github.com:blake-sheridan/.emacs.d-llvm-mode.git
+[submodule "auctex"]
+	path = auctex
+	url = git://git.savannah.gnu.org/auctex.git
