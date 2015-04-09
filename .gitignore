@@ -1,10 +1,14 @@
 # Dot directories
 /.VirtualBox\ VMs/
 /.cache/
+/.compiz/
 /.cpanm/
 /.dbus/
+/.gnome/
 /.mozilla/
 /.pki/
+/.ssh/
+/.subversion/
 
 # Dot files
 /.ICEauthority
