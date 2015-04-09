@@ -1,25 +1,4 @@
 ;;------------------------------------------------------------------------------------------------;;
-;; B
-
-(add-to-list
-  'load-path
-  "~/src/b-mode")
-
-(autoload
-  'b-mode
-  "b-mode"
-  nil
-  t)
-
-(autoload
-  'b-keymap-mode
-  "~/src/b-mode/b-keymap-mode")
-
-(add-to-list
-  'auto-mode-alist
-  '("[.]b$" . b-mode))
-
-;;------------------------------------------------------------------------------------------------;;
 ;; C/C++
 
 ; We can't use autoload, as it must take priority over the normal cc-mode
