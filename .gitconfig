@@ -10,6 +10,7 @@ l = log
 lp = log -p
 r = reset HEAD --
 s = status
+sh = show
 
 [clean]
 requireForce = false
