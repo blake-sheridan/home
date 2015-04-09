@@ -23,7 +23,7 @@
 
 (add-to-list
   'load-path
-  "~/src/llvm-mode")
+  "~/.emacs.d/llvm-mode")
 
 (autoload
   'llvm-mode
