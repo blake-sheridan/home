@@ -183,6 +183,48 @@ $(eval $(call target,libtoolize))
 
 ####################################################################################################
 
+gnulib-source := $(SRC)/gnulib
+
+####################################################################################################
+
+gettext-source := $(SRC)/gettext
+
+#---------------------------------------------------------------------------------------------------
+
+gettext-configure := $(gettext-source)/configure
+$(gettext-configure):
+	cd $(@D) && \
+		GNULIB_SRCDIR=$(gnulib-source) \
+		./autogen.sh
+
+#---------------------------------------------------------------------------------------------------
+
+gettext-makefile := $(gettext-source)/Makefile
+$(gettext-makefile): $(gettext-configure)
+	cd $(@D) && \
+		./configure \
+		--prefix=$(PREFIX)
+
+#---------------------------------------------------------------------------------------------------
+
+gettext-archive.dir.tar.xz := $(gettext-source)/gettext-tools/misc/archive.dir.tar.xz
+$(gettext-archive.dir.tar.xz): $(gettext-makefile)
+	cd $(@D) && \
+		$(MAKE) \
+			$(@F)
+
+#---------------------------------------------------------------------------------------------------
+
+autopoint := $(gettext-source)/gettext-tools/misc/autopoint
+$(autopoint): $(gettext-makefile) | $(gettext-archive.dir.tar.xz)
+	cd $(<D) && \
+		$(MAKE) \
+			autopoint
+
+$(eval $(call target,autopoint))
+
+####################################################################################################
+
 clang-source := $(SRC)/clang
 lld-source   := $(SRC)/lld
 llvm-source  := $(SRC)/llvm

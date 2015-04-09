@@ -52,6 +52,7 @@
 [submodule ".local/src/gettext"]
 	path = .local/src/gettext
 	url = git://git.savannah.gnu.org/gettext.git
+	ignore = untracked
 [submodule ".local/src/autoconf"]
 	path = .local/src/autoconf
 	url = git://git.savannah.gnu.org/autoconf.git
