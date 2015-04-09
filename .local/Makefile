@@ -34,8 +34,7 @@ ack-source := $(SRC)/ack2
 
 #---------------------------------------------------------------------------------------------------
 
-ack-makefile := $(ack-source)/Makefile
-$(ack-makefile):
+$(ack-source)/Makefile:
 	cd $(@D) && \
 		perl \
 			Makefile.PL
@@ -43,7 +42,7 @@ $(ack-makefile):
 #---------------------------------------------------------------------------------------------------
 
 ack := $(ack-source)/ack-standalone
-$(ack): $(ack-makefile)
+$(ack): $(ack-source)/Makefile
 	cd $(@D) && \
 		$(MAKE) \
 			ack-standalone
@@ -56,14 +55,12 @@ emacs-source := $(SRC)/emacs
 
 #---------------------------------------------------------------------------------------------------
 
-emacs-configure := $(emacs-source)/configure
-$(emacs-configure):
+$(emacs-source)/configure:
 	cd $(@D) && ./autogen.sh
 
 #---------------------------------------------------------------------------------------------------
 
-emacs-makefile := $(emacs-source)/Makefile
-$(emacs-makefile): $(emacs-configure)
+$(emacs-source)/Makefile: $(emacs-source)/configure
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX) \
@@ -73,7 +70,7 @@ $(emacs-makefile): $(emacs-configure)
 #---------------------------------------------------------------------------------------------------
 
 emacs := $(emacs-source)/src/emacs
-$(emacs): $(emacs-makefile)
+$(emacs): $(emacs-source)/Makefile
 	cd $(@D) && $(MAKE)
 
 $(eval $(call target,emacs))
@@ -96,8 +93,7 @@ $(help2man-source):
 
 #---------------------------------------------------------------------------------------------------
 
-help2man-makefile := $(help2man-source)/Makefile
-$(help2man-makefile): | $(help2man-source)
+$(help2man-source)/Makefile: | $(help2man-source)
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
@@ -105,7 +101,7 @@ $(help2man-makefile): | $(help2man-source)
 #---------------------------------------------------------------------------------------------------
 
 help2man := $(help2man-source)/help2man
-$(help2man): $(help2man-makefile)
+$(help2man): $(help2man-source)/Makefile
 	cd $(@D) && \
 		$(MAKE)
 
@@ -129,8 +125,7 @@ $(texinfo-source):
 
 #---------------------------------------------------------------------------------------------------
 
-texinfo-makefile := $(texinfo-source)/Makefile
-$(texinfo-makefile): | $(texinfo-source)
+$(texinfo-source)/Makefile: | $(texinfo-source)
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
@@ -138,7 +133,7 @@ $(texinfo-makefile): | $(texinfo-source)
 #---------------------------------------------------------------------------------------------------
 
 makeinfo := $(texinfo-source)/tp/texi2any
-$(makeinfo): $(texinfo-makefile)
+$(makeinfo): $(texinfo-source)/Makefile
 	cd $(@D) && \
 		$(MAKE)
 
@@ -150,15 +145,13 @@ libtool-source := $(SRC)/libtool
 
 #---------------------------------------------------------------------------------------------------
 
-libtool-configure := $(libtool-source)/configure
-$(libtool-configure): | $(help2man) $(makeinfo)
+$(libtool-source)/configure: | $(help2man) $(makeinfo)
 	cd $(@D) && \
 		./bootstrap
 
 #---------------------------------------------------------------------------------------------------
 
-libtool-makefile := $(libtool-source)/Makefile
-$(libtool-makefile): $(libtool-configure)
+$(libtool-source)/Makefile): $(libtool-source)/configure
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
@@ -166,7 +159,7 @@ $(libtool-makefile): $(libtool-configure)
 #---------------------------------------------------------------------------------------------------
 
 libtool := $(libtool-source)/libtool
-$(libtool): $(libtool-makefile)
+$(libtool): $(libtool-source)/Makefile
 	cd $(@D) && \
 		$(MAKE)
 
@@ -175,7 +168,7 @@ $(eval $(call target,libtool))
 #---------------------------------------------------------------------------------------------------
 
 libtoolize := $(libtool-source)/libtoolize
-$(libtoolize): $(libtool-makefile)
+$(libtoolize): $(libtool-source)/Makefile
 	cd $(@D) && \
 		$(MAKE)
 
@@ -191,16 +184,14 @@ gettext-source := $(SRC)/gettext
 
 #---------------------------------------------------------------------------------------------------
 
-gettext-configure := $(gettext-source)/configure
-$(gettext-configure):
+$(gettext-source)/configure:
 	cd $(@D) && \
 		GNULIB_SRCDIR=$(gnulib-source) \
 		./autogen.sh
 
 #---------------------------------------------------------------------------------------------------
 
-gettext-makefile := $(gettext-source)/Makefile
-$(gettext-makefile): $(gettext-configure)
+$(gettext-source)/Makefile: $(gettext-source)/configure
 	cd $(@D) && \
 		./configure \
 		--prefix=$(PREFIX)
@@ -208,7 +199,7 @@ $(gettext-makefile): $(gettext-configure)
 #---------------------------------------------------------------------------------------------------
 
 gettext-archive.dir.tar.xz := $(gettext-source)/gettext-tools/misc/archive.dir.tar.xz
-$(gettext-archive.dir.tar.xz): $(gettext-makefile)
+$(gettext-archive.dir.tar.xz): $(gettext-source)/Makefile
 	cd $(@D) && \
 		$(MAKE) \
 			$(@F)
@@ -216,7 +207,7 @@ $(gettext-archive.dir.tar.xz): $(gettext-makefile)
 #---------------------------------------------------------------------------------------------------
 
 autopoint := $(gettext-source)/gettext-tools/misc/autopoint
-$(autopoint): $(gettext-makefile) | $(gettext-archive.dir.tar.xz)
+$(autopoint): $(gettext-source)/Makefile | $(gettext-archive.dir.tar.xz)
 	cd $(<D) && \
 		$(MAKE) \
 			autopoint
@@ -237,8 +228,7 @@ $(llvm-build):
 
 #---------------------------------------------------------------------------------------------------
 
-llvm-makefile := $(llvm-build)/Makefile
-$(llvm-makefile): | $(llvm-build)
+$(llvm-build)/Makefile: | $(llvm-build)
 	cd $(@D) && \
 		cmake \
 			-D CMAKE_BUILD_TYPE:STRING=Release \
@@ -273,8 +263,7 @@ python-source := $(SRC)/cpython
 
 #---------------------------------------------------------------------------------------------------
 
-python-makefile := $(python-source)/Makefile
-$(python-makefile):
+$(python-source)/Makefile:
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
@@ -282,7 +271,7 @@ $(python-makefile):
 #---------------------------------------------------------------------------------------------------
 
 python := $(python-source)/python
-$(python): $(python-makefile)
+$(python): $(python-source)/Makefile
 	cd $(@D) && $(MAKE)
 
 $(eval $(call target,python))
