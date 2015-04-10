@@ -153,7 +153,7 @@ $(libtool-source)/configure: | $(help2man) $(makeinfo)
 
 #---------------------------------------------------------------------------------------------------
 
-$(libtool-source)/Makefile): $(libtool-source)/configure
+$(libtool-source)/Makefile: $(libtool-source)/configure
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
