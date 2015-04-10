@@ -19,4 +19,10 @@
 /.zcompdump
 /.zsh_history
 
-/tmp/
+# Ignore non-dotfiles in this directory…
+/[!.]*
+
+# …except for…
+!/include/
+!/src/
+!/tools/
