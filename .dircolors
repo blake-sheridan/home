@@ -106,7 +106,7 @@ EXEC                  35
 FIFO                1;38;5;136;48;5;230
 LINK                3;33
 MULTIHARDLINK       0
-NORMAL              1;36
+NORMAL              0
 ORPHAN              9;38;5;160;48;5;235
 OTHER_WRITABLE        38;5;33;48;5;235
 RESET               0
