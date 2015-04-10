@@ -8,6 +8,7 @@ d = diff
 ds = diff --staged
 l = log
 lp = log -p
+p = push
 r = reset HEAD --
 s = status
 sh = show
