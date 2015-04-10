@@ -77,7 +77,7 @@ $(emacs-source)/Makefile: $(emacs-source)/configure
 
 emacs := $(emacs-source)/src/emacs
 $(emacs): $(emacs-source)/Makefile
-	cd $(@D) && $(MAKE)
+	cd $(^D) && $(MAKE)
 
 $(eval $(call target,emacs))
 
