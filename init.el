@@ -58,8 +58,16 @@
   "~/.emacs.d/emacs-color-theme-solarized")
 
 (load-theme
-  'solarized-dark
+  'solarized
   t)
+
+(add-hook 'after-make-frame-functions
+  (lambda (frame)
+    (set-frame-parameter
+      frame
+      'background-mode
+      'dark)
+    (enable-theme 'solarized)))
 
 ;;------------------------------------------------------------------------------------------------;;
 
@@ -126,6 +134,7 @@
  '(electric-indent-mode t)
  '(font-lock-maximum-decoration t)
  '(font-lock-support-mode (quote jit-lock-mode))
+ '(frame-background-mode (quote dark))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(lisp-backquote-indentation t)
