@@ -69,7 +69,6 @@ $(emacs-source)/configure:
 $(emacs-source)/Makefile: $(emacs-source)/configure
 	cd $(@D) && \
 		./configure \
-			--prefix=$(PREFIX) \
 			--without-makeinfo \
 			--without-x
 
