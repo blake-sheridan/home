@@ -83,7 +83,8 @@ help2man-version := 1.46.5
 
 help2man-source := $(SRC)/help2man-$(help2man-version)
 $(help2man-source):
-	curl \
+	wget \
+		-q -O - \
 		http://mirrors.syringanetworks.net/gnu/help2man/help2man-$(help2man-version).tar.xz \
 	| tar \
 		--directory=$(@D) \
@@ -115,7 +116,8 @@ texinfo-version := 5.2
 
 texinfo-source := $(SRC)/texinfo-$(texinfo-version)
 $(texinfo-source):
-	curl \
+	wget \
+		-q -O - \
 		http://ftp.gnu.org/gnu/texinfo/texinfo-$(texinfo-version).tar.xz \
 	| tar \
 		--directory=$(@D) \
