@@ -34,6 +34,9 @@ ack-source := $(SRC)/ack2
 
 #---------------------------------------------------------------------------------------------------
 
+# TODO:
+# sudo apt-get install libfile-next-perl
+
 $(ack-source)/Makefile:
 	cd $(@D) && \
 		perl \
@@ -59,6 +62,9 @@ $(emacs-source)/configure:
 	cd $(@D) && ./autogen.sh
 
 #---------------------------------------------------------------------------------------------------
+
+# TODO:
+# sudo apt-get install libncurses-dev
 
 $(emacs-source)/Makefile: $(emacs-source)/configure
 	cd $(@D) && \
@@ -229,6 +235,9 @@ $(llvm-build):
 	mkdir -p $@
 
 #---------------------------------------------------------------------------------------------------
+
+# TODO:
+# sudo apt-get install cmake
 
 $(llvm-build)/Makefile: | $(llvm-build)
 	cd $(@D) && \
