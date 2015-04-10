@@ -15,7 +15,7 @@ alias .....='cd ../../../..'
 
 # emacs
 alias e='emacs'
-alias emacs='TERM=xterm-256color emacs -nw'
+alias emacs='emacs -nw'
 
 # git
 alias ad='git add -p'
@@ -29,7 +29,6 @@ alias m='make --jobs=8 --no-builtin-rules --no-builtin-variables --warn-undefine
 
 alias sudo='sudo '
 alias sshscan='nmap -p 22 --open -sV 192.168.2.0/24'
-alias tmux='TERM=xterm-256color tmux'
 
 function cd-ls()
 {
