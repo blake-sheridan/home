@@ -2,9 +2,9 @@
 	branch = master
 	path = .emacs.d
 	url = git@github.com:blake-sheridan/.emacs.d.git
-[submodule "src"]
+[submodule ".local/src"]
 	branch = master
-	path = src
+	path = .local/src
 	url = git@github.com:blake-sheridan/src.git
 [submodule "include"]
 	branch = master
