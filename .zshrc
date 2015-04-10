@@ -1,5 +1,5 @@
 # terminal prompt
-PS1='%F{green}%* %n@%m %~> %f'
+PS1='%F{blue}%* %~/%f '
 
 # aliases
 alias ls='LC_COLLATE=C ls --color=auto'
