@@ -9,6 +9,7 @@ ds = diff --staged
 l = log
 lp = log -p
 p = push
+pr = push --recurse-submodules=on-demand
 r = reset HEAD --
 s = status
 sh = show
