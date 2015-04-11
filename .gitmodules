@@ -6,10 +6,6 @@
 	branch = master
 	path = .local/src
 	url = git@github.com:blake-sheridan/src.git
-[submodule "include"]
-	branch = master
-	path = include
-	url = git@github.com:blake-sheridan/include.git
 [submodule "tools"]
 	branch = master
 	path = tools
