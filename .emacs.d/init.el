@@ -41,6 +41,14 @@
 ;; Markdown
 
 (add-to-list
+  'load-path
+  "~/.emacs.d/markdown-mode")
+
+(autoload
+  'markdown-mode
+  "markdown-mode")
+
+(add-to-list
   'auto-mode-alist
   '("[.]md$" . markdown-mode))
 
