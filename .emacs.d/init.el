@@ -59,6 +59,11 @@
   'auto-mode-alist
   '("[.]wsgi$" . python-mode))
 
+(add-hook
+  'python-mode-hook
+  (lambda ()
+    (electric-indent-local-mode -1)))
+
 ;;------------------------------------------------------------------------------------------------;;
 
 (add-to-list
