@@ -1,13 +1,10 @@
-PREFIX  := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
+ROOT := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
 
 #---------------------------------------------------------------------------------------------------
 
-BIN     := $(PREFIX)/bin
-BUILD   := $(PREFIX)/.build
-INCLUDE := $(PREFIX)/include
-LIB     := $(PREFIX)/lib
-SHARE   := $(PREFIX)/share
-SRC     := $(PREFIX)/src
+PREFIX := $(ROOT)
+BUILD  := $(ROOT)/.build
+SRC    := $(ROOT)/src
 
 #---------------------------------------------------------------------------------------------------
 
