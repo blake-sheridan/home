@@ -47,7 +47,7 @@ $(ack-source)/Makefile:
 ack := $(ack-source)/ack-standalone
 $(ack): $(ack-source)/Makefile
 	$(MAKE) \
-		--directory=$(@D) \
+		--directory=$(<D) \
 		ack-standalone
 
 $(eval $(call target,ack))
@@ -59,7 +59,8 @@ emacs-source := $(SRC)/emacs
 #---------------------------------------------------------------------------------------------------
 
 $(emacs-source)/configure:
-	cd $(@D) && ./autogen.sh
+	cd $(@D) && \
+		./autogen.sh
 
 #---------------------------------------------------------------------------------------------------
 
@@ -77,7 +78,7 @@ $(emacs-source)/Makefile: $(emacs-source)/configure
 emacs := $(emacs-source)/src/emacs
 $(emacs): $(emacs-source)/Makefile
 	$(MAKE) \
-		--directory=$(^D)
+		--directory=$(<D)
 
 $(eval $(call target,emacs))
 
@@ -108,7 +109,7 @@ $(gcc-build)/Makefile: | $(gcc-build)
 gcc := $(gcc-build)/gcc/xgcc
 $(gcc): $(gcc-build)/Makefile
 	$(MAKE) \
-		--directory=$(^D)
+		--directory=$(<D)
 
 $(eval $(call target,gcc))
 
@@ -139,7 +140,7 @@ $(git-source)/config.mak.autogen: $(git-source)/configure
 git := $(git-source)/git
 $(git): $(git-source)/Makefile $(git-source)/config.mak.autogen
 	$(MAKE) \
-		--directory=$(^D)
+		--directory=$(<D)
 
 $(eval $(call target,git))
 
@@ -172,7 +173,7 @@ $(help2man-source)/Makefile: | $(help2man-source)
 help2man := $(help2man-source)/help2man
 $(help2man): $(help2man-source)/Makefile
 	$(MAKE) \
-		--directory=$(@D)
+		--directory=$(<D)
 
 $(eval $(call target,help2man))
 
@@ -205,7 +206,7 @@ $(texinfo-source)/Makefile: | $(texinfo-source)
 makeinfo := $(texinfo-source)/tp/texi2any
 $(makeinfo): $(texinfo-source)/Makefile
 	$(MAKE) \
-		--directory=$(@D)
+		--directory=$(<D)
 
 $(eval $(call target,makeinfo))
 
@@ -231,7 +232,7 @@ $(libtool-source)/Makefile: $(libtool-source)/configure
 libtool := $(libtool-source)/libtool
 $(libtool): $(libtool-source)/Makefile
 	$(MAKE) \
-		--directory=$(@D)
+		--directory=$(<D)
 
 $(eval $(call target,libtool))
 
@@ -271,7 +272,7 @@ $(gettext-source)/Makefile: $(gettext-source)/configure
 gettext-archive.dir.tar.xz := $(gettext-source)/gettext-tools/misc/archive.dir.tar.xz
 $(gettext-archive.dir.tar.xz): $(gettext-source)/Makefile
 	$(MAKE) \
-		--directory=$(@D) \
+		--directory=$(<D) \
 		$(@F)
 
 #---------------------------------------------------------------------------------------------------
@@ -319,7 +320,7 @@ $(llvm-build)/Makefile: | $(llvm-build)
 clang := $(llvm-build)/bin/clang
 $(clang): $(llvm-build)/Makefile
 	$(MAKE) \
-		--directory=$(^D)
+		--directory=$(<D)
 		clang
 
 $(eval $(call target,clang))
@@ -329,7 +330,7 @@ $(eval $(call target,clang))
 lld := $(llvm-build)/bin/lld
 $(lld): $(llvm-build)/Makefile
 	$(MAKE) \
-		--directory=$(^D)
+		--directory=$(<D)
 		lld
 
 $(eval $(call target,lld))
@@ -350,7 +351,7 @@ $(python-source)/Makefile:
 python := $(python-source)/python
 $(python): $(python-source)/Makefile
 	$(MAKE) \
-		--directory=$(^D)
+		--directory=$(<D)
 
 $(eval $(call target,python))
 
