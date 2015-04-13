@@ -131,15 +131,15 @@ $(git-source)/configure:
 $(git-source)/config.mak.autogen: $(git-source)/configure
 	cd $(@D) && \
 		./configure \
-			--prefix=$(PREFIX)
+			--prefix=$(PREFIX) \
+			--with-curl
 
 #---------------------------------------------------------------------------------------------------
 
 git := $(git-source)/git
 $(git): $(git-source)/Makefile $(git-source)/config.mak.autogen
 	$(MAKE) \
-		--directory=$(^D) \
-		git
+		--directory=$(^D)
 
 $(eval $(call target,git))
 
