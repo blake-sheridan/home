@@ -46,9 +46,9 @@ $(ack-source)/Makefile:
 
 ack := $(ack-source)/ack-standalone
 $(ack): $(ack-source)/Makefile
-	cd $(@D) && \
-		$(MAKE) \
-			ack-standalone
+	$(MAKE) \
+		--directory=$(@D) \
+		ack-standalone
 
 $(eval $(call target,ack))
 
@@ -76,7 +76,8 @@ $(emacs-source)/Makefile: $(emacs-source)/configure
 
 emacs := $(emacs-source)/src/emacs
 $(emacs): $(emacs-source)/Makefile
-	cd $(^D) && $(MAKE)
+	$(MAKE) \
+		--directory=$(^D)
 
 $(eval $(call target,emacs))
 
@@ -90,9 +91,9 @@ git-source := $(SRC)/git
 # sudo apt-get install libssl-dev
 
 $(git-source)/configure:
-	cd $(@D) && \
-		$(MAKE) \
-			configure
+	$(MAKE) \
+		--directory=$(@D) \
+		configure
 
 #---------------------------------------------------------------------------------------------------
 
@@ -105,9 +106,9 @@ $(git-source)/config.mak.autogen: $(git-source)/configure
 
 git := $(git-source)/git
 $(git): $(git-source)/Makefile $(git-source)/config.mak.autogen
-	cd $(^D) && \
-		$(MAKE) \
-			git
+	$(MAKE) \
+		--directory=$(^D) \
+		git
 
 $(eval $(call target,git))
 
@@ -139,8 +140,8 @@ $(help2man-source)/Makefile: | $(help2man-source)
 
 help2man := $(help2man-source)/help2man
 $(help2man): $(help2man-source)/Makefile
-	cd $(@D) && \
-		$(MAKE)
+	$(MAKE) \
+		--directory=$(@D)
 
 $(eval $(call target,help2man))
 
@@ -172,8 +173,8 @@ $(texinfo-source)/Makefile: | $(texinfo-source)
 
 makeinfo := $(texinfo-source)/tp/texi2any
 $(makeinfo): $(texinfo-source)/Makefile
-	cd $(@D) && \
-		$(MAKE)
+	$(MAKE) \
+		--directory=$(@D)
 
 $(eval $(call target,makeinfo))
 
@@ -198,8 +199,8 @@ $(libtool-source)/Makefile: $(libtool-source)/configure
 
 libtool := $(libtool-source)/libtool
 $(libtool): $(libtool-source)/Makefile
-	cd $(@D) && \
-		$(MAKE)
+	$(MAKE) \
+		--directory=$(@D)
 
 $(eval $(call target,libtool))
 
@@ -207,8 +208,8 @@ $(eval $(call target,libtool))
 
 libtoolize := $(libtool-source)/libtoolize
 $(libtoolize): $(libtool-source)/Makefile
-	cd $(@D) && \
-		$(MAKE)
+	$(MAKE) \
+		--directory=$(@D)
 
 $(eval $(call target,libtoolize))
 
@@ -238,17 +239,17 @@ $(gettext-source)/Makefile: $(gettext-source)/configure
 
 gettext-archive.dir.tar.xz := $(gettext-source)/gettext-tools/misc/archive.dir.tar.xz
 $(gettext-archive.dir.tar.xz): $(gettext-source)/Makefile
-	cd $(@D) && \
-		$(MAKE) \
-			$(@F)
+	$(MAKE) \
+		--directory=$(@D) \
+		$(@F)
 
 #---------------------------------------------------------------------------------------------------
 
 autopoint := $(gettext-source)/gettext-tools/misc/autopoint
 $(autopoint): $(gettext-source)/Makefile | $(gettext-archive.dir.tar.xz)
-	cd $(<D) && \
-		$(MAKE) \
-			autopoint
+	$(MAKE) \
+		--directory=$(<D) \
+		autopoint
 
 $(eval $(call target,autopoint))
 
@@ -286,7 +287,9 @@ $(llvm-build)/Makefile: | $(llvm-build)
 
 clang := $(llvm-build)/bin/clang
 $(clang): $(llvm-build)/Makefile
-	cd $(llvm-build) && $(MAKE) clang
+	$(MAKE) \
+		--directory=$(^D)
+		clang
 
 $(eval $(call target,clang))
 
@@ -294,7 +297,9 @@ $(eval $(call target,clang))
 
 lld := $(llvm-build)/bin/lld
 $(lld): $(llvm-build)/Makefile
-	cd $(llvm-build) && $(MAKE) lld
+	$(MAKE) \
+		--directory=$(^D)
+		lld
 
 $(eval $(call target,lld))
 
@@ -313,7 +318,8 @@ $(python-source)/Makefile:
 
 python := $(python-source)/python
 $(python): $(python-source)/Makefile
-	cd $(@D) && $(MAKE)
+	$(MAKE) \
+		--directory=$(^D)
 
 $(eval $(call target,python))
 
