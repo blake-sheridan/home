@@ -12,23 +12,20 @@ SRC    := $(ROOT)/src
 all: ack clang emacs git python
 
 ####################################################################################################
+# ack
 
-ack-source := $(SRC)/ack2
-
-#---------------------------------------------------------------------------------------------------
+_ := $(SRC)/ack2
 
 # TODO:
 # sudo apt-get install libfile-next-perl
 
-$(ack-source)/Makefile:
+$(_)/Makefile:
 	cd $(@D) && \
 		perl \
 			Makefile.PL
 
-#---------------------------------------------------------------------------------------------------
-
-ack := $(ack-source)/ack-standalone
-$(ack): $(ack-source)/Makefile
+ack := $(_)/ack-standalone
+$(ack): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D) \
 		ack-standalone
@@ -37,30 +34,25 @@ $(ack): $(ack-source)/Makefile
 ack: $(ack)
 
 ####################################################################################################
+# emacs
 
-emacs-source := $(SRC)/emacs
+_ := $(SRC)/emacs
 
-#---------------------------------------------------------------------------------------------------
-
-$(emacs-source)/configure:
+$(_)/configure:
 	cd $(@D) && \
 		./autogen.sh
-
-#---------------------------------------------------------------------------------------------------
 
 # TODO:
 # sudo apt-get install libncurses-dev
 
-$(emacs-source)/Makefile: $(emacs-source)/configure
+$(_)/Makefile: $(_)/configure
 	cd $(@D) && \
 		./configure \
 			--without-makeinfo \
 			--without-x
 
-#---------------------------------------------------------------------------------------------------
-
-emacs := $(emacs-source)/src/emacs
-$(emacs): $(emacs-source)/Makefile
+emacs := $(_)/src/emacs
+$(emacs): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 
@@ -68,31 +60,24 @@ $(emacs): $(emacs-source)/Makefile
 emacs: $(emacs)
 
 ####################################################################################################
+# gcc
 
-gcc-source := $(SRC)/gcc
-
-#---------------------------------------------------------------------------------------------------
-
-gcc-build := $(BUILD)/gcc
-$(gcc-build):
+_ := $(BUILD)/gcc
+$(_):
 	mkdir -p $@
 
-#---------------------------------------------------------------------------------------------------
-
-$(gcc-build)/Makefile: | $(gcc-build)
+$(_)/Makefile: | $(_)
 	cd $(@D) && \
-		$(gcc-source)/configure \
+		$(SRC)/gcc/configure \
 		--disable-multilib
-
-#---------------------------------------------------------------------------------------------------
 
 # TODO:
 # sudo apt-get install libmpfr-dev
 # sudo apt-get install libmpc-dev
 # sudo apt-get install flex
 
-gcc := $(gcc-build)/gcc/xgcc
-$(gcc): $(gcc-build)/Makefile
+gcc := $(_)/gcc/xgcc
+$(gcc): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 
@@ -100,31 +85,26 @@ $(gcc): $(gcc-build)/Makefile
 gcc: $(gcc)
 
 ####################################################################################################
+# git
 
-git-source := $(SRC)/git
-
-#---------------------------------------------------------------------------------------------------
+_ := $(SRC)/git
 
 # TODO:
 # sudo apt-get install libssl-dev
 
-$(git-source)/configure:
+$(_)/configure:
 	$(MAKE) \
 		--directory=$(@D) \
 		configure
 
-#---------------------------------------------------------------------------------------------------
-
-$(git-source)/config.mak.autogen: $(git-source)/configure
+$(_)/config.mak.autogen: $(_)/configure
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX) \
 			--with-curl
 
-#---------------------------------------------------------------------------------------------------
-
-git := $(git-source)/git
-$(git): $(git-source)/Makefile $(git-source)/config.mak.autogen
+git := $(_)/git
+$(git): $(_)/Makefile $(_)/config.mak.autogen
 	$(MAKE) \
 		--directory=$(<D)
 
@@ -132,9 +112,11 @@ $(git): $(git-source)/Makefile $(git-source)/config.mak.autogen
 git: $(git)
 
 ####################################################################################################
+# help2man
 
-help2man-source := $(SRC)/help2man-1.46.5
-$(help2man-source):
+_ := $(SRC)/help2man-1.46.5
+
+$(_):
 	wget \
 		-q -O - \
 		http://mirrors.syringanetworks.net/gnu/help2man/$(@F).tar.xz \
@@ -144,24 +126,22 @@ $(help2man-source):
 		--extract \
 		--xz
 
-#---------------------------------------------------------------------------------------------------
-
-$(help2man-source)/Makefile: | $(help2man-source)
+$(_)/Makefile: | $(_)
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
 
-#---------------------------------------------------------------------------------------------------
-
-help2man := $(help2man-source)/help2man
-$(help2man): $(help2man-source)/Makefile
+help2man := $(_)/help2man
+$(help2man): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 
 ####################################################################################################
+# texinfo (makeinfo)
 
-texinfo-source := $(SRC)/texinfo-5.2
-$(texinfo-source):
+_ := $(SRC)/texinfo-5.2
+
+$(_):
 	wget \
 		-q -O - \
 		http://ftp.gnu.org/gnu/texinfo/$(@F).tar.xz \
@@ -171,123 +151,93 @@ $(texinfo-source):
 		--extract \
 		--xz
 
-#---------------------------------------------------------------------------------------------------
-
-$(texinfo-source)/Makefile: | $(texinfo-source)
+$(_)/Makefile: | $(_)
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
 
-#---------------------------------------------------------------------------------------------------
-
-makeinfo := $(texinfo-source)/tp/texi2any
-$(makeinfo): $(texinfo-source)/Makefile
+makeinfo := $(_)/tp/texi2any
+$(makeinfo): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 
 ####################################################################################################
+# libtool
 
-libtool-source := $(SRC)/libtool
+_ := $(SRC)/libtool
 
-#---------------------------------------------------------------------------------------------------
-
-$(libtool-source)/configure: | $(help2man) $(makeinfo)
+$(_)/configure: | $(help2man) $(makeinfo)
 	cd $(@D) && \
 		./bootstrap
 
-#---------------------------------------------------------------------------------------------------
-
-$(libtool-source)/Makefile: $(libtool-source)/configure
+$(_)/Makefile: $(_)/configure
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
 
-#---------------------------------------------------------------------------------------------------
-
-libtool := $(libtool-source)/libtool
-$(libtool): $(libtool-source)/Makefile
+libtool := $(_)/libtool
+$(libtool): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 
-#---------------------------------------------------------------------------------------------------
-
-libtoolize := $(libtool-source)/libtoolize
-$(libtoolize): $(libtool-source)/Makefile
+libtoolize := $(_)/libtoolize
+$(libtoolize): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 
 ####################################################################################################
+# gettext
 
-gnulib-source := $(SRC)/gnulib
+_ := $(SRC)/gettext
 
-####################################################################################################
-
-gettext-source := $(SRC)/gettext
-
-#---------------------------------------------------------------------------------------------------
-
-$(gettext-source)/configure:
+$(_)/configure:
 	cd $(@D) && \
-		GNULIB_SRCDIR=$(gnulib-source) \
+		GNULIB_SRCDIR=$(SRC)/gnulib \
 		./autogen.sh
 
-#---------------------------------------------------------------------------------------------------
-
-$(gettext-source)/Makefile: $(gettext-source)/configure
+$(_)/Makefile: $(_)/configure
 	cd $(@D) && \
 		./configure \
 		--prefix=$(PREFIX)
 
-#---------------------------------------------------------------------------------------------------
-
-gettext-archive.dir.tar.xz := $(gettext-source)/gettext-tools/misc/archive.dir.tar.xz
-$(gettext-archive.dir.tar.xz): $(gettext-source)/Makefile
+gettext-archive.dir.tar.xz := $(_)/gettext-tools/misc/archive.dir.tar.xz
+$(gettext-archive.dir.tar.xz): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D) \
 		$(@F)
 
-#---------------------------------------------------------------------------------------------------
-
-autopoint := $(gettext-source)/gettext-tools/misc/autopoint
-$(autopoint): $(gettext-source)/Makefile | $(gettext-archive.dir.tar.xz)
+autopoint := $(_)/gettext-tools/misc/autopoint
+$(autopoint): $(_)/Makefile | $(gettext-archive.dir.tar.xz)
 	$(MAKE) \
 		--directory=$(<D) \
 		autopoint
 
 ####################################################################################################
+# clang/lld
 
-clang-source := $(SRC)/clang
-lld-source   := $(SRC)/lld
-llvm-source  := $(SRC)/llvm
+_ := $(BUILD)/llvm
 
-#---------------------------------------------------------------------------------------------------
-
-llvm-build := $(BUILD)/llvm
-$(llvm-build):
+$(_):
 	mkdir -p $@
-
-#---------------------------------------------------------------------------------------------------
 
 # TODO:
 # sudo apt-get install cmake
 
-$(llvm-build)/Makefile: | $(llvm-build)
+$(_)/Makefile: | $(_)
 	cd $(@D) && \
 		cmake \
 			-D CMAKE_BUILD_TYPE:STRING=Release \
 			-D CLANG_INCLUDE_DOCS:BOOL=OFF \
 			-D CLANG_INCLUDE_TESTS:BOOL=OFF \
 			-D LLVM_ENABLE_PIC:BOOL=OFF \
-			-D LLVM_EXTERNAL_CLANG_SOURCE_DIR:PATH=$(clang-source) \
-			-D LLVM_EXTERNAL_LLD_SOURCE_DIR:PATH=$(lld-source) \
+			-D LLVM_EXTERNAL_CLANG_SOURCE_DIR:PATH=$(SRC)/clang \
+			-D LLVM_EXTERNAL_LLD_SOURCE_DIR:PATH=$(SRC)/lld \
 			-D LLVM_INCLUDE_EXAMPLES:BOOL=OFF \
 			-D LLVM_INCLUDE_TESTS:BOOL=OFF \
-			 $(llvm-source)
+			 $(SRC)/llvm
 
-#---------------------------------------------------------------------------------------------------
-
-clang := $(llvm-build)/bin/clang
-$(clang): $(llvm-build)/Makefile
+clang := $(_)/bin/clang
+$(clang): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 		clang
@@ -295,10 +245,8 @@ $(clang): $(llvm-build)/Makefile
 .PHONY: clang
 clang: $(clang)
 
-#---------------------------------------------------------------------------------------------------
-
-lld := $(llvm-build)/bin/lld
-$(lld): $(llvm-build)/Makefile
+lld := $(_)/bin/lld
+$(lld): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 		lld
@@ -307,20 +255,17 @@ $(lld): $(llvm-build)/Makefile
 lld: $(lld)
 
 ####################################################################################################
+# python
 
-python-source := $(SRC)/cpython
+_ := $(SRC)/cpython
 
-#---------------------------------------------------------------------------------------------------
-
-$(python-source)/Makefile:
+$(_)/Makefile:
 	cd $(@D) && \
 		./configure \
 			--prefix=$(PREFIX)
 
-#---------------------------------------------------------------------------------------------------
-
-python := $(python-source)/python
-$(python): $(python-source)/Makefile
+python := $(_)/python
+$(python): $(_)/Makefile
 	$(MAKE) \
 		--directory=$(<D)
 
