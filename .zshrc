@@ -25,7 +25,7 @@ alias g='git'
 alias st='git status'
 
 # make
-alias m='make --jobs=8 --no-builtin-rules --no-builtin-variables --warn-undefined-variables'
+alias m='make --jobs=8 --warn-undefined-variables'
 
 alias sudo='sudo '
 alias sshscan='nmap -p 22 --open -sV 192.168.2.0/24'
