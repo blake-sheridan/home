@@ -6,4 +6,7 @@ accels
 /libreoffice/
 /pulse/
 
+# saved gui state
+/totem/state.ini
+
 /Trolltech.conf
