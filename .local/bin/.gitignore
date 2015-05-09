@@ -6,8 +6,8 @@
 /autoreconf
 /autoscan
 /autoupdate
-/clang
-/emacs
+/clang*
+/emacs*
 /git
 /gperf
 /help2man
