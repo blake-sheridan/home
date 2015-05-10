@@ -38,6 +38,28 @@
   '("\\.ll\\'" . llvm-mode))
 
 ;;------------------------------------------------------------------------------------------------;;
+;; Make
+
+(define-derived-mode __makefile-mode makefile-mode
+  "`makefile-mode` tweaks"
+  (defconst __makefile-font-lock-keywords
+    (makefile-make-font-lock-keywords
+      makefile-var-use-regex
+      `(
+         "undefine"
+         ,@makefile-gmake-statements)
+      t))
+  (setq font-lock-defaults
+    `(__makefile-font-lock-keywords ,@(cdr font-lock-defaults))))
+
+(setq auto-mode-alist
+  (append
+    (list
+      '("Makefile\\'" . __makefile-mode)
+      '("\\.mk\\'"    . __makefile-mode))
+    auto-mode-alist))
+
+;;------------------------------------------------------------------------------------------------;;
 ;; Markdown
 
 (add-to-list
