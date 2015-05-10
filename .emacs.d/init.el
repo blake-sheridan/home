@@ -138,6 +138,21 @@
   "\M-;"
   "…")
 
+;; Reserved for users:
+;; F5 through F9 without modifier keys
+;; C-c and a letter
+
+(global-set-key "\C-ca" "∧")
+(global-set-key "\C-cd" "÷")
+(global-set-key "\C-ci" "•")
+(global-set-key "\C-cf" "⊥")
+(global-set-key "\C-cm" "×")
+(global-set-key "\C-cN" "≠")
+(global-set-key "\C-cn" (lambda () (interactive) (insert "¬"))) ; Workaround
+(global-set-key "\C-co" "∨")
+(global-set-key "\C-ct" "⊤")
+(global-set-key "\C-cx" "⊕")
+
 ; Print the current column
 
 (global-set-key
