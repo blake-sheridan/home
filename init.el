@@ -9,14 +9,14 @@
 
 (add-to-list
   'auto-mode-alist
-  '("[.]h[p]?[p]?$" . c++-mode))
+  '("\\.h[p]?[p]?\\'" . c++-mode))
 
 ;;------------------------------------------------------------------------------------------------;;
 ;; git
 
 (add-to-list
   'auto-mode-alist
-  '(".git\\(?:config\\|ignore\\|modules\\)" . conf-unix-mode))
+  '(".git\\(?:config\\|ignore\\|modules\\)\\'" . conf-unix-mode))
 
 (add-to-list
   'auto-mode-alist
@@ -35,7 +35,7 @@
 
 (add-to-list
   'auto-mode-alist
-  '("[.]ll$" . llvm-mode))
+  '("\\.ll\\'" . llvm-mode))
 
 ;;------------------------------------------------------------------------------------------------;;
 ;; Markdown
@@ -50,14 +50,14 @@
 
 (add-to-list
   'auto-mode-alist
-  '("[.]md$" . markdown-mode))
+  '("\\.md\\'" . markdown-mode))
 
 ;;------------------------------------------------------------------------------------------------;;
 ;; Python
 
 (add-to-list
   'auto-mode-alist
-  '("[.]wsgi$" . python-mode))
+  '("\\.wsgi\\'" . python-mode))
 
 (add-hook
   'python-mode-hook
