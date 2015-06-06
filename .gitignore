@@ -23,6 +23,6 @@
 /[!.]*
 
 # …except for…
-!/include/
+!/mojo/
 !/src/
 !/tools/

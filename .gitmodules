@@ -9,3 +9,6 @@
 [submodule "src"]
 	path = src
 	url = git@github.com:blake-sheridan/src.git
+[submodule "mojo"]
+	path = mojo
+	url = git@github.com:mojo-runtime/mojo.git
