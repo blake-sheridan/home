@@ -19,6 +19,7 @@
 /telepathy
 /texinfo/
 /unity-settings-daemon
+/unity-webapps/*.db
 /zeitgeist/
 /.converted-launchers
 
