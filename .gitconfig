@@ -7,10 +7,15 @@ co = checkout
 d = diff
 ds = diff --staged
 l = log
+lf = log --follow
 lp = log -p
 p = push
 pr = push --recurse-submodules=on-demand
 r = reset HEAD --
+rb = rebase --interactive
+rba = rebase --abort
+rbc = rebase --continue
+rbs = rebase --skip
 s = status
 sh = show
 
@@ -31,6 +36,10 @@ abbrevCommit = true
 
 [push]
 default = simple
+
+[rebase]
+autosquash = true
+stat = true
 
 [user]
 email = blake.m.sheridan@gmail.com
