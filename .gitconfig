@@ -22,6 +22,9 @@ sh = show
 [clean]
 requireForce = false
 
+[color]
+status = always
+
 [core]
 editor = emacs -nw
 
