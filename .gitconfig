@@ -2,6 +2,8 @@
 a = add -p
 ad = add
 c = checkout -p
+cf = config
+cfl = config --list
 ci = commit
 co = checkout
 d = diff
