@@ -6,6 +6,7 @@ c = checkout -p
 cf = config
 cfl = config --list
 ci = commit
+cm = commit -m
 co = checkout
 d = diff
 ds = diff --staged
