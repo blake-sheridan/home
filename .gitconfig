@@ -45,6 +45,7 @@ default = simple
 
 [rebase]
 autosquash = true
+autostash = true
 stat = true
 
 [user]
