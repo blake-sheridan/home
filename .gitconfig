@@ -22,6 +22,7 @@ rbc = rebase --continue
 rbs = rebase --skip
 s = status
 sh = show
+su = submodule update --init
 
 [clean]
 requireForce = false
