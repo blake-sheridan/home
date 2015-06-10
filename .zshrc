@@ -2,6 +2,9 @@
 PS1='%F{blue}%* %~/%f '
 
 # aliases
+
+alias kill-suspended='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
+
 alias ls='LC_COLLATE=C ls --color=auto'
 alias ls-symbols='ls -lfd [\!_]* _*'
 
