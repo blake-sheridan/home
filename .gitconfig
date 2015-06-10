@@ -1,8 +1,8 @@
 [alias]
 a = add -p
 ad = add
-am = commit --amend
 c = checkout -p
+ca = commit --amend
 cf = config
 cfl = config --list
 ci = commit
