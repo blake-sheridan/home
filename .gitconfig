@@ -1,6 +1,7 @@
 [alias]
 a = add -p
 ad = add
+am = commit --amend
 c = checkout -p
 cf = config
 cfl = config --list
