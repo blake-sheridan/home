@@ -155,6 +155,7 @@
   '(c-offsets-alist
      (quote
        ((topmost-intro-cont . 0)
+         (brace-list-open . 0)
          (statement-cont . 0)
          (statement-case-open . 4)
          (substatement-open . 0)
