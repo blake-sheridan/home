@@ -33,18 +33,11 @@ alias m='make --jobs=8 --warn-undefined-variables'
 alias sudo='sudo '
 alias sshscan='nmap -p 22 --open -sV 192.168.2.0/24'
 
-function cd-ls()
-{
-    if [[ "$1" = "" ]] ; then
-        \cd ~/
-        ls
-    else
-        \cd "$1"
-        ls
-    fi
-}
+# `ls` after changing the working directory
 
-alias cd='cd-ls'
+chpwd() {
+    ls
+}
 
 ####################################################################################################
 # LS_COLORS
