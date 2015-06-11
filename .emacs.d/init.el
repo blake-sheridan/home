@@ -89,60 +89,157 @@
 
 ;;------------------------------------------------------------------------------------------------;;
 
-(global-set-key
-  [f12]
-  `beginning-of-buffer)
+;; escape
+;; f1
+;;   <alt>: put keyboard focus on the launcher
+;; f2
+;;   <alt>: execute command
+;; f3
+;; f4
+;;   <alt>: close window
+;; f5
+;; f6
+;; f7
+;;   <alt>: move window
+;; f8
+;;   <alt>: resize window
+;; f9
+;; f10
+;;   <alt>: open the first panel menu
+;; f11: close terminal
+;; f12: new terminal
 
-(global-set-key
-  "\C-u"
-  `insert-char)
+;; `
+;;   <super>: show the launcher
+;; 1
+;; 2
+;; 3
+;; 4
+;; 5
+;;   <ctrl><alt>: toggle maximization state
+;; 6
+;; 7
+;; 8
+;; 9
+;; 0
+;;   <ctrl>: normal size
+;;   <ctrl><alt>: minimize window
+;; -
+;;   <ctrl>: zoom out
+;; +
+;;   <ctrl>: zoom in
+;; backspace
 
-(global-set-key
-  "\C-v"
-  `align-current)
-
-(global-set-key
-  "\C-x\C-t"
-  `delete-trailing-whitespace)
-
-(global-set-key
-  "\C-\M-e"
-  `eval-expression)
-
-(global-set-key
-  "\M-,"
-  "←")
-
-(global-set-key
-  "\M-."
-  "→")
-
-(global-set-key
-  "\M-;"
-  "…")
-
-;; Reserved for users:
-;; F5 through F9 without modifier keys
-;; C-c and a letter
-
-(global-set-key "\C-ca" "∧")
-(global-set-key "\C-cd" "÷")
-(global-set-key "\C-ci" "•")
-(global-set-key "\C-cf" "⊥")
-(global-set-key "\C-cm" "×")
-(global-set-key "\C-cN" "≠")
-(global-set-key "\C-cn" (lambda () (interactive) (insert "¬"))) ; Workaround
-(global-set-key "\C-co" "∨")
+;; q
+;;   <shift><ctrl>: close all terminals
+;; w
+;;   <super>: initiate window picker
+;;   <super><shift>: initiate window picker for all windows
+;; e
+;; r
+;; t
+(global-set-key "\C-x\C-t" `delete-trailing-whitespace)
 (global-set-key "\C-ct" "⊤")
-(global-set-key "\C-cx" "⊕")
+;; y
+;; u
+(global-set-key "\C-u" `insert-char)
+;; i
+(global-set-key "\C-ci" "•")
+;; o
+(global-set-key "\C-co" "∨")
+;; p
+;; [
+;; ]
+;; \
 
-; Print the current column
+;; a
+;; s
+;;   <ctrl><alt>: toggle shaded state
+;;   <super>: expo key
+;; d
+;;   <ctrl><super>: hide all normal windows
+;; f
+;;   <shift><ctrl>: find
+;; g
+;;   <shift><ctrl>: find next
+;; h
+;;   <shift><ctrl>: find previous
+;; j
+;;   <shift><ctrl>: clear find highlight
+;; k
+;; l
+;;   <ctrl><alt>: lock screen
+;; ;
 
-(global-set-key
-  "\C-cc"
-  '(lambda ()
-     (interactive)
-     (print (current-column) t)))
+(global-set-key "\M-;" "…")
+
+;; z
+;; x
+;; c
+;;   <ctrl>: print current column
+;;   <shift><ctrl>: copy
+
+(global-set-key "\C-cc" '(lambda () (interactive) (print (current-column) t)))
+
+;; v
+;;   <ctrl>: align current
+;;   <shift><ctrl>: paste
+
+(global-set-key "\C-v" `align-current)
+
+;; b
+;; n
+
+(global-set-key "\C-cn" (lambda () (interactive) (insert "¬"))) ; Workaround
+(global-set-key "\C-cN" "≠")
+
+;; m
+
+(global-set-key "\C-cm" "×")
+
+;; ,
+;;   <meta>: beginning-of-buffer
+
+(global-set-key "\M-," `beginning-of-buffer)
+
+;; .
+;;   <meta>: end-of-buffer
+
+(global-set-key "\M-." `end-of-buffer)
+
+;; /
+
+;; space
+;;   <alt>: activate window menu
+;;   <super>: switch to next source
+;;   <shift><super>: switch to previous source
+
+;; insert
+;; delete
+;;   <ctrl><alt>: log out
+
+;; home
+;;   <shift><super>: move window to workspace 1
+;;   <super>: switch to workspace 1
+;; end
+
+;; page up
+;;   <shift><ctrl>: move terminal to the left
+;; page down
+;;   <shift><ctrl>: move terminal to the right
+
+;; ↑
+;;   <ctrl><super>: maximize window
+;;   <shift><ctrl><alt>: move window one workspace up
+;; ↓
+;;   <ctrl><super>: restore window
+;;   <shift><ctrl><alt>: move window one workspace down
+;; ←
+;;   <shift><ctrl><alt>: move window one workspace to the left
+;;   <ctrl><alt>: switch to workspace left
+;; →
+;;   <shift><ctrl><alt>: move window one workspace to the right
+;;   <ctrl><alt>: switch to workspace right
 
 ;;------------------------------------------------------------------------------------------------;;
 
