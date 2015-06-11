@@ -3,7 +3,7 @@
 	path = .emacs.d
 	url = git@github.com:blake-sheridan/.emacs.d.git
 [submodule "src"]
-	path = src
+	path = tools
 	url = git@github.com:blake-sheridan/src.git
 [submodule "mojo"]
 	path = mojo

@@ -24,5 +24,4 @@
 
 # …except for…
 !/mojo/
-!/src/
 !/tools/
