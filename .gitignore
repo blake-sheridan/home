@@ -19,9 +19,5 @@
 /.zcompdump
 /.zsh_history
 
-# Ignore non-dotfiles in this directory…
+# Ignore non-dotfiles in this directory
 /[!.]*
-
-# …except for…
-!/mojo/
-!/tools/
