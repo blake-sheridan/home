@@ -105,7 +105,6 @@
 ;;   <alt>: resize window
 ;; f9
 ;; f10
-;;   <alt>: open the first panel menu
 ;; f11: close terminal
 ;; f12: new terminal
 
