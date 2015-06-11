@@ -49,7 +49,7 @@ eval `dircolors .dircolors`
 
 typeset -U path
 
-path=(~/.local/bin ~/tools $path)
+path=(~/.local/bin $path)
 
 ####################################################################################################
 
