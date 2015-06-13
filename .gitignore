@@ -4,6 +4,7 @@
 /.cpanm/
 /.dbus/
 /.gnome/
+/.local/
 /.mozilla/
 /.pki/
 /.ssh/
