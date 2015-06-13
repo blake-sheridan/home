@@ -60,10 +60,10 @@ setopt AUTO_CD # (-J)
 setopt AUTO_PUSHD # (-N)
 # CDABLE_VARS (-T)
 # CHASE_DOTS
-# CHASE_LINKS # (-w)
+setopt CHASE_LINKS # (-w)
 # PUSHD_IGNORE_DUPS
 # PUSHD_MINUS
-# PUSHD_SILENT (-E)
+setopt PUSHD_SILENT # (-E)
 # PUSHD_TO_HOME (-D)
 
 ####################################################################################################
@@ -154,7 +154,7 @@ setopt NULL_GLOB # (-G)
 ####################################################################################################
 # Input/Output
 
-# ALIASES <D>
+setopt ALIASES # <D>
 # CLOBBER (+C, ksh: +C) <D>
 setopt CORRECT # (-0)
 # CORRECT_ALL (-O)
