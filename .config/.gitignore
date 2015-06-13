@@ -5,8 +5,6 @@ accels
 /google-chrome/
 /libreoffice/
 /pulse/
-
-# saved gui state
-/totem/state.ini
+/totem/
 
 /Trolltech.conf
