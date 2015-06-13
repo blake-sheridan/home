@@ -138,14 +138,11 @@
 ;; r
 ;; t
 (global-set-key "\C-x\C-t" `delete-trailing-whitespace)
-(global-set-key "\C-ct" "⊤")
 ;; y
 ;; u
 (global-set-key "\C-u" `insert-char)
 ;; i
-(global-set-key "\C-ci" "•")
 ;; o
-(global-set-key "\C-co" "∨")
 ;; p
 ;; [
 ;; ]
@@ -170,8 +167,6 @@
 ;;   <ctrl><alt>: lock screen
 ;; ;
 
-(global-set-key "\M-;" "…")
-
 ;; z
 ;; x
 ;; c
@@ -188,14 +183,7 @@
 
 ;; b
 ;; n
-
-(global-set-key "\C-cn" (lambda () (interactive) (insert "¬"))) ; Workaround
-(global-set-key "\C-cN" "≠")
-
 ;; m
-
-(global-set-key "\C-cm" "×")
-
 ;; ,
 ;;   <meta>: beginning-of-buffer
 
