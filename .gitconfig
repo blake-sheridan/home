@@ -31,7 +31,7 @@ requireForce = false
 status = always
 
 [core]
-editor = emacs -nw
+editor = env TERM=xterm-256color emacs -nw
 
 [diff]
 algorithm = minimal
