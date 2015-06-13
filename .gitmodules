@@ -1,4 +1,0 @@
-[submodule ".emacs.d"]
-	branch = master
-	path = .emacs.d
-	url = git@github.com:blake-sheridan/.emacs.d.git
