@@ -1,40 +1,27 @@
 # terminal prompt
 PS1='%F{blue}%* %~/%f '
 
-# aliases
-
-alias kill-suspended='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
-
-alias ls='LC_COLLATE=C ls --color=auto'
-alias ls-symbols='ls -lfd [\!_]* _*'
-
-alias cb='cd $OLDPWD'
-alias x='exit'
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
-# emacs
-alias e='emacs'
-alias emacs='emacs -nw'
-
-# git
 alias ad='git add -p'
-alias d='git diff'
+alias cb='cd $OLDPWD'
 alias co='git checkout -p'
+alias d='git diff'
+alias e='TERM=xterm-256color emacs -nw'
 alias g='git'
+alias kill-suspended='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
+alias ls='LC_COLLATE=C ls --color=auto'
+alias lsla='ls -la'
+alias ls-symbols='ls -lfd [\!_]* _*'
 alias st='git status'
-
-# make
 alias m='make --jobs=8 --warn-undefined-variables'
-
 alias sudo='sudo '
-alias sshscan='nmap -p 22 --open -sV 192.168.2.0/24'
+alias ssh-scan='nmap -p 22 --open -sV 192.168.2.0/24'
+alias x='exit'
 
 # `ls` after changing the working directory
-
 chpwd() {
     ls
 }
