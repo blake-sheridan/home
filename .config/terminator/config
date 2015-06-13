@@ -1,0 +1,74 @@
+[global_config]
+  window_state = maximise
+  suppress_multiple_term_dialog = True
+  handle_size = 2
+  inactive_color_offset = 0.82
+  focus = system
+[keybindings]
+  cycle_prev = None
+  next_tab = None
+  full_screen = None
+  go_prev = <Shift><Super>Tab
+  move_tab_right = None
+  close_term = <Primary>w
+  move_tab_left = None
+  edit_window_title = None
+  new_tab = <Primary>t
+  cycle_next = None
+  go_next = <Super>Tab
+  prev_tab = None
+  hide_window = None
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    cursor_shape = ibeam
+    use_system_font = False
+    foreground_color = "#839496"
+    show_titlebar = False
+    font = Monospace 9
+    background_color = "#002b36"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+  [[programming]]
+    [[[child0]]]
+      position = 0:24
+      type = Window
+      order = 0
+      parent = ""
+      size = 1920, 1056
+    [[[child1]]]
+      position = 963
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child3]]]
+      position = 734
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = primary
+      type = Terminal
+      order = 0
+      parent = child1
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child3
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child3
+[plugins]
