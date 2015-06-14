@@ -17,3 +17,15 @@
 [submodule "markdown-mode"]
 	path = .emacs.d/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+[submodule "src/git"]
+	path = tools/git
+	url = git@github.com:git/git.git
+[submodule "src/ack"]
+	path = tools/ack
+	url = git@github.com:petdance/ack2.git
+[submodule "src/emacs"]
+	path = tools/emacs
+	url = git://git.savannah.gnu.org/emacs.git
+[submodule "src/python"]
+	path = tools/python
+	url = git@github.com:python/cpython.git

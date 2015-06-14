@@ -20,5 +20,9 @@
 /.zcompdump
 /.zsh_history
 
-# Ignore non-dotfiles in this directory
+# Whitelist non-dotfiles in this directory.
 /[!.]*
+!/data/
+!/lib/
+!/src/
+!/tools/
