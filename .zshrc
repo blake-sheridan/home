@@ -36,7 +36,7 @@ eval `dircolors ~/.dircolors`
 
 typeset -U path
 
-path=(~/.local/bin $path)
+path=(~/.local/bin ~/lib $path)
 
 ####################################################################################################
 
@@ -59,7 +59,7 @@ compinit
 setopt AUTO_CD # (-J)
 setopt AUTO_PUSHD # (-N)
 # CDABLE_VARS (-T)
-# CHASE_DOTS
+setopt CHASE_DOTS
 setopt CHASE_LINKS # (-w)
 # PUSHD_IGNORE_DUPS
 # PUSHD_MINUS
@@ -69,31 +69,31 @@ setopt PUSHD_SILENT # (-E)
 ####################################################################################################
 # Completion
 
-# ALWAYS_LAST_PROMPT <D>
+setopt ALWAYS_LAST_PROMPT # <D>
 # ALWAYS_TO_END
-# AUTO_LIST (-9) <D>
-# AUTO_MENU <D>
+setopt AUTO_LIST # (-9) <D>
+setopt AUTO_MENU # <D>
 # AUTO_NAME_DIRS
 # AUTO_PARAM_KEYS <D>
 # AUTO_PARAM_SLASH <D>
 # AUTO_REMOVE_SLASH <D>
 # BASH_AUTO_LIST
 # COMPLETE_ALIASES
-# COMPLETE_IN_WORD
+setopt COMPLETE_IN_WORD
 # GLOB_COMPLETE
 # HAST_LIST_ALL <D>
 # LIST_AMBIGUOUS <D>
 # LIST_BEEP <D>
 # LIST_PACKED
 # LIST_ROWS_FIRST
-# LIST_TYPES (-X) <D>
+setopt LIST_TYPES # (-X) <D>
 # MENU_COMPLETE (-Y)
 # REC_EXACT (-S)
 
 ####################################################################################################
 # Expansion and Globbing
 
-# BAD_PATTERN (+2) <C> <Z>
+setopt BAD_PATTERN # (+2) <C> <Z>
 # BARE_GLOB_QUAL <Z>
 # BRACE_CCL
 # CASE_GLOB <D>
@@ -118,21 +118,21 @@ setopt NULL_GLOB # (-G)
 # REMATCH_PCRE <Z>
 # SH_GLOB <K> <S>
 # UNSET (+u, ksh: +u) <K> <S> <Z>
-# WARN_CREATE_GLOBAL
+setopt WARN_CREATE_GLOBAL
 
 ####################################################################################################
 # History
 
 # APPEND_HISTORY <D>
 # BANG_HIST (+K) <C> <Z>
-# EXTENDED_HISTORY <C>
+setopt EXTENDED_HISTORY # <C>
 # HIST_ALLOW_CLOBBER
 # HIST_BEEP <D>
 # HIST_EXPIRE_DUPS_FIRST
 # HIST_FCNTL_LOCK
 # HIST_FIND_NO_DUPS
 # HIST_IGNORE_ALL_DUPS
-# HIST_IGNORE_DUPS # (-h)
+setopt HIST_IGNORE_DUPS # (-h)
 # HIST_IGNORE_SPACE (-g)
 # HIST_NO_FUNCTIONS
 # HIST_NO_STORE
@@ -192,8 +192,8 @@ setopt NOTIFY # (-5, ksh: -b) <Z>
 # PROMPT_BANG <K>
 # PROMPT_CR (+V) <D>
 # PROMPT_SP <D>
-# PROMPT_PERCENT <C> <Z>
-# PROMPT_SUBST <K> <S>
+setopt PROMPT_PERCENT # <C> <Z>
+setopt PROMPT_SUBST # <K> <S>
 # TRANSIENT_RPROMPT
 
 ####################################################################################################
