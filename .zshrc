@@ -1,5 +1,5 @@
 # terminal prompt
-PS1='%F{blue}%* %~/%f '
+PS1='%F{blue}%* %~%f '
 
 alias ..='cd ..'
 alias ...='cd ../..'
