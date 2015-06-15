@@ -29,7 +29,37 @@ chpwd() {
 ####################################################################################################
 # LS_COLORS
 
-eval `dircolors ~/.dircolors`
+ls_colors=(
+    bd='1;38;5;244;48;5;230'    # block device
+    ca='30;41'
+    cd='1;38;5;244;48;5;230'    # character device
+    di='32'                     # directory
+    do='1;38;5;136;48;5;230'    # door
+    ex='35'                     # executable files
+    ln='3;33'                   # symbolic link
+    mh='0'
+    no='0'                      # normal text
+    or='9;38;5;160;48;5;235'
+    ow='38;5;33;48;5;235'       # world writable directories without sticky bit set
+    pi='1;38;5;136;48;5;230'    # fifo
+    rs='0'
+    sg='38;5;230;48;5;136'      # setgid
+    so='1;38;5;136;48;5;230'    # socket
+    st='38;5;230;48;5;33'       # directories with sticky bit set but not world writable
+    su='38;5;230;48;5;160'      # setuid
+    tw='38;5;230;48;5;64:'      # world writable directories with sticky bit set
+)
+
+export LS_COLORS=${(j/:/)ls_colors}
+
+ls_colors+=(
+    # ec - end code
+    # lc - left code
+    # sa - files with an associated suffix alias
+    # sp - spaces printed after matches to align the next column
+)
+
+zstyle ':completion:*:default' list-colors ${(j/:/)ls_colors}
 
 ####################################################################################################
 # PATH
