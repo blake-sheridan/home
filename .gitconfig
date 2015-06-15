@@ -38,6 +38,7 @@ algorithm = minimal
 #ignoreSubmodules = dirty
 mnemonicprefix = true
 renames = true
+submodule = log
 
 [log]
 abbrevCommit = true
@@ -49,6 +50,9 @@ default = simple
 autosquash = true
 autostash = true
 stat = true
+
+[status]
+submodulesummary = true
 
 [user]
 email = blake.m.sheridan@gmail.com
