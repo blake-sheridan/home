@@ -22,7 +22,5 @@
 
 # Whitelist non-dotfiles in this directory.
 /[!.]*
-!/lib/
-!/src/
 !/tools/
 !/zsh
