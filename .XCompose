@@ -1,0 +1,37 @@
+# -*- Conf -*-
+
+# U+00AC NOT SIGN
+<Multi_key> <minus> <bar> : "¬"
+
+# U+00B1 PLUS-MINUS SIGN
+<Multi_key> <plus> <minus> : "±"
+
+# U+00D7 MULTIPLICATION SIGN
+<Multi_key> <x> <x> : "×"
+
+# U+00F7 DIVISION SIGN
+<Multi_key> <minus> <colon> : "÷"
+
+# U+00B2 SUPERSCRIPT TWO
+# U+00B3 SUPERSCRIPT THREE
+
+# U+2190 LEFTWARDS ARROW
+<Multi_key> <less> <minus> : "←"
+# U+2191 UPWARDS ARROW
+# U+2192 RIGHTWARDS ARROW
+<Multi_key> <minus> <greater> : "←"
+# U+2193 DOWNWARDS ARROW
+
+# U+2026 HORIZONTAL ELLIPSIS
+<Multi_key> <period> <period> : "…"
+
+# U+2260 NOT EQUAL TO
+<Multi_key> <slash> <equal> : "≠"
+
+# U+2264 LESS-THAN OR EQUAL TO
+<Multi_key> <less> <equal> : "≤"
+# U+2265 GREATER-THAN OR EQUAL TO
+<Multi_key> <greater> <equal> : "≥"
+
+# U+2713 CHECK MARK
+<Multi_key> <period> <slash> : "✓"
