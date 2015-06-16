@@ -51,9 +51,6 @@ autosquash = true
 autostash = true
 stat = true
 
-[status]
-submodulesummary = true
-
 [user]
 email = blake.m.sheridan@gmail.com
 name = Blake Sheridan
