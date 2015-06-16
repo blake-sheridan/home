@@ -1,5 +1,7 @@
+TERM=xterm-256color
+
 # terminal prompt
-PS1='%F{blue}%* %~%f '
+PS1='%F{4}%* %~%f '
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -31,23 +33,40 @@ chpwd() {
 
 ls_colors=(
     bd='1;38;5;244;48;5;230'    # block device
-    ca='30;41'
+    ca='30;41'                  # capability
     cd='1;38;5;244;48;5;230'    # character device
-    di='32'                     # directory
-    do='1;38;5;136;48;5;230'    # door
+    di='38;5;9'                 # directory
     ex='35'                     # executable files
     ln='3;33'                   # symbolic link
-    mh='0'
-    no='0'                      # normal text
-    or='9;38;5;160;48;5;235'
+    mh='0'                      # multihardlink
+    no='5'                      # normal text
+    or='9;38;5;160;48;5;235'    # orphaned link
     ow='38;5;33;48;5;235'       # world writable directories without sticky bit set
     pi='1;38;5;136;48;5;230'    # fifo
-    rs='0'
+    rs='0'                      # reset
     sg='38;5;230;48;5;136'      # setgid
     so='1;38;5;136;48;5;230'    # socket
     st='38;5;230;48;5;33'       # directories with sticky bit set but not world writable
     su='38;5;230;48;5;160'      # setuid
-    tw='38;5;230;48;5;64:'      # world writable directories with sticky bit set
+    tw='38;5;230;48;5;64'       # world writable directories with sticky bit set
+
+    '*.gitignore'='38;5;94'
+
+    '*.c'='38;5;87'
+    '*.cxx'='38;5;166'
+    '*.el'='38;5;128'
+    '*.h'='38;5;100'
+    '*.hxx'='38;5;229'
+    '*.md'='38;5;88'
+    '*.mk'='38;5;176'
+    '*.py'='38;5;142'
+    '*.sh'='38;5;180'
+    '*.zsh'='38;5;178'
+
+    '*LICENSE.txt'='38;5;238'
+    '*Makefile'='38;5;124'
+    '*README.md'='38;5;238'
+
 )
 
 export LS_COLORS=${(j/:/)ls_colors}
@@ -57,6 +76,10 @@ ls_colors+=(
     # lc - left code
     # sa - files with an associated suffix alias
     # sp - spaces printed after matches to align the next column
+
+    #'*.hxx'='38;5;111'
+
+    '=(#b)(*).hxx'='38;5;238'='38;5;170'
 )
 
 zstyle ':completion:*:default' list-colors ${(j/:/)ls_colors}
