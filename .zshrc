@@ -91,6 +91,23 @@ typeset -U path
 
 path=(~/.local/bin ~/lib $path)
 
+fpath=(~/zsh/functions $fpath)
+
+autoload\
+    find.extension\
+    find.name\
+    terminal.print-colors\
+    window.class\
+    window.class.set\
+    window.geometry\
+    window.name\
+    window.name.set\
+    window.role\
+    window.role.set\
+    window.spy\
+    window.title\
+    window.title.set
+
 ####################################################################################################
 
 HISTFILE=~/.zsh_history

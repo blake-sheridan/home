@@ -1,0 +1,5 @@
+# -*- Shell-script -*-
+
+local WINDOW X Y WIDTH HEIGHT SCREEN
+eval $(xdotool getactivewindow getwindowgeometry --shell)
+print ${WIDTH}x${HEIGHT}+$X+$Y

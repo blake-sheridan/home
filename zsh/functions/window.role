@@ -1,0 +1,6 @@
+# -*- Shell-script -*-
+
+xdotool getactivewindow\
+    | xargs -I '{}' xprop -id '{}' WM_WINDOW_ROLE\
+    | awk '{print $3}'\
+    | sed 's/"//g'
