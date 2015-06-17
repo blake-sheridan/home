@@ -19,7 +19,7 @@
 <Multi_key> <less> <minus> : "←"
 # U+2191 UPWARDS ARROW
 # U+2192 RIGHTWARDS ARROW
-<Multi_key> <minus> <greater> : "←"
+<Multi_key> <minus> <greater> : "→"
 # U+2193 DOWNWARDS ARROW
 
 # U+2026 HORIZONTAL ELLIPSIS
