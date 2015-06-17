@@ -1,7 +1,8 @@
 TERM=xterm-256color
 
 # terminal prompt
-PS1='%F{4}%* %~%f '
+PS1="%F{4}%~⏵%f "
+RPS1="%F{23}%*"
 
 alias ..='cd ..'
 alias ...='cd ../..'
