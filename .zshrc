@@ -95,6 +95,8 @@ path=(~/.local/bin ~/lib $path)
 fpath=(~/zsh/functions $fpath)
 
 autoload\
+    cursor.hide\
+    cursor.show\
     find.extension\
     find.name\
     terminal.print-colors\
