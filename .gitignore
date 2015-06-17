@@ -19,8 +19,3 @@
 /.xsession-errors.old
 /.zcompdump
 /.zsh_history
-
-# Whitelist non-dotfiles in this directory.
-/[!.]*
-!/tools/
-!/zsh
