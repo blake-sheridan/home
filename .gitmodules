@@ -6,10 +6,6 @@
 	branch = master
 	path = .emacs.d/cc-mode
 	url = git@github.com:blake-sheridan/cc-mode.git
-[submodule "llvm-mode"]
-	branch = master
-	path = .emacs.d/llvm-mode
-	url = git@github.com:blake-sheridan/llvm-mode.git
 [submodule "auctex"]
 	branch = master
 	path = .emacs.d/auctex
