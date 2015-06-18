@@ -46,11 +46,19 @@
     cursor_shape = ibeam
     use_system_font = False
     foreground_color = "#839496"
-    scroll_on_output = False
     show_titlebar = False
     font = Monospace 9
     background_color = "#002b36"
-    scrollback_infinite = True
+  [[editor]]
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    cursor_shape = ibeam
+    use_system_font = False
+    foreground_color = "#839496"
+    show_titlebar = False
+    font = Monospace 9
+    background_color = "#002b36"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -78,7 +86,7 @@
       order = 1
       parent = child1
     [[[terminal2]]]
-      profile = primary
+      profile = editor
       type = Terminal
       order = 0
       parent = child1
