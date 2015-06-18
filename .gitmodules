@@ -31,3 +31,6 @@
 [submodule "zsh/functions"]
 	path = zsh/functions
 	url = git@github.com:blake-sheridan/zsh-functions.git
+[submodule ".emacs.d/llvm-mode"]
+	path = .emacs.d/llvm-mode
+	url = git@github.com:blake-sheridan/llvm-mode.git
