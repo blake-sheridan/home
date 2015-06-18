@@ -76,10 +76,11 @@
 
 ;;------------------------------------------------------------------------------------------------;;
 
-(global-set-key "\C-ct" `delete-trailing-whitespace)
 (global-set-key "\C-u" `insert-char)
+(global-set-key "\C-ca" `align-current)
 (global-set-key "\C-cc" '(lambda () (interactive) (print (current-column) t)))
-(global-set-key "\C-v" `align-current)
+(global-set-key "\C-ce" `eval-buffer)
+(global-set-key "\C-ct" `delete-trailing-whitespace)
 (global-set-key "\M-," `beginning-of-buffer)
 (global-set-key "\M-." `end-of-buffer)
 
