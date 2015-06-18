@@ -1,10 +1,3 @@
-(add-to-list
-  'load-path
-  "~/elisp")
-
-(load-file
-  "~/elisp/.loaddefs.el")
-
 ;;------------------------------------------------------------------------------------------------;;
 ;; C/C++
 
@@ -28,6 +21,43 @@
 (add-to-list
   'auto-mode-alist
   '("COMMIT_EDITMSG" . conf-unix-mode)) ; `log-edit-mode`, maybe
+
+;;------------------------------------------------------------------------------------------------;;
+;; LLVM
+
+(add-to-list
+  'load-path
+  "~/.emacs.d/llvm-mode")
+
+(autoload
+  'llvm-mode
+  "llvm-mode")
+
+(add-to-list
+  'auto-mode-alist
+  '("\\.ll\\'" . llvm-mode))
+
+;;------------------------------------------------------------------------------------------------;;
+;; Make
+
+(define-derived-mode __makefile-mode makefile-mode
+  "`makefile-mode` tweaks"
+  (defconst __makefile-font-lock-keywords
+    (makefile-make-font-lock-keywords
+      makefile-var-use-regex
+      `(
+         "undefine"
+         ,@makefile-gmake-statements)
+      t))
+  (setq font-lock-defaults
+    `(__makefile-font-lock-keywords ,@(cdr font-lock-defaults))))
+
+(setq auto-mode-alist
+  (append
+    (list
+      '("Makefile\\'" . __makefile-mode)
+      '("\\.mk\\'"    . __makefile-mode))
+    auto-mode-alist))
 
 ;;------------------------------------------------------------------------------------------------;;
 ;; Markdown
