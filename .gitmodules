@@ -28,3 +28,6 @@
 [submodule "elisp"]
 	path = elisp
 	url = https://github.com/blake-sheridan/elisp.git
+[submodule "zsh/functions"]
+	path = zsh/functions
+	url = git@github.com:blake-sheridan/zsh-functions.git

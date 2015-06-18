@@ -1,3 +1,0 @@
-# -*- Shell-script -*-
-
-find -name $1

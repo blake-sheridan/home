@@ -1,3 +1,0 @@
-# -*- Shell-script -*-
-
-echo -n "\e[?25l"

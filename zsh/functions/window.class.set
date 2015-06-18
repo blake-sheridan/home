@@ -1,3 +1,0 @@
-# -*- Shell-script -*-
-
-xdotool getactivewindow set_window --class $1

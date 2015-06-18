@@ -1,3 +1,0 @@
-# -*- Shell-script -*-
-
-xdotool getactivewindow | xargs -I '{}' xprop -id '{}' -spy
