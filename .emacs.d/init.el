@@ -103,6 +103,7 @@
          (arglist-intro . +)
          (arglist-close . 0)
          (inextern-lang . 0)
+         (inline-open . 0)
          (innamespace . 0))))
  '(csv-separators (quote ("," ";")))
  '(electric-indent-mode t)
