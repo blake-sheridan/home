@@ -37,8 +37,8 @@ ls_colors=(
     bd='1;38;5;244;48;5;230'    # block device
     ca='30;41'                  # capability
     cd='1;38;5;244;48;5;230'    # character device
-    di='38;5;9'                 # directory
-    ex='35'                     # executable files
+    di='38;5;2'                 # directory
+    ex='38;5;1'                 # executable files
     ln='3;33'                   # symbolic link
     mh='0'                      # multihardlink
     no='5'                      # normal text
@@ -52,39 +52,39 @@ ls_colors=(
     su='38;5;230;48;5;160'      # setuid
     tw='38;5;230;48;5;64'       # world writable directories with sticky bit set
 
+    '*@test'='38;5;84'
+
     '*.gitignore'='38;5;94'
 
-    '*.c'='38;5;87'
-    '*.cxx'='38;5;166'
-    '*.el'='38;5;128'
-    '*.h'='38;5;100'
-    '*.hxx'='38;5;229'
+    '*.c'='38;5;34'
+    '*.h'='38;5;108'
+
+    '*.cxx'='38;5;180'
+    '*.hxx'='38;5;180'
+
+    '*.el'='38;5;203'
+
     '*.md'='38;5;88'
+
+    '*Makefile'='38;5;94'
     '*.mk'='38;5;176'
+
     '*.py'='38;5;142'
+
     '*.sh'='38;5;180'
-    '*.zsh'='38;5;178'
+    '*.zsh'='38;5;180'
 
+    '*LICENSE'='38;5;238'
     '*LICENSE.txt'='38;5;238'
-    '*Makefile'='38;5;124'
-    '*README.md'='38;5;238'
 
+    '*README'='38;5;238'
+    '*README.md'='38;5;238'
+    '*README.txt'='38;5;238'
 )
 
 export LS_COLORS=${(j/:/)ls_colors}
 
-ls_colors+=(
-    # ec - end code
-    # lc - left code
-    # sa - files with an associated suffix alias
-    # sp - spaces printed after matches to align the next column
-
-    #'*.hxx'='38;5;111'
-
-    '=(#b)(*).hxx'='38;5;238'='38;5;170'
-)
-
-zstyle ':completion:*:default' list-colors ${(j/:/)ls_colors}
+zstyle ':completion:*:default' list-colors $LS_COLORS
 
 ####################################################################################################
 # PATH
