@@ -1,9 +1,6 @@
 TERM=xterm-256color
 
-alias ad='git add -p'
 alias cb='cd $OLDPWD'
-alias co='git checkout -p'
-alias d='git diff'
 alias e='emacs -nw'
 alias g='git'
 alias kill-suspended='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
@@ -12,7 +9,6 @@ alias lsla='ls -la'
 alias ls-symbols='ls -lfd [\!_]* _*'
 alias m='make --jobs=8 --warn-undefined-variables'
       p() { python3 <<< "print($@)" }
-alias st='git status'
 alias sudo='sudo '
 alias ssh-scan='nmap -p 22 --open -sV 192.168.2.0/24'
 alias x='exit'
