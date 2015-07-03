@@ -101,10 +101,6 @@ autoload\
 
 ####################################################################################################
 
-HISTFILE=~/.zsh_history
-HISTSIZE=99999
-SAVEHIST=$HISTSIZE
-
 bindkey -e
 
 # The following lines were added by compinstall
@@ -188,6 +184,10 @@ setopt WARN_CREATE_GLOBAL
 
 ####################################################################################################
 # History
+
+HISTFILE=~/.zsh_history
+HISTSIZE=99999
+SAVEHIST=$HISTSIZE
 
 # APPEND_HISTORY <D>
 # BANG_HIST (+K) <C> <Z>
