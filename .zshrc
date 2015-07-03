@@ -17,11 +17,6 @@ alias sudo='sudo '
 alias ssh-scan='nmap -p 22 --open -sV 192.168.2.0/24'
 alias x='exit'
 
-# `ls` after changing the working directory
-chpwd() {
-    ls
-}
-
 ####################################################################################################
 # LS_COLORS
 
@@ -131,6 +126,11 @@ setopt CHASE_LINKS # (-w)
 # PUSHD_MINUS
 setopt PUSHD_SILENT # (-E)
 # PUSHD_TO_HOME (-D)
+
+# `ls` after changing the working directory
+chpwd() {
+    ls
+}
 
 ####################################################################################################
 # Completion
