@@ -4,10 +4,6 @@ TERM=xterm-256color
 PS1="%F{4}%~⏵%f "
 RPS1="%F{23}%*"
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 alias ad='git add -p'
 alias cb='cd $OLDPWD'
 alias co='git checkout -p'
