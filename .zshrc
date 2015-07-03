@@ -1,9 +1,5 @@
 TERM=xterm-256color
 
-# terminal prompt
-PS1="%F{4}%~⏵%f "
-RPS1="%F{23}%*"
-
 alias ad='git add -p'
 alias cb='cd $OLDPWD'
 alias co='git checkout -p'
@@ -258,6 +254,9 @@ setopt NOTIFY # (-5, ksh: -b) <Z>
 
 ####################################################################################################
 # Prompting
+
+PS1="%F{4}%~⏵%f "
+RPS1="%F{23}%*"
 
 # PROMPT_BANG <K>
 # PROMPT_CR (+V) <D>
