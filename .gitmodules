@@ -31,3 +31,6 @@
 [submodule ".emacs.d/llvm-mode"]
 	path = .emacs.d/llvm-mode
 	url = git@github.com:blake-sheridan/llvm-mode.git
+[submodule ".emacs.d/lisp"]
+	path = .emacs.d/lisp
+	url = git@github.com:blake-sheridan/elisp.git
