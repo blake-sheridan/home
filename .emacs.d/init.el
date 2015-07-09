@@ -1,3 +1,9 @@
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 ;;------------------------------------------------------------------------------------------------;;
 ;; C/C++
 
@@ -73,6 +79,11 @@
 (add-to-list
   'auto-mode-alist
   '("\\.md\\'" . markdown-mode))
+
+(add-hook
+  'markdown-mode-hook
+  (lambda ()
+    (electric-indent-local-mode -1)))
 
 ;;------------------------------------------------------------------------------------------------;;
 ;; Python
@@ -155,5 +166,25 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(font-lock-comment-delimiter-face ((t (:inherit shadow))))
+ '(font-lock-comment-face ((t (:foreground "brightyellow" :slant italic))))
+ '(font-lock-doc-face ((t (:foreground "color-244" :slant italic))))
+ '(font-lock-function-name-face ((t (:foreground "magenta"))))
+ '(markdown-header-face ((t (:inherit outline-1 :underline t))))
+ '(markdown-header-face-1 ((t (:inherit (outline-1 markdown-header-face)))))
+ '(markdown-header-face-2 ((t (:inherit (outline-2 markdown-header-face)))))
+ '(markdown-header-face-3 ((t (:inherit (outline-3 markdown-header-face)))))
+ '(markdown-header-face-4 ((t (:inherit (outline-4 markdown-header-face)))))
+ '(markdown-header-face-5 ((t (:inherit (outline-5 markdown-header-face)))))
+ '(markdown-header-face-6 ((t (:inherit (outline-6 markdown-header-face)))))
+ '(markdown-inline-code-face ((t (:inherit font-lock-constant-face :foreground "brightred"))))
+ '(markdown-language-keyword-face ((t (:inherit font-lock-keyword-face))))
+ '(markdown-list-face ((t (:inherit shadow))))
+ '(markdown-pre-face ((t (:inherit nil :background "color-239"))))
+ '(outline-1 ((t (:foreground "red"))))
+ '(outline-2 ((t (:foreground "green"))))
+ '(outline-3 ((t (:foreground "yellow"))))
+ '(outline-4 ((t (:foreground "blue"))))
+ '(outline-5 ((t (:foreground "magenta"))))
+ '(outline-6 ((t (:foreground "cyan")))))
 (put 'upcase-region 'disabled nil)
