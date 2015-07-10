@@ -1,37 +1,101 @@
 # -*- Conf -*-
 
-# U+00AC NOT SIGN
-<Multi_key> <minus> <bar> : "¬"
+<Multi_key> <z> <z> : "🔙"
 
-# U+00B1 PLUS-MINUS SIGN
-<Multi_key> <plus> <minus> : "±"
+# `
+<Multi_key <tilde> <tilde> : "≈" # U+2248 ALMOST EQUAL TO
+# 1
+<Multi_key> <1> <slash> <4> : "¼" # U+00BC VULGAR FRACTION ONE QUARTER
+<Multi_key> <1> <slash> <2> : "½" # U+00BD VULGAR FRACTION ONE HALF
+<Multi_key> <exclam> <exclam> : "‼" # U+203C DOUBLE EXCLAMATION MARK
+<Multi_key> <exclam> <question> : "⁉" # U+2049 EXCLAMATOIN QUESTION MARK
+# 2
+# 3
+<Multi_key> <3> <slash> <4> : "¾" # U+00BE VULGAR FRACTION THREE QUARTERS
+# 4
+# 5
+# 6
+<Multi_key> <asciicircum> <1> : "¹" # U+00B9 SUPERSCRIPT ONE
+<Multi_key> <asciicircum> <2> : "²" # U+00B2 SUPERSCRIPT TWO
+<Multi_key> <asciicircum> <3> : "³" # U+00B3 SUPERSCRIPT THREE
+# 7
+# 8
+# 9
+<Multi_key> <parenleft> <c> <parenright> : "©" # U+00A9 COPYRIGHT SIGN
+<Multi_key> <parenleft> <R> <parenright> : "®" # U+00A3 REGISTERED SIGN
+# 0
+# -
+<Multi_key> <minus> <bar> : "¬" # U+00AC NOT SIGN
+<Multi_key> <minus> <colon> : "÷" # U+00F7 DIVISION SIGN
+<Multi_key> <minus> <greater> : "→" # U+2192 RIGHTWARDS ARROW
+# =
+<Multi_key> <equal> <equal> : "≡" # U+2261 IDENTICAL TO
+<Multi_key> <plus> <minus> : "±" # U+00B1 PLUS-MINUS SIGN
 
-# U+00D7 MULTIPLICATION SIGN
-<Multi_key> <x> <x> : "×"
+# q
+# w
+# e
+# r
+# t
+<Multi_key> <t> <m> : "™" # U+2122 TRADE MARK SIGN
+# y
+# u
+# i
+<Multi_key> <i> <period> : "•" # U+2022 BULLET
+<Multi_key> <i> <greater> : "‣" # U+2023 TRIANGULAR BULLET
 
-# U+00F7 DIVISION SIGN
-<Multi_key> <minus> <colon> : "÷"
+# o
+<Multi_key> <o> <Multi_key> : "°" # U+00B0 DEGREE SIGN
+<Multi_key> <o> <o> : "∞" # U+221E INFINITY
+# p
+# [
+# ]
+# \
+<Multi_key> <backslash> <2> <slash> : "√" # U+221A SQUARE ROOT
+<Multi_key> <backslash> <3> <slash> : "∛" # U+221B CUBE ROOT
+<Multi_key> <backslash> <4> <slash> : "∜" # U+221C FOURTH ROOT
+<Multi_key> <backslash> <backslash> : "‖" # U+2016 DOUBLE VERTICAL LINE
+<Multi_key> <backslash> <slash> : "∨" # U+2228 LOGICAL OR
+<Multi_key> <bar> <u> : "µ" # U+00B5 MICRO SIGN
+# a
+# s
+# d
+# f
+# g
+# h
+# j
+# k
+# l
+# ;
+<Multi_key> <colon> <equal> : "≔" # U+2254 COLON EQUALS
+# '
+<Multi_key> <apostrophe> <apostrophe> : "″" # U+2033 DOUBLE PRIME
 
-# U+00B2 SUPERSCRIPT TWO
-# U+00B3 SUPERSCRIPT THREE
-
-# U+2190 LEFTWARDS ARROW
-<Multi_key> <less> <minus> : "←"
-# U+2191 UPWARDS ARROW
-# U+2192 RIGHTWARDS ARROW
-<Multi_key> <minus> <greater> : "→"
-# U+2193 DOWNWARDS ARROW
-
-# U+2026 HORIZONTAL ELLIPSIS
-<Multi_key> <period> <period> : "…"
-
-# U+2260 NOT EQUAL TO
-<Multi_key> <slash> <equal> : "≠"
-
-# U+2264 LESS-THAN OR EQUAL TO
-<Multi_key> <less> <equal> : "≤"
-# U+2265 GREATER-THAN OR EQUAL TO
-<Multi_key> <greater> <equal> : "≥"
-
-# U+2713 CHECK MARK
-<Multi_key> <period> <slash> : "✓"
+# z
+# x
+<Multi_key> <x> <x> : "×" # U+00D7 MULTIPLICATION SIGN
+# c
+<Multi_key> <c> <bar> : "¢" # U+00A2 CENT SIGN
+# v
+# b
+# n
+<Multi_key> <n> <o> : "№" # U+2116 NUMERO SIGN
+# m
+# ,
+<Multi_key> <less> <equal> : "≤" # U+2264 LESS-THAN OR EQUAL TO
+<Multi_key> <less> <less> : "≪" # U+226A MUCH LESS-THAN
+<Multi_key> <less> <minus> : "←" # U+2190 LEFTWARDS ARROW
+# .
+<Multi_key> <period> <period> : "…" # U+2026 HORIZONTAL ELLIPSIS
+<Multi_key> <period> <slash> : "✓" # U+2713 CHECK MARK
+<Multi_key> <period> <x> : "✗" # U+2717 BALLOT X
+<Multi_key> <greater> <equal> : "≥" # U+2265 GREATER-THAN OR EQUAL TO
+<Multi_key> <greater> <greater> : "≫" # U+226B MUCH GREATER-THAN
+# /
+<Multi_key> <slash> <backslash> : "∧" # U+2227 LOGICAL AND
+<Multi_key> <slash> <equal> : "≠" # U+2260 NOT EQUAL TO
+<Multi_key> <slash> <greater> : "≯" # U+226F NOT GREATER-THAN
+<Multi_key> <slash> <less> : "≮" # U+226E NOT LESS-THAN
+<Multi_key> <slash> <o> : "∅" # U+2205 EMPTY SET
+<Multi_key> <question> <exclam> : 1"⁈" # U+2048 QUESTION EXCLAMATION MARK
+<Multi_key> <question> <question> : "⁇" # U+2047 DOUBLE QUESTION MARK
