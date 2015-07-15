@@ -68,22 +68,14 @@
 ;;------------------------------------------------------------------------------------------------;;
 ;; Markdown
 
-(add-to-list
-  'load-path
-  "~/.emacs.d/markdown-mode")
-
 (autoload
-  'markdown-mode
-  "markdown-mode")
+  'gfm-mode
+  "~/.emacs.d/markdown-mode/markdown-mode.el"
+  t)
 
 (add-to-list
   'auto-mode-alist
-  '("\\.md\\'" . markdown-mode))
-
-(add-hook
-  'markdown-mode-hook
-  (lambda ()
-    (electric-indent-local-mode -1)))
+  '("\\.md\\'" . gfm-mode))
 
 ;;------------------------------------------------------------------------------------------------;;
 ;; Python
@@ -91,11 +83,6 @@
 (add-to-list
   'auto-mode-alist
   '("\\.wsgi\\'" . python-mode))
-
-(add-hook
-  'python-mode-hook
-  (lambda ()
-    (electric-indent-local-mode -1)))
 
 ;;------------------------------------------------------------------------------------------------;;
 
@@ -134,21 +121,21 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 4)
-  '(c-offsets-alist
-     (quote
-       ((topmost-intro-cont . 0)
-         (brace-list-open . 0)
-         (statement-cont . 0)
-         (statement-case-open . 4)
-         (substatement-open . 0)
-         (access-label . -2)
-         (arglist-intro . +)
-         (arglist-close . 0)
-         (inextern-lang . 0)
-         (inline-open . 0)
-         (innamespace . 0))))
+ '(c-offsets-alist
+    (quote
+      ((topmost-intro-cont . 0)
+        (brace-list-open . 0)
+        (statement-cont . 0)
+        (statement-case-open . 4)
+        (substatement-open . 0)
+        (access-label . -2)
+        (arglist-intro . +)
+        (arglist-close . 0)
+        (inextern-lang . 0)
+        (inline-open . 0)
+        (innamespace . 0))))
  '(csv-separators (quote ("," ";")))
- '(electric-indent-mode t)
+ '(electric-indent-mode nil)
  '(font-lock-maximum-decoration t)
  '(font-lock-support-mode (quote jit-lock-mode))
  '(frame-background-mode (quote dark))
