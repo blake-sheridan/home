@@ -7,7 +7,7 @@ alias d='git diff'
 alias e='emacs -nw'
 alias g='git'
 alias kill-suspended='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
-alias ls='LC_COLLATE=C ls --color=auto --hide="LICENSE*" --hide="README*"'
+alias ls='LC_COLLATE=C ls --color=auto --group-directories-first --hide="LICENSE*" --hide="__pycache__"'
 alias lsa='ls -A'
 alias lsla='ls -la'
 alias ls-symbols='ls -lfd [\!_]* _*'
@@ -25,7 +25,7 @@ ls_colors=(
     bd='1;38;5;244;48;5;230'    # block device
     ca='30;41'                  # capability
     cd='1;38;5;244;48;5;230'    # character device
-    di='38;5;2'                 # directory
+    di='1;38;5;12'              # directory
     ex='38;5;1'                 # executable files
     ln='3;33'                   # symbolic link
     mh='0'                      # multihardlink
@@ -54,13 +54,17 @@ ls_colors=(
 
     '*.md'='38;5;88'
 
-    '*Makefile'='38;5;94'
+    '*Makefile'='38;5;128'
     '*.mk'='38;5;176'
 
-    '*.py'='38;5;142'
+    '*.py'='38;5;226'
 
     '*.sh'='38;5;180'
     '*.zsh'='38;5;180'
+
+    '*.sql'='38;5;81'
+
+    '*.txt'='38;5;253'
 
     '*LICENSE'='38;5;238'
     '*LICENSE.txt'='38;5;238'
