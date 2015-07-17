@@ -11,7 +11,7 @@
 
 (add-to-list
   'load-path
-  "~/.emacs.d/cc-mode")
+  "~/emacs/cc-mode")
 
 (add-to-list
   'auto-mode-alist
@@ -33,7 +33,7 @@
 
 (add-to-list
   'load-path
-  "~/.emacs.d/llvm-mode")
+  "~/emacs/llvm-mode")
 
 (autoload
   'llvm-mode
@@ -70,7 +70,7 @@
 
 (autoload
   'gfm-mode
-  "~/.emacs.d/markdown-mode/markdown-mode.el"
+  "~/emacs/markdown-mode/markdown-mode.el"
   t)
 
 (add-to-list
@@ -88,7 +88,7 @@
 
 (add-to-list
   'custom-theme-load-path
-  "~/.emacs.d/emacs-color-theme-solarized")
+  "~/emacs/color-theme-solarized")
 
 (load-theme
   'solarized
