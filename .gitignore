@@ -4,6 +4,7 @@
 /.config/
 /.cpanm/
 /.dbus/
+/.emacs.d/
 /.gnome/
 /.gnupg/
 /.local/
