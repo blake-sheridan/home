@@ -4,3 +4,6 @@
 [submodule "emacs/cc-mode"]
 	path = emacs/cc-mode
 	url = https://github.com/blake-sheridan/cc-mode.git
+[submodule "emacs/markdown-mode"]
+	path = emacs/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
