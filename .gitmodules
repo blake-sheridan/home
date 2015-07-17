@@ -1,3 +1,6 @@
 [submodule "zsh/functions"]
 	path = zsh/functions
 	url = git@github.com:blake-sheridan/zsh-functions
+[submodule "emacs/cc-mode"]
+	path = emacs/cc-mode
+	url = https://github.com/blake-sheridan/cc-mode.git
