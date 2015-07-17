@@ -137,7 +137,7 @@ setopt COMPLETE_IN_WORD
 # LIST_PACKED
 # LIST_ROWS_FIRST
 setopt LIST_TYPES # (-X) <D>
-setopt MENU_COMPLETE #(-Y)
+# MENU_COMPLETE (-Y)
 # REC_EXACT (-S)
 
 ####################################################################################################
