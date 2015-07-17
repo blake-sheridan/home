@@ -12,6 +12,8 @@
 /.ssh/
 /.subversion/
 
+/.*.log
+
 /.ICEauthority
 /.Xauthority
 /.lesshst
