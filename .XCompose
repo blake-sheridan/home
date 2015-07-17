@@ -89,6 +89,7 @@
 <Multi_key> <less> <less> : "≪" # U+226A MUCH LESS-THAN
 <Multi_key> <less> <minus> : "←" # U+2190 LEFTWARDS ARROW
 # .
+<Multi_key> <period> <backslash> : "⋮" # U+22EE VERTICAL ELLIPSIS
 <Multi_key> <period> <period> : "…" # U+2026 HORIZONTAL ELLIPSIS
 <Multi_key> <period> <slash> : "✓" # U+2713 CHECK MARK
 <Multi_key> <period> <x> : "✗" # U+2717 BALLOT X
