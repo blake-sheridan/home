@@ -1,7 +1,8 @@
 [Desktop Entry]
+Actions=Programming;
 Categories=GNOME;GTK;Utility;TerminalEmulator;System;
 Comment=Multiple terminals in one window
-Exec=terminator --layout=programming --maximise --role=background
+Exec=terminator
 GenericName=Terminal
 Icon=terminator
 Keywords=terminal;shell;prompt;command;commandline;
@@ -9,3 +10,8 @@ Name=Terminator
 StartupNotify=true
 TryExec=terminator
 Type=Application
+
+[Desktop Action Programming]
+Exec=terminator --layout=programming --maximise --role=background
+Name=Programming
+OnlyShowIn=Unity;
