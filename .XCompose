@@ -101,5 +101,5 @@
 <Multi_key> <slash> <greater> : "≯" # U+226F NOT GREATER-THAN
 <Multi_key> <slash> <less> : "≮" # U+226E NOT LESS-THAN
 <Multi_key> <slash> <o> : "∅" # U+2205 EMPTY SET
-<Multi_key> <question> <exclam> : 1"⁈" # U+2048 QUESTION EXCLAMATION MARK
+<Multi_key> <question> <exclam> : "⁈" # U+2048 QUESTION EXCLAMATION MARK
 <Multi_key> <question> <question> : "⁇" # U+2047 DOUBLE QUESTION MARK
