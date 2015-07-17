@@ -85,7 +85,7 @@ typeset -U path
 
 path=(~/.local/bin ~/lib $path)
 
-fpath=(~/.zsh/functions $fpath)
+fpath=(~/zsh/functions $fpath)
 
 ####################################################################################################
 
