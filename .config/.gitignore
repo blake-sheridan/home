@@ -3,8 +3,12 @@ accels
 
 # data, not configuration
 /google-chrome/
+# Saves geometry
+/gtk-2.0/gtkfilechooser.ini
 /libreoffice/
 /pulse/
+# Saves geometry
+/software-center/softwarecenter.cfg
 /totem/
 
 /Trolltech.conf
