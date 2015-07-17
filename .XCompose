@@ -49,9 +49,9 @@
 <Multi_key> <o> <o> : "∞" # U+221E INFINITY
 # p
 # [
-<Multi_key> <bracketleft> <space> <bracketright> : "☐" : U+2610 BALLOT BOX
-<Multi_key> <bracketleft> <slash> <bracketright> : "☑" : U+2611 BALLOT BOX WITH CHECK
-<Multi_key> <bracketleft> <x> <bracketright> : "☒" : U+2612 BALLOT BOX WITH X
+<Multi_key> <bracketleft> <space> <bracketright> : "☐" # U+2610 BALLOT BOX
+<Multi_key> <bracketleft> <slash> <bracketright> : "☑" # U+2611 BALLOT BOX WITH CHECK
+<Multi_key> <bracketleft> <x> <bracketright> : "☒" # U+2612 BALLOT BOX WITH X
 # ]
 # \
 <Multi_key> <backslash> <2> <slash> : "√" # U+221A SQUARE ROOT
