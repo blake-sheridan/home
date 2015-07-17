@@ -4,6 +4,7 @@
 /.cpanm/
 /.dbus/
 /.gnome/
+/.gnupg/
 /.local/
 /.mozilla/
 /.pki/
@@ -13,6 +14,11 @@
 /.ICEauthority
 /.Xauthority
 /.lesshst
+# cluttery
+/.pgadmin_histoqueries
+/.pgadmin3
+/.pgpass
+/.psql_history
 /.python_history
 /.sudo_as_admin_successful
 /.xsession-errors
