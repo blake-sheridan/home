@@ -137,7 +137,7 @@ setopt COMPLETE_IN_WORD
 # LIST_PACKED
 # LIST_ROWS_FIRST
 setopt LIST_TYPES # (-X) <D>
-# MENU_COMPLETE (-Y)
+setopt MENU_COMPLETE #(-Y)
 # REC_EXACT (-S)
 
 ####################################################################################################
@@ -150,7 +150,7 @@ setopt BAD_PATTERN # (+2) <C> <Z>
 # CASE_MATCH <D>
 # CSH_NULL_GLOB <C>
 # EQUALS <Z>
-# EXTENDED_GLOB
+setopt EXTENDED_GLOB
 # GLOB (+F, ksh: +f) <D>
 # GLOB_ASSIGN <C>
 # GLOB_DOTS (-4)
