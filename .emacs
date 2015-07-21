@@ -5,19 +5,6 @@
 (package-initialize)
 
 ;;------------------------------------------------------------------------------------------------;;
-;; C/C++
-
-; We can't use autoload, as it must take priority over the normal cc-mode
-
-(add-to-list
-  'load-path
-  "~/emacs/cc-mode")
-
-(add-to-list
-  'auto-mode-alist
-  '("\\.h[p]?[p]?\\'" . c++-mode))
-
-;;------------------------------------------------------------------------------------------------;;
 ;; git
 
 (add-to-list
@@ -70,7 +57,7 @@
 
 (autoload
   'gfm-mode
-  "~/emacs/markdown-mode/markdown-mode.el"
+  "markdown-mode"
   t)
 
 (add-to-list
@@ -88,7 +75,7 @@
 
 (add-to-list
   'custom-theme-load-path
-  "~/emacs/color-theme-solarized")
+  "~/.emacs.d/color-theme-solarized")
 
 (load-theme
   'solarized
