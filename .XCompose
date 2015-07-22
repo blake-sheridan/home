@@ -38,6 +38,7 @@
 # r
 # t
 <Multi_key> <t> <m> : "™" # U+2122 TRADE MARK SIGN
+<Multi_key> <T> : "⊤" # U+22A4
 # y
 # u
 # i
@@ -64,6 +65,7 @@
 # s
 # d
 # f
+<Multi_key> <F> : "⊥" # U+22A5
 # g
 # h
 # j
