@@ -5,6 +5,15 @@
 (package-initialize)
 
 ;;------------------------------------------------------------------------------------------------;;
+;; C/C++
+
+; We can't use autoload, as it must take priority over the normal cc-mode
+
+(add-to-list
+  'load-path
+  "~/emacs/cc-mode")
+
+;;------------------------------------------------------------------------------------------------;;
 ;; git
 
 (add-to-list
