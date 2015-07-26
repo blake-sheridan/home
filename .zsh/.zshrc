@@ -85,7 +85,7 @@ typeset -U path
 
 path=(~/.local/bin ~/lib $path)
 
-fpath=(~/zsh/functions $fpath)
+fpath=(~/.zsh/functions $fpath)
 
 ####################################################################################################
 
@@ -173,7 +173,7 @@ setopt WARN_CREATE_GLOBAL
 ####################################################################################################
 # History
 
-HISTFILE=~/.zsh_history
+HISTFILE=~/.zsh/history
 HISTSIZE=99999
 SAVEHIST=$HISTSIZE
 
