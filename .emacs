@@ -141,6 +141,7 @@
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(show-trailing-whitespace t)
+ '(standard-indent 2)
  '(tab-width 4))
 
 (custom-set-faces
@@ -148,10 +149,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-delimiter-face ((t (:inherit shadow))))
+ '(font-lock-builtin-face ((t (:foreground "magenta"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "black" :slant italic))))
  '(font-lock-comment-face ((t (:foreground "brightyellow" :slant italic))))
- '(font-lock-doc-face ((t (:foreground "color-244" :slant italic))))
- '(font-lock-function-name-face ((t (:foreground "magenta"))))
+ '(font-lock-doc-face ((t (:foreground "brightgreen" :slant italic))))
+ '(font-lock-function-name-face ((t (:foreground "brightred"))))
+ '(font-lock-string-face ((t (:foreground "cyan"))))
  '(markdown-header-face ((t (:inherit outline-1 :underline t))))
  '(markdown-header-face-1 ((t (:inherit (outline-1 markdown-header-face)))))
  '(markdown-header-face-2 ((t (:inherit (outline-2 markdown-header-face)))))
