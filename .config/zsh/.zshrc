@@ -93,11 +93,6 @@ export LS_COLORS=${(j/:/)ls_colors}
 zstyle ':completion:*:default' list-colors $LS_COLORS
 
 ####################################################################################################
-# PATH
-
-typeset -U path
-
-path=(~/.local/bin ~/lib $path)
 
 fpath=(~/.data/zsh/functions $fpath)
 
