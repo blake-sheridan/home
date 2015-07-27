@@ -1,0 +1,6 @@
+[Added Associations]
+text/plain=emacs24.desktop;
+text/x-tex=emacs.desktop;
+
+[Default Applications]
+text/plain=emacs24.desktop
