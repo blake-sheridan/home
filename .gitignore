@@ -1,0 +1,9 @@
+/.cache/
+/.data/
+/.dbus/
+/.local/share/keyrings/
+/.pki/
+/.ssh/
+
+/.ICEauthority
+/.pgadmin3
