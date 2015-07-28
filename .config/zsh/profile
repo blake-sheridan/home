@@ -1,6 +1,6 @@
 # -*- mode: shell-script -*-
 
-FPATH=$XDG_CONFIG_DIR/zsh/functions:$FPATH
+fpath=($XDG_CONFIG_HOME/zsh/functions $fpath)
 
 ####################################################################################################
 # Changing Directories
