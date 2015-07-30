@@ -1,0 +1,5 @@
+[Added Associations]
+application/x-shellscript=emacs24.desktop;
+
+[Default Applications]
+application/x-shellscript=emacs24.desktop
