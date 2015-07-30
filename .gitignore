@@ -8,6 +8,7 @@
 /.ssh/
 
 /.ICEauthority
+/.Xauthority
 /.pgadmin3
 /.xinputrc
 
