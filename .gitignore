@@ -1,5 +1,7 @@
 /.cache/
+/.compiz/session/
 /.dbus/
+/.gnome/apps/chrome-*.desktop
 /.local/share/
 /.pki/
 /.ssh/
