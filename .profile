@@ -1,5 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.data
+export XDG_DATA_HOME=$HOME/.local/share
 
 export ACKRC=$XDG_CONFIG_HOME/ack/rc
 export GTK_IM_MODULE=xim
