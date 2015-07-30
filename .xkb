@@ -121,7 +121,7 @@ xkb_symbols {
 	key <AE09> {[ 9, U0028 ]};
 	key <AE10> {[ 0, U0029 ]};
 	key <AE11> {[ U002D, U005F ]};
-	key <AE12> {[ U003D, U002B ]};
+	key <AE12> {[ U003D, U002B, U2260 ], type="THREE_LEVEL"};
 	key <BKSP> {[ BackSpace, Delete ]}; // FIXME delete?
 
   key <TAB>  {[ Tab, ISO_Left_Tab ]};

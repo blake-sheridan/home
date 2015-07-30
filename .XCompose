@@ -88,7 +88,6 @@
 <Multi_key> <greater> <equal> : "≥" # U+2265 GREATER-THAN OR EQUAL TO
 <Multi_key> <greater> <greater> : "≫" # U+226B MUCH GREATER-THAN
 # /
-<Multi_key> <slash> <equal> : "≠" # U+2260 NOT EQUAL TO
 <Multi_key> <slash> <greater> : "≯" # U+226F NOT GREATER-THAN
 <Multi_key> <slash> <less> : "≮" # U+226E NOT LESS-THAN
 <Multi_key> <slash> <o> : "∅" # U+2205 EMPTY SET
