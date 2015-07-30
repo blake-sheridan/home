@@ -25,9 +25,6 @@
 <Multi_key> <parenleft> <R> <parenright> : "®" # U+00A3 REGISTERED SIGN
 # 0
 # -
-<Multi_key> <minus> <bar> : "¬" # U+00AC NOT SIGN
-<Multi_key> <minus> <colon> : "÷" # U+00F7 DIVISION SIGN
-<Multi_key> <minus> <greater> : "→" # U+2192 RIGHTWARDS ARROW
 # =
 <Multi_key> <equal> <equal> : "≡" # U+2261 IDENTICAL TO
 <Multi_key> <plus> <minus> : "±" # U+00B1 PLUS-MINUS SIGN
@@ -42,7 +39,6 @@
 # y
 # u
 # i
-<Multi_key> <i> <period> : "•" # U+2022 BULLET
 <Multi_key> <i> <greater> : "‣" # U+2023 TRIANGULAR BULLET
 
 # o
@@ -59,7 +55,6 @@
 <Multi_key> <backslash> <3> <slash> : "∛" # U+221B CUBE ROOT
 <Multi_key> <backslash> <4> <slash> : "∜" # U+221C FOURTH ROOT
 <Multi_key> <backslash> <backslash> : "‖" # U+2016 DOUBLE VERTICAL LINE
-<Multi_key> <backslash> <slash> : "∨" # U+2228 LOGICAL OR
 <Multi_key> <bar> <u> : "µ" # U+00B5 MICRO SIGN
 # a
 # s
@@ -78,7 +73,6 @@
 
 # z
 # x
-<Multi_key> <x> <x> : "×" # U+00D7 MULTIPLICATION SIGN
 # c
 <Multi_key> <c> <bar> : "¢" # U+00A2 CENT SIGN
 # v
@@ -89,16 +83,12 @@
 # ,
 <Multi_key> <less> <equal> : "≤" # U+2264 LESS-THAN OR EQUAL TO
 <Multi_key> <less> <less> : "≪" # U+226A MUCH LESS-THAN
-<Multi_key> <less> <minus> : "←" # U+2190 LEFTWARDS ARROW
 # .
-<Multi_key> <period> <backslash> : "⋮" # U+22EE VERTICAL ELLIPSIS
-<Multi_key> <period> <period> : "…" # U+2026 HORIZONTAL ELLIPSIS
 <Multi_key> <period> <slash> : "✓" # U+2713 CHECK MARK
 <Multi_key> <period> <x> : "✗" # U+2717 BALLOT X
 <Multi_key> <greater> <equal> : "≥" # U+2265 GREATER-THAN OR EQUAL TO
 <Multi_key> <greater> <greater> : "≫" # U+226B MUCH GREATER-THAN
 # /
-<Multi_key> <slash> <backslash> : "∧" # U+2227 LOGICAL AND
 <Multi_key> <slash> <equal> : "≠" # U+2260 NOT EQUAL TO
 <Multi_key> <slash> <greater> : "≯" # U+226F NOT GREATER-THAN
 <Multi_key> <slash> <less> : "≮" # U+226E NOT LESS-THAN
