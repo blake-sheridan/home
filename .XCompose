@@ -54,7 +54,6 @@
 <Multi_key> <backslash> <2> <slash> : "√" # U+221A SQUARE ROOT
 <Multi_key> <backslash> <3> <slash> : "∛" # U+221B CUBE ROOT
 <Multi_key> <backslash> <4> <slash> : "∜" # U+221C FOURTH ROOT
-<Multi_key> <backslash> <backslash> : "‖" # U+2016 DOUBLE VERTICAL LINE
 <Multi_key> <bar> <u> : "µ" # U+00B5 MICRO SIGN
 # a
 # s

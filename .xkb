@@ -137,7 +137,7 @@ xkb_symbols {
 	key <AD10> {[ p, P ]};
 	key <AD11> {[ U005B, U007B, U27E8 ], type="THREE_LEVEL"};
 	key <AD12> {[ U005D, U007D, U27E9 ], type="THREE_LEVEL"};
-  key <BKSL> {[ U005C, U007C ]};
+  key <BKSL> {[ U005C, U007C, U2016 ], type="THREE_LEVEL"};
 
   key <CAPS> {[ Control_L ]};
 	key <AC01> {[ a, A, U2190 ], type="THREE_LEVEL"};
