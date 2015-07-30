@@ -2,6 +2,7 @@
 /.compiz/session/
 /.dbus/
 /.gnome/apps/chrome-*.desktop
+/.gnome2/accels/
 /.local/share/
 /.pki/
 /.ssh/
