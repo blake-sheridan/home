@@ -68,7 +68,6 @@
 # ;
 <Multi_key> <colon> <equal> : "≔" # U+2254 COLON EQUALS
 # '
-<Multi_key> <apostrophe> <apostrophe> : "″" # U+2033 DOUBLE PRIME
 
 # z
 # x

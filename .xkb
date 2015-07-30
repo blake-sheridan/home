@@ -150,7 +150,7 @@ xkb_symbols {
 	key <AC08> {[ k, K ]};
 	key <AC09> {[ l, L ]};
 	key <AC10> {[ U003B, U003A ]};
-	key <AC11> {[ U0027, U0022 ]};
+	key <AC11> {[ U0027, U0022, U2033 ], type="THREE_LEVEL"};
 	key <RTRN> {[ Return ]};
 
 	key <LFSH> {[ Shift_L ]};
