@@ -140,6 +140,7 @@
  '(lisp-indent-offset 2)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
+ '(safe-local-variable-values (quote ((tab-always-indent))))
  '(show-trailing-whitespace t)
  '(standard-indent 2)
  '(tab-width 4))
