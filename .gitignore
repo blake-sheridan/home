@@ -11,5 +11,6 @@
 /.Xauthority
 /.pgadmin3
 /.xinputrc
+/.xsession-errors*
 
 /[!.]*
