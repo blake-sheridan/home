@@ -1,5 +1,9 @@
 # -*- mode: shell-script -*-
 
+HISTFILE=$XDG_DATA_HOME/zsh/history
+HISTSIZE=99999
+SAVEHIST=$HISTSIZE
+
 PS1="%F{4}%~%f "
 RPS1="%F{23}%*"
 

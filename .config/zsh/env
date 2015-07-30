@@ -72,10 +72,6 @@ setopt WARN_CREATE_GLOBAL
 ####################################################################################################
 # History
 
-HISTFILE=$XDG_DATA_HOME/zsh/history
-HISTSIZE=99999
-SAVEHIST=$HISTSIZE
-
 # APPEND_HISTORY <D>
 # BANG_HIST (+K) <C> <Z>
 setopt EXTENDED_HISTORY # <C>
@@ -141,9 +137,6 @@ setopt NOTIFY # (-5, ksh: -b) <Z>
 
 ####################################################################################################
 # Prompting
-
-PS1="%F{4}%~%f "
-RPS1="%F{23}%*"
 
 # PROMPT_BANG <K>
 # PROMPT_CR (+V) <D>
