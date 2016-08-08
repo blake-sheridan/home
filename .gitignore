@@ -10,7 +10,9 @@
 
 /.ICEauthority
 /.Xauthority
+/.bash_history
 /.pgadmin3
+/.sudo_as_admin_successful
 /.xinputrc
 /.xsession-errors*
 
