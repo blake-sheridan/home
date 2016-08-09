@@ -1,107 +1,109 @@
 [global_config]
-  window_state = maximise
-  handle_size = 2
-  enabled_plugins = CustomCommandsMenu, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  suppress_multiple_term_dialog = True
   borderless = True
+  enabled_plugins = CustomCommandsMenu, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  handle_size = 2
   inactive_color_offset = 0.86
+  suppress_multiple_term_dialog = True
+  window_state = maximise
 [keybindings]
-  cycle_prev = None
-  next_tab = None
-  close_window = None
-  group_tab = None
   broadcast_all = None
-  rotate_ccw = None
-  reset_clear = None
-  go_right = <Primary>Right
-  new_tab = None
-  group_all = None
-  toggle_zoom = None
-  scaled_zoom = None
-  zoom_in = <Primary><Shift>Page_Up
-  full_screen = None
-  prev_tab = None
-  switch_to_tab_4 = None
-  switch_to_tab_2 = None
-  ungroup_all = None
-  broadcast_off = None
-  split_vert = <Primary><Shift>o
-  ungroup_tab = None
-  switch_to_tab_3 = None
-  cycle_next = None
-  zoom_out = <Primary><Shift>Page_Down
   broadcast_group = None
-  switch_to_tab_1 = None
-  go_prev = <Primary><Shift>Tab
+  broadcast_off = None
   close_term = <Primary><Alt>w
-  new_terminator = None
-  go_next = <Primary>Tab
-  go_left = <Primary>Left
-  hide_window = None
-  reset = None
-  search = None
-  go_up = <Primary>Up
-  move_tab_right = None
-  rotate_cw = None
-  split_horiz = <Primary><Shift>e
-  zoom_normal = None
-  go_down = <Primary>Down
-  new_window = None
+  close_window = None
+  cycle_next = None
+  cycle_prev = None
   edit_window_title = None
+  full_screen = None
+  go_down = <Primary>Down
+  go_left = <Primary>Left
+  go_next = <Primary>Tab
+  go_prev = <Primary><Shift>Tab
+  go_right = <Primary>Right
+  go_up = <Primary>Up
+  group_all = None
+  group_tab = None
+  hide_window = None
   move_tab_left = None
+  move_tab_right = None
+  new_tab = None
+  new_terminator = None
+  new_window = None
+  next_tab = None
+  prev_tab = None
+  reset = None
+  reset_clear = None
+  rotate_ccw = None
+  rotate_cw = None
+  scaled_zoom = None
+  search = None
+  split_horiz = <Primary><Shift>e
+  split_vert = <Primary><Shift>o
+  switch_to_tab_1 = None
+  switch_to_tab_2 = None
+  switch_to_tab_3 = None
+  switch_to_tab_4 = None
   toggle_scrollbar = None
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    background_image = None
-    cursor_shape = ibeam
-    use_system_font = False
-    foreground_color = "#839496"
-    scroll_on_output = False
-    show_titlebar = False
-    font = Monospace 9
-    background_color = "#002b36"
-    scrollback_infinite = True
+  toggle_zoom = None
+  ungroup_all = None
+  ungroup_tab = None
+  zoom_in = <Primary><Shift>Page_Up
+  zoom_normal = None
+  zoom_out = <Primary><Shift>Page_Down
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
       profile = default
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
   [[programming]]
     [[[child0]]]
-      position = 0:24
-      type = Window
       order = 0
       parent = ""
+      position = 0:24
       size = 1920, 1056
+      type = Window
     [[[child1]]]
-      position = 963
-      type = HPaned
       order = 0
       parent = child0
+      position = 963
+      type = HPaned
     [[[child3]]]
+      order = 1
+      parent = child1
       position = 734
       type = VPaned
-      order = 1
-      parent = child1
     [[[terminal2]]]
+      order = 0
+      parent = child1
       profile = editor
       type = Terminal
-      order = 0
-      parent = child1
-    [[[terminal5]]]
-      profile = shell
-      type = Terminal
-      order = 1
-      parent = child3
     [[[terminal4]]]
+      order = 0
+      parent = child3
       profile = None
       type = Terminal
-      order = 0
+    [[[terminal5]]]
+      order = 1
       parent = child3
+      profile = shell
+      type = Terminal
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_image = None
+    cursor_shape = ibeam
+    custom_command = zsh
+    font = Monospace 9
+    foreground_color = "#839496"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scroll_on_output = False
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_custom_command = True
+    use_system_font = False
