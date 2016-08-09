@@ -1,8 +1,13 @@
 /dconf/
+/enchant/
 /evolution/
 /ibus/
+/gedit/accels
 /google-chrome/
+/gtk-2.0/
+/gtk-3.0/
 /libaccounts-glib/
+/libreoffice
 /nautilus/accels
 /nautilus/desktop-metadata
 /pulse/
