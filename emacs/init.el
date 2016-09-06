@@ -99,7 +99,7 @@
 
 (add-to-list
   'custom-theme-load-path
-  "~/src/emacs-color-theme-solarized")
+  "~/.config/emacs/color-theme-solarized")
 
 (load-theme
   'solarized
