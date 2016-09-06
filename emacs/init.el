@@ -78,7 +78,7 @@
 
 (add-to-list
   'load-path
-  "~/src/php-mode")
+  "~/.config/emacs/php-mode")
 
 (autoload
   'php-mode
