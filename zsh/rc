@@ -31,6 +31,7 @@ alias ls-symbols='ls -lfd [\!_]* _*'
 alias m='make --jobs=8 --warn-undefined-variables'
       p() { python3 <<< "print($@)" }
 alias s='git status'
+alias st='git status --untracked-files=no'
 alias sudo='sudo '
 alias ssh-scan='nmap -p 22 --open -sV 192.168.2.0/24'
 alias x='exit'
