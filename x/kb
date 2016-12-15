@@ -147,8 +147,8 @@ xkb_symbols {
 	key <AC05> {[ g, G ]};
 	key <AC06> {[ h, H ]};
 	key <AC07> {[ j, J ]};
-	key <AC08> {[ k, K ]};
-	key <AC09> {[ l, L ]};
+	key <AC08> {[ k, K, U2717 ], type="THREE_LEVEL"};
+	key <AC09> {[ l, L, U2713 ], type="THREE_LEVEL"};
 	key <AC10> {[ U003B, U003A ]};
 	key <AC11> {[ U0027, U0022, U2033 ], type="THREE_LEVEL"};
 	key <RTRN> {[ Return ]};
