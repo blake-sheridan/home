@@ -125,3 +125,15 @@ zstyle :compinstall filename '/home/blake/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+# Fixes for super old Red Hat servers at work.
+ls --group-directories-first &> /dev/null
+if [ $? -ne 0 ]; then
+    PS1="%m:%~ "
+    RPS1="%*"
+    unalias ls
+    unset LS_COLORS
+    chpwd() {
+        /bin/ls
+    }
+fi
