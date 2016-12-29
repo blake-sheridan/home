@@ -172,6 +172,7 @@ xkb_symbols {
 	key <SPCE> {[ space ]};
 	key <RALT> {[ Multi_key ]};
 	key <RWIN> {[ Super_R ]};
+	key <MENU> {[ Menu ]};
 	key <RCTL> {[ Meta_R ]};
 
 	key <PRSC> {[ Print ]};
