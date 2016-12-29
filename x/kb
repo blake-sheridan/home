@@ -125,10 +125,10 @@ xkb_symbols {
 	key <BKSP> {[ BackSpace, Delete ]}; // FIXME delete?
 
   key <TAB>  {[ Tab, ISO_Left_Tab ]};
-	key <AD01> {[ q, Q, U2227 ], type="THREE_LEVEL"};
-	key <AD02> {[ w, W, U2228 ], type="THREE_LEVEL"};
-	key <AD03> {[ e, E, U00AC ], type="THREE_LEVEL"};
-	key <AD04> {[ r, R ]};
+	key <AD01> {[ q, Q, U00AC ], type="THREE_LEVEL"};
+	key <AD02> {[ w, W, U2191 ], type="THREE_LEVEL"};
+	key <AD03> {[ e, E, U2227 ], type="THREE_LEVEL"};
+	key <AD04> {[ r, R, U2228 ], type="THREE_LEVEL"};
 	key <AD05> {[ t, T ]};
 	key <AD06> {[ y, Y ]};
 	key <AD07> {[ u, U ]};
@@ -141,7 +141,7 @@ xkb_symbols {
 
   key <CAPS> {[ Control_L ]};
 	key <AC01> {[ a, A, U2190 ], type="THREE_LEVEL"};
-	key <AC02> {[ s, S ]};
+	key <AC02> {[ s, S, U2193 ], type="THREE_LEVEL"};
 	key <AC03> {[ d, D, U2192 ], type="THREE_LEVEL"};
 	key <AC04> {[ f, F ]};
 	key <AC05> {[ g, G ]};
