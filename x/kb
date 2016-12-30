@@ -161,8 +161,8 @@ xkb_symbols {
 	key <AB05> {[ b, B ]};
 	key <AB06> {[ n, N ]};
 	key <AB07> {[ m, M ]};
-	key <AB08> {[ U002C, U003C ]};
-	key <AB09> {[ U002E, U003E ]};
+	key <AB08> {[ U002C, U003C, U2264 ], type="THREE_LEVEL"};
+	key <AB09> {[ U002E, U003E, U2265 ], type="THREE_LEVEL"};
 	key <AB10> {[ U002F, U003F, U2026, U22EE ], type="FOUR_LEVEL"};
 	key <RTSH> {[ ISO_Level3_Shift, Caps_Lock ]};
 
