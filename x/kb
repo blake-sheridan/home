@@ -157,7 +157,7 @@ xkb_symbols {
 	key <AB01> {[ z, Z ]};
 	key <AB02> {[ x, X, U00D7 ], type="THREE_LEVEL"};
 	key <AB03> {[ c, C, U00F7 ], type="THREE_LEVEL"};
-	key <AB04> {[ v, V ]};
+	key <AB04> {[ v, V, U2208, U2209 ], type="FOUR_LEVEL"};
 	key <AB05> {[ b, B ]};
 	key <AB06> {[ n, N ]};
 	key <AB07> {[ m, M ]};
