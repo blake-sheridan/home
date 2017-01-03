@@ -110,16 +110,16 @@ xkb_symbols {
 	key <FK12> {[ F12 ]};
 
   key <TLDE> {[ U0060, U007E ]};
-	key <AE01> {[ 1, U0021, U2071 ], type="THREE_LEVEL"};
-	key <AE02> {[ 2, U0040, U00B2 ], type="THREE_LEVEL"};
-	key <AE03> {[ 3, U0023, U00B3 ], type="THREE_LEVEL"};
-	key <AE04> {[ 4, U0024, U2074 ], type="THREE_LEVEL"};
-	key <AE05> {[ 5, U0025, U2075 ], type="THREE_LEVEL"};
-	key <AE06> {[ 6, U005E, U2076 ], type="THREE_LEVEL"};
-	key <AE07> {[ 7, U0026, U2077 ], type="THREE_LEVEL"};
-	key <AE08> {[ 8, U002A, U2078 ], type="THREE_LEVEL"};
-	key <AE09> {[ 9, U0028, U2079 ], type="THREE_LEVEL"};
-	key <AE10> {[ 0, U0029, U2070 ], type="THREE_LEVEL"};
+	key <AE01> {[ 1, U0021, U2071, U2081 ], type="FOUR_LEVEL"};
+	key <AE02> {[ 2, U0040, U00B2, U2082 ], type="FOUR_LEVEL"};
+	key <AE03> {[ 3, U0023, U00B3, U2083 ], type="FOUR_LEVEL"};
+	key <AE04> {[ 4, U0024, U2074, U2084 ], type="FOUR_LEVEL"};
+	key <AE05> {[ 5, U0025, U2075, U2085 ], type="FOUR_LEVEL"};
+	key <AE06> {[ 6, U005E, U2076, U2086 ], type="FOUR_LEVEL"};
+	key <AE07> {[ 7, U0026, U2077, U2087 ], type="FOUR_LEVEL"};
+	key <AE08> {[ 8, U002A, U2078, U2088 ], type="FOUR_LEVEL"};
+	key <AE09> {[ 9, U0028, U2079, U2089 ], type="FOUR_LEVEL"};
+	key <AE10> {[ 0, U0029, U2070, U2080 ], type="FOUR_LEVEL"};
 	key <AE11> {[ U002D, U005F, U2014, U2013 ], type="FOUR_LEVEL"};
 	key <AE12> {[ U003D, U002B, U2260 ], type="THREE_LEVEL"};
 	key <BKSP> {[ BackSpace, Delete ]}; // FIXME delete?
