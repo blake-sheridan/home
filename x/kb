@@ -133,7 +133,7 @@ xkb_symbols {
 	key <AD06> {[ y, Y ]};
 	key <AD07> {[ u, U ]};
 	key <AD08> {[ i, I ]};
-	key <AD09> {[ o, O ]};
+	key <AD09> {[ o, O, U00B0 ], type="THREE_LEVEL"};
 	key <AD10> {[ p, P, U2022, U2023 ], type="FOUR_LEVEL"};
 	key <AD11> {[ U005B, U007B, U00AB, U27E8 ], type="FOUR_LEVEL"};
 	key <AD12> {[ U005D, U007D, U00BB, U27E9 ], type="FOUR_LEVEL"};
