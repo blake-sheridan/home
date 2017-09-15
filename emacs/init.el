@@ -25,6 +25,13 @@
   '("COMMIT_EDITMSG" . conf-unix-mode)) ; `log-edit-mode`, maybe
 
 ;;------------------------------------------------------------------------------------------------;;
+;; HTML
+
+(add-hook 'html-mode-hook
+  (lambda ()
+    (set (make-local-variable 'sgml-basic-offset) 4)))
+
+;;------------------------------------------------------------------------------------------------;;
 ;; LLVM
 
 (add-to-list
