@@ -1,10 +1,6 @@
 # -*- mode: shell-script -*-
 
-if [ -z "${XDG_DATA_HOME}" ]; then
-    export XDG_DATA_HOME=~/.local
-fi
-
-HISTFILE=$XDG_DATA_HOME/zsh/history
+HISTFILE=${XDG_DATA_HOME:-~/.local/share}/zsh/history
 HISTSIZE=99999
 SAVEHIST=$HISTSIZE
 
