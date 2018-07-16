@@ -4,10 +4,11 @@ HISTFILE=${XDG_DATA_HOME:-~/.local/share}/zsh/history
 HISTSIZE=99999
 SAVEHIST=$HISTSIZE
 
-case $(ps -o comm= -p $PPID) in
-    sshd|*/sshd) PS1="%F{4}%m:%~%f ";;
-    *)           PS1="%F{4}%~%f "
-esac
+if [[ $SSH_TTY ]]; then
+    PS1="%F{4}%m:%~%f "
+else
+    PS1="%F{4}%~%f "
+fi
 
 RPS1="%F{23}%*"
 
