@@ -18,24 +18,37 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias a='git add --patch'
+alias ap='ack --python'
 alias c='git checkout --patch'
 alias cb='cd $OLDPWD'
 alias d='git diff'
 alias e='emacs -nw'
+alias f='find -name'
 alias g='git'
+alias gb='git branch'
+alias gbl='git branch --list'
+alias gc='git checkout'
+alias gca='git commit --amend'
+alias gcm='git checkout master'
+alias gf='git fetch'
+alias gp='git pull'
+alias gsu='git submodule update'
+alias gsuir='git submodule update --init --recursive'
 alias kill-suspended='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
 alias l='ls'
 alias ls='LC_COLLATE=C ls --color=auto --group-directories-first --hide="LICENSE*" --hide="__pycache__" -p'
 alias lsa='ls -A'
 alias lsla='ls -la'
-alias ls-symbols='ls -lfd [\!_]* _*'
-alias m='make --jobs=8 --warn-undefined-variables'
-      p() { python3 <<< "print($@)" }
+alias pdb='python -m pdb -c continue'
+alias pe='pipenv'
+alias pei='pipenv install'
+alias peid='pipenv install --dev'
+alias pes='pipenv shell'
 alias s='git status'
 alias st='git status --untracked-files=no'
 alias sudo='sudo '
 alias ssh-scan='nmap -p 22 --open -sV 192.168.2.0/24'
-alias x='exit'
+alias t='tail -f'
 
 # `ls` after changing the working directory
 chpwd() {
@@ -138,3 +151,11 @@ if [ $? -ne 0 ]; then
         /bin/ls
     }
 fi
+
+export PATH=$HOME/scripts:$PATH
+
+# Qeexo
+export MLAUTO_DEBUG=
+export MLAUTO_PORT=5000
+export NDK_ROOT=~/dev/ndk/android-ndk-r18b
+export PATH=$HOME/.local/bin:$NDK_ROOT:$HOME/Android/Sdk/platform-tools:$PATH
