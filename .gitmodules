@@ -1,6 +1,3 @@
-[submodule ".config/zsh/functions"]
-	path = .config/zsh/functions
-	url = git@github.com:blake-sheridan/zsh-functions.git
 [submodule "emacs/php-mode"]
 	path = emacs/php-mode
 	url = https://github.com/ejmr/php-mode.git
