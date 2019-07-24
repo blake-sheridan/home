@@ -71,6 +71,10 @@
 ;;------------------------------------------------------------------------------------------------;;
 ;; Markdown
 
+(add-to-list
+  'load-path
+  "~/.config/emacs/markdown-mode")
+
 (autoload
   'gfm-mode
   "markdown-mode"
