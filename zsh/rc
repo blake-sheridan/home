@@ -142,22 +142,4 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Fixes for super old Red Hat servers at work.
-ls --group-directories-first &> /dev/null
-if [ $? -ne 0 ]; then
-    PS1="%m:%~ "
-    RPS1="%*"
-    unalias ls
-    unset LS_COLORS
-    chpwd() {
-        /bin/ls
-    }
-fi
-
 export PATH=$HOME/scripts:$PATH
-
-# Qeexo
-export MLAUTO_DEBUG=
-export MLAUTO_PORT=5000
-export NDK_ROOT=~/dev/ndk/android-ndk-r18b
-export PATH=$HOME/.local/bin:$NDK_ROOT:$HOME/Android/Sdk/platform-tools:$PATH
