@@ -96,3 +96,39 @@ return
 #!F12::
 MouseGetPos, _, _, f12_id
 return
+
+
+tile(x_lower, x_upper, y_lower, y_upper) {
+    SysGet, workarea_, MonitorWorkArea
+
+    workarea_width := workarea_Right - workarea_Left
+    workarea_height := workarea_Bottom - workarea_Top
+
+    width := (x_upper - x_lower) * workarea_width
+    height := (y_upper - y_lower) * workarea_height
+
+    x := workarea_Left + (x_lower * workarea_width)
+    y := workarea_Top + (y_lower * workarea_height)
+
+    WinMove, A, , %x%, %y%, %width%, %height%
+}
+
+
+#F1::
+tile(0, 0.33, 0.5, 1)
+return
+#F2::
+tile(0.33, 0.66, 0.5, 1)
+return
+#F3::
+tile(0.66, 1, 0.5, 1)
+return
+#F4::
+tile(0, 0.33, 0, 0.5)
+return
+#F5::
+tile(0.33, 0.66, 0, 0.5)
+return
+#F6::
+tile(0.66, 1, 0, 0.5)
+return
