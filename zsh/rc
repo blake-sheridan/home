@@ -1,8 +1,5 @@
 # -*- mode: shell-script -*-
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 alias a='git add --patch'
 alias ap='ack --python'
 alias c='git checkout --patch'
@@ -44,6 +41,10 @@ alias s='git status'
 alias sp='cd $(python3 -c '\''for x in filter(lambda x: x.endswith("site-packages"), __import__("sys").path): print(x)'\'')'
 alias sudo='sudo '
 alias t='tail -f'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # My repos
 config=~/config
