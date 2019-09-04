@@ -52,6 +52,11 @@ alias .....='cd ../../../..'
 config=~/config
 scripts=~/scripts
 
+# If we're in a WSL instance…
+if [[ -d /mnt/c ]]; then
+    blake=/mnt/c/Users/blake
+fi
+
 ls_colors=(
     bd='1;38;5;244;48;5;230'    # block device
     ca='30;41'                  # capability
