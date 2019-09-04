@@ -120,6 +120,7 @@ export ACKRC=$config/ack/rc
 export LS_COLORS=${(j/:/)ls_colors}
 export PATH=$scripts:$PATH
 
+HISTFILE=~/.zsh_history
 HISTSIZE=99999
 if ((${#SSH_TTY[@]})); then
     PS1="%F{4}%m:%~%f "
