@@ -33,6 +33,7 @@ alias lsa='ls -A'
 alias lsla='ls -la'
 # Kill any suspended processes
 alias ks='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
+alias p='python3'
 alias pe='pipenv'
 alias pei='pipenv install'
 alias peid='pipenv install --dev'
