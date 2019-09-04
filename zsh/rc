@@ -147,4 +147,6 @@ compinit
 bindkey -e
 
 # Any machine-specific stuff not under version control
-source ~/.local_variables
+if [[ -f ~/.local_variables ]]; then
+    source ~/.local_variables
+fi
