@@ -45,14 +45,9 @@ alias sp='cd $(python3 -c '\''for x in filter(lambda x: x.endswith("site-package
 alias sudo='sudo '
 alias t='tail -f'
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/blake/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-bindkey -e
+# My repos
+config=~/config
+scripts=~/scripts
 
 ls_colors=(
     bd='1;38;5;244;48;5;230'    # block device
@@ -121,13 +116,10 @@ ls_colors=(
     '*README.txt'='38;5;238'
 )
 
+export ACKRC=$config/ack/rc
 export LS_COLORS=${(j/:/)ls_colors}
+export PATH=$scripts:$PATH
 
-zstyle ':completion:*:default' list-colors $LS_COLORS
-
-export PATH=$HOME/scripts:$PATH
-
-HISTFILE=${XDG_DATA_HOME:-~/.local/share}/zsh/history
 HISTSIZE=99999
 if ((${#SSH_TTY[@]})); then
     PS1="%F{4}%m:%~%f "
@@ -138,8 +130,17 @@ RPS1="%F{23}%*"
 SAVEHIST=$HISTSIZE
 TERM=xterm-256color
 
-# `ls` after changing the working directory
+# Automatic `ls` after changing the working directory
 chpwd() { ls }
+
+zstyle :compinstall filename '/home/blake/.zshrc'
+zstyle ':completion:*:default' list-colors $LS_COLORS
+
+autoload -Uz compinit
+compinit
+
+# I don't remember
+bindkey -e
 
 # Any machine-specific stuff not under version control
 source ~/.local_variables
