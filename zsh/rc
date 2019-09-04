@@ -13,6 +13,7 @@ alias gbl='git branch --list'
 alias gblr='git branch --list --remote'
 alias gc='git commit'
 alias gca='git commit --amend'
+alias gcb='git checkout -b'
 alias gcm='git checkout master'
 # Delete all merged branches
 alias gdmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
