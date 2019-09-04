@@ -137,3 +137,6 @@ TERM=xterm-256color
 
 # `ls` after changing the working directory
 chpwd() { ls }
+
+# Any machine-specific stuff not under version control
+source ~/.local_variables
