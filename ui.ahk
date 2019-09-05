@@ -7,7 +7,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 
 run_last_command(terminal_id) {
     ; Run the last command in a terminal again
-    WinGet saved_id
+    WinGet saved_id, , A
 
     WinActivate ahk_id %terminal_id%
     Send {Up}{Enter}
@@ -30,7 +30,7 @@ tile(window_id, x_start, x_stop, y_start, y_stop) {
     y :=  workarea_Top + (y_start * workarea_height)
 
     if window_id
-        WinMove ahk_id %window_id%,, %x%, %y%, %width%, %height%
+        WinMove ahk_id %window_id%, , %x%, %y%, %width%, %height%
 }
 
 
