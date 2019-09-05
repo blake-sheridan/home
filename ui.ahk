@@ -6,6 +6,26 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #SingleInstance Force
 
+
+tile(window_id, x_start, x_stop, y_start, y_stop) {
+    ; Tile a window from x_start:x_stop, y_start:y_stop
+    ; start/stop should be numbers from 0 to 1
+    SysGet, workarea_, MonitorWorkArea
+
+    workarea_width  :=  workarea_Right - workarea_Left
+    workarea_height := workarea_Bottom - workarea_Top
+
+    width  := (x_stop - x_start) * workarea_width
+    height := (y_stop - y_start) * workarea_height
+
+    x := workarea_Left + (x_start * workarea_width)
+    y :=  workarea_Top + (y_start * workarea_height)
+
+    if window_id
+        WinMove, ahk_id %window_id%,, %x%, %y%, %width%, %height%
+}
+
+
 ; Grid is a 3x2 matrix of windows:
 ; alt+f1 | alt+f2 | alt+f3
 ;     f1 |     f2 |     f3
@@ -55,22 +75,6 @@ return
 #!F3::
 MouseGetPos, _, _, alt_f3_id
 return
-
-tile(window_id, x_lower, x_upper, y_lower, y_upper) {
-    SysGet, workarea_, MonitorWorkArea
-
-    workarea_width  :=  workarea_Right - workarea_Left
-    workarea_height := workarea_Bottom - workarea_Top
-
-    width  := (x_upper - x_lower) * workarea_width
-    height := (y_upper - y_lower) * workarea_height
-
-    x := workarea_Left + (x_lower * workarea_width)
-    y :=  workarea_Top + (y_lower * workarea_height)
-
-    if window_id
-        WinMove, ahk_id %window_id%,, %x%, %y%, %width%, %height%
-}
 
 #F4::
 tile(    f1_id,    0, 0.33, 0.5,   1)
