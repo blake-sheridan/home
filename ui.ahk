@@ -1,13 +1,24 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 
-; Only ever activate a single instance of this scripts
+; Only ever activate a single instance of this script
 #SingleInstance Force
+
+
+run_last_command(terminal_id) {
+    ; Run the last command in a terminal again
+    WinGet saved_id
+
+    WinActivate ahk_id %terminal_id%
+    Send {Up}{Enter}
+
+    WinActivate ahk_id %saved_id%
+}
 
 
 tile(window_id, x_start, x_stop, y_start, y_stop) {
     ; Tile a window using subranges of the current desktop
-    SysGet, workarea_, MonitorWorkArea
+    SysGet workarea_, MonitorWorkArea
 
     workarea_width  :=  workarea_Right - workarea_Left
     workarea_height := workarea_Bottom - workarea_Top
@@ -19,7 +30,7 @@ tile(window_id, x_start, x_stop, y_start, y_stop) {
     y :=  workarea_Top + (y_start * workarea_height)
 
     if window_id
-        WinMove, ahk_id %window_id%,, %x%, %y%, %width%, %height%
+        WinMove ahk_id %window_id%,, %x%, %y%, %width%, %height%
 }
 
 
@@ -71,6 +82,10 @@ MouseGetPos, _, _, alt_f2_id
 return
 #!F3::
 MouseGetPos, _, _, alt_f3_id
+return
+
+F4::
+run_last_command(f3_id)
 return
 
 #F4::
