@@ -6,8 +6,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 
 
 tile(window_id, x_start, x_stop, y_start, y_stop) {
-    ; Tile a window from x_start:x_stop, y_start:y_stop
-    ; start/stop should be numbers from 0 to 1
+    ; Tile a window using subranges of the current desktop
     SysGet, workarea_, MonitorWorkArea
 
     workarea_width  :=  workarea_Right - workarea_Left
