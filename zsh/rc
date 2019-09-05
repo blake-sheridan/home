@@ -17,6 +17,7 @@ alias gcb='git checkout -b'
 alias gcm='git checkout master'
 # Delete all merged branches
 alias gdmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias gds='git diff --staged'
 alias gf='git fetch'
 alias gl='git log'
 alias gp='git pull'
