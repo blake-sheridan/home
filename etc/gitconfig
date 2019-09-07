@@ -1,4 +1,6 @@
 [alias]
+a = add
+ap = add --patch
 b = branch
 bl = branch --list
 blr = branch --list --remote
@@ -7,6 +9,7 @@ ca = commit --amend
 cm = commit --message
 co = checkout
 com = checkout master
+cop = checkout --patch
 d = diff
 ds = diff --staged
 f = fetch
