@@ -5,6 +5,6 @@ set -u
 root="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. >/dev/null 2>&1 && pwd )"
 
 ln -fs $root/etc/emacs.d ~/.emacs.d
-ln -fs $root/etc/git ~/.config/git
+ln -fs $root/etc/git ~/.gitconfig
 ln -fs $root/etc/zshenv ~/.zshenv
 ln -fs $root/etc/zshrc ~/.zshrc

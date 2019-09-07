@@ -8,28 +8,8 @@ alias d='git diff'
 alias e='emacs -nw'
 alias f='find -name'
 alias g='git'
-alias gb='git branch'
-alias gbl='git branch --list'
-alias gblr='git branch --list --remote'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gcb='git checkout -b'
-alias gcm='git checkout master'
 # Delete all merged branches
 alias gdmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
-alias gds='git diff --staged'
-alias gf='git fetch'
-alias gl='git log'
-alias gp='git pull'
-alias gpr='git pull --rebase'
-alias gr='git rebase'
-alias grc='git rebase --continue'
-alias grh='git reset HEAD --'
-alias gri='git rebase --interactive'
-alias gst='git status --untracked-files=no'
-alias gsu='git submodule update'
-alias gsui='git submodule update --init'
-alias gsuir='git submodule update --init --recursive'
 alias l='less'
 alias ls='LC_COLLATE=C ls --color=auto --group-directories-first --hide="LICENSE*" --hide="__pycache__" -p'
 alias lsa='ls -A'
@@ -52,15 +32,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
-# My repos
-config=~/config
-scripts=~/scripts
-
-# If we're in a WSL instance…
-if [[ -d /mnt/c ]]; then
-    blake=/mnt/c/Users/blake
-fi
 
 ls_colors=(
     bd='1;38;5;244;48;5;230'    # block device
@@ -129,9 +100,9 @@ ls_colors=(
     '*README.txt'='38;5;238'
 )
 
-export ACKRC=$config/ack/rc
+export ACKRC=~/env/etc/ackrc
 export LS_COLORS=${(j/:/)ls_colors}
-export PATH=$scripts:$PATH
+export PATH=~/env/bin:$PATH
 
 HISTFILE=~/.zsh_history
 HISTSIZE=99999
@@ -142,7 +113,6 @@ else
 fi
 RPS1="%F{23}%*"
 SAVEHIST=$HISTSIZE
-TERM=xterm-256color
 
 # Automatic `ls` after changing the working directory
 chpwd() { ls }
@@ -157,6 +127,6 @@ compinit
 bindkey -e
 
 # Any machine-specific stuff not under version control
-if [[ -f ~/.local_variables ]]; then
-    source ~/.local_variables
+if [[ -f ~/local.rc ]]; then
+    source ~/local.rc
 fi
