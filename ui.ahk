@@ -84,7 +84,13 @@ return
 MouseGetPos, _, _, alt_f3_id
 return
 
-F4::
+^F1::
+run_last_command(f1_id)
+return
+^F2::
+run_last_command(f2_id)
+return
+^F3::
 run_last_command(f3_id)
 return
 
