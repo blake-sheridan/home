@@ -1,28 +1,31 @@
 [alias]
-a = add -p
-ad = add
-c = checkout -p
+b = branch
+bl = branch --list
+blr = branch --list --remote
+c = commit
 ca = commit --amend
-cf = config
-cfl = config --list
-ci = commit
-cm = commit -m
+cm = commit --message
 co = checkout
+com = checkout master
 d = diff
 ds = diff --staged
+f = fetch
 l = log
 lf = log --follow
 lp = log -p
-p = push
-pr = push --recurse-submodules=on-demand
-r = reset HEAD --
-rb = rebase --interactive
-rba = rebase --abort
-rbc = rebase --continue
-rbs = rebase --skip
+p = pull
+pr = pull --rebase
+ra = rebase --abort
+rc = rebase --continue
+rh = reset HEAD --
+rs = rebase --skip
+ri = rebase --interactive
 s = status
 sh = show
-su = submodule update --init
+st = status --untracked-files=no
+su = submodule update
+sui = submodule update --init
+suir = submodule update --init --recursive
 
 [clean]
 requireForce = false
