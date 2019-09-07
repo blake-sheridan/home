@@ -33,72 +33,85 @@ tile(window_id, x_start, x_stop, y_start, y_stop) {
         WinMove ahk_id %window_id%, , %x%, %y%, %width%, %height%
 }
 
-
-; Grid is a 3x2 matrix of windows:
-; alt+f1 | alt+f2 | alt+f3
-;     f1 |     f2 |     f3
-
 f1_id := 0
 f2_id := 0
 f3_id := 0
-
-alt_f1_id := 0
-alt_f2_id := 0
-alt_f3_id := 0
+f4_id := 0
+f5_id := 0
+f6_id := 0
 
 F1::
 WinActivate, ahk_id %f1_id%
 return
+
 F2::
 WinActivate, ahk_id %f2_id%
 return
+
 F3::
 WinActivate, ahk_id %f3_id%
 return
-!F1:
-WinActivate, ahk_id %alt_f1_id%
-return
-!F2:
-WinActivate, ahk_id %alt_f2_id%
-return
-!F3:
-WinActivate, ahk_id %alt_f3_id%
+
+F4::
+WinActivate, ahk_id %f4_id%
 return
 
-#F1::
+F5::
+WinActivate, ahk_id %f5_id%
+return
+
+F6::
+WinActivate, ahk_id %f6_id%
+return
+
+
+^!F1::
 MouseGetPos, _, _, f1_id
 return
-#F2::
+
+^!F2::
 MouseGetPos, _, _, f2_id
 return
-#F3::
+
+^!F3::
 MouseGetPos, _, _, f3_id
 return
-#!F1::
-MouseGetPos, _, _, alt_f1_id
+
+^!F4::
+MouseGetPos, _, _, f4_id
 return
-#!F2::
-MouseGetPos, _, _, alt_f2_id
+
+^!F5::
+MouseGetPos, _, _, f5_id
 return
-#!F3::
-MouseGetPos, _, _, alt_f3_id
+
+^!F6::
+MouseGetPos, _, _, f6_id
 return
+
 
 ^F1::
 run_last_command(f1_id)
 return
+
 ^F2::
 run_last_command(f2_id)
 return
+
 ^F3::
 run_last_command(f3_id)
 return
 
-#F4::
-tile(    f1_id,    0, 0.33, 0.5,   1)
-tile(    f2_id, 0.33, 0.66, 0.5,   1)
-tile(    f3_id, 0.66, 1.00, 0.5,   1)
-tile(alt_f1_id,    0, 0.33,   0, 0.5)
-tile(alt_f2_id, 0.33, 0.66,   0, 0.5)
-tile(alt_f3_id, 0.66, 1.00,   0, 0.5)
+
+; Grid is a 3x2 matrix:
+; f4 | f5 | f6
+; f1 | f2 | f3
+
+^F4::
+tile(f1_id,    0, 0.33, 0.5,   1)
+tile(f2_id, 0.33, 0.66, 0.5,   1)
+tile(f3_id, 0.66, 1.00, 0.5,   1)
+tile(f4_id,    0, 0.33,   0, 0.5)
+tile(f5_id, 0.33, 0.66,   0, 0.5)
+tile(f6_id, 0.66, 1.00,   0, 0.5)
 return
