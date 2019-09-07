@@ -4,102 +4,11 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-;;------------------------------------------------------------------------------------------------;;
-;; C/C++
-
-; We can't use autoload, as it must take priority over the normal cc-mode
-
-(add-to-list
-  'load-path
-  "~/emacs/cc-mode")
-
-;;------------------------------------------------------------------------------------------------;;
-;; git
-
-(add-to-list
-  'auto-mode-alist
-  '(".git\\(?:config\\|ignore\\|modules\\)\\'" . conf-unix-mode))
-
-(add-to-list
-  'auto-mode-alist
-  '("COMMIT_EDITMSG" . conf-unix-mode)) ; `log-edit-mode`, maybe
-
-;;------------------------------------------------------------------------------------------------;;
-;; HTML
-
-(add-hook 'html-mode-hook
-  (lambda ()
-    (set (make-local-variable 'sgml-basic-offset) 4)))
-
-;;------------------------------------------------------------------------------------------------;;
-;; LLVM
-
-(add-to-list
-  'load-path
-  "~/emacs/llvm-mode")
-
-(autoload
-  'llvm-mode
-  "llvm-mode")
-
-(add-to-list
-  'auto-mode-alist
-  '("\\.ll\\'" . llvm-mode))
-
-;;------------------------------------------------------------------------------------------------;;
-;; Make
-
-(define-derived-mode __makefile-mode makefile-mode
-  "`makefile-mode` tweaks"
-  (defconst __makefile-font-lock-keywords
-    (makefile-make-font-lock-keywords
-      makefile-var-use-regex
-      `(
-         "undefine"
-         ,@makefile-gmake-statements)
-      t))
-  (setq font-lock-defaults
-    `(__makefile-font-lock-keywords ,@(cdr font-lock-defaults))))
-
-(setq auto-mode-alist
-  (append
-    (list
-      '("Makefile\\'" . __makefile-mode)
-      '("\\.mk\\'"    . __makefile-mode))
-    auto-mode-alist))
-
-;;------------------------------------------------------------------------------------------------;;
-;; Markdown
-
-(add-to-list
-  'load-path
-  "~/.config/emacs/markdown-mode")
-
-(autoload
-  'gfm-mode
-  "markdown-mode"
-  t)
-
-(add-to-list
-  'auto-mode-alist
-  '("\\.md\\'" . gfm-mode))
-
-;;------------------------------------------------------------------------------------------------;;
-;; Python
-
-(add-to-list
-  'auto-mode-alist
-  '("\\.wsgi\\'" . python-mode))
-
-;;------------------------------------------------------------------------------------------------;;
-
 (add-to-list
   'custom-theme-load-path
-  "~/config/emacs/color-theme-solarized")
+  "~/.emacs.d/color-theme-solarized")
 
-(load-theme
-  'solarized
-  t)
+(load-theme 'solarized t)
 
 (add-hook 'after-make-frame-functions
   (lambda (frame)
@@ -108,17 +17,6 @@
       'background-mode
       'dark)
     (enable-theme 'solarized)))
-
-;;------------------------------------------------------------------------------------------------;;
-
-(global-set-key "\C-ca" `align-current)
-(global-set-key "\C-cc" '(lambda () (interactive) (print (current-column) t)))
-(global-set-key "\C-ce" `eval-buffer)
-(global-set-key "\C-ci" `insert-char)
-(global-set-key "\C-cl" `goto-line)
-(global-set-key "\C-ct" `delete-trailing-whitespace)
-
-;;------------------------------------------------------------------------------------------------;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
