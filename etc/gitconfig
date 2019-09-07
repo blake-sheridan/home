@@ -36,23 +36,11 @@ status = always
 [core]
 editor = emacs
 
-[diff]
-algorithm = minimal
-#ignoreSubmodules = dirty
-mnemonicprefix = true
-renames = true
-submodule = log
-
 [log]
 abbrevCommit = true
 
 [push]
 default = simple
-
-[rebase]
-autosquash = true
-autostash = true
-stat = true
 
 [user]
 name = Blake Sheridan

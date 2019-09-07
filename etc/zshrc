@@ -1,16 +1,13 @@
 # -*- mode: shell-script -*-
 
-alias a='git add --patch'
 alias ap='ack --python'
-alias c='git checkout --patch'
 alias cb='cd $OLDPWD'
-alias d='git diff'
 alias e='emacs -nw'
 alias f='find -name'
 alias g='git'
 # Delete all merged branches
 alias gdmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
-alias l='less'
+alias l='ls'
 alias ls='LC_COLLATE=C ls --color=auto --group-directories-first --hide="LICENSE*" --hide="__pycache__" -p'
 alias lsa='ls -A'
 alias lsla='ls -la'
