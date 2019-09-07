@@ -1,0 +1,28 @@
+#!/bin/bash
+
+repo="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. >/dev/null 2>&1 && pwd )"
+
+# .emacs.d/
+rm ~/.emacs.d
+ln -s $repo/etc/emacs.d ~/.emacs.d
+
+# .gitconfig
+ln -fs $repo/etc/gitconfig ~/.gitconfig
+
+# .zshenv
+ln -fs $repo/etc/zshenv ~/.zshenv
+
+# .zshrc
+ln -fs $repo/etc/zshrc ~/.zshrc
+
+# ~/bin
+rm ~/bin
+ln -s $repo/bin ~/bin
+
+# ~/etc
+rm ~/etc
+ln -s $repo/etc ~/etc
+
+# ~/src
+rm ~/src
+ln -s $repo/src ~/src
