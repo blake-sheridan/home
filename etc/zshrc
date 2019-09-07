@@ -97,9 +97,9 @@ ls_colors=(
     '*README.txt'='38;5;238'
 )
 
-export ACKRC=~/env/etc/ackrc
+export ACKRC=~/etc/ackrc
 export LS_COLORS=${(j/:/)ls_colors}
-export PATH=~/env/bin:$PATH
+export PATH=~/bin:$PATH
 
 HISTFILE=~/.zsh_history
 HISTSIZE=99999
