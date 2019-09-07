@@ -30,6 +30,29 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+setopt ALIASES
+setopt ALWAYS_LAST_PROMPT
+setopt AUTO_CD
+setopt AUTO_NAME_DIRS
+setopt AUTO_LIST
+setopt AUTO_MENU
+setopt AUTO_PUSHD
+setopt BAD_PATTERN
+unsetopt BEEP
+setopt COMPLETE_IN_WORD
+setopt CORRECT
+setopt EQUALS
+setopt EXTENDED_GLOB
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt LIST_PACKED
+setopt LIST_TYPES
+setopt NOTIFY
+setopt NULL_GLOB
+setopt PROMPT_PERCENT
+setopt PROMPT_SUBST
+setopt WARN_CREATE_GLOBAL
+
 ls_colors=(
     bd='1;38;5;244;48;5;230'    # block device
     ca='30;41'                  # capability
@@ -97,7 +120,6 @@ ls_colors=(
     '*README.txt'='38;5;238'
 )
 
-export ACKRC=~/etc/ackrc
 export LS_COLORS=${(j/:/)ls_colors}
 export PATH=~/bin:$PATH
 
@@ -112,18 +134,12 @@ RPS1="%F{23}%*"
 SAVEHIST=$HISTSIZE
 
 # Automatic `ls` after changing the working directory
-chpwd() { ls }
+#chpwd() { ls }
 
-zstyle :compinstall filename '/home/blake/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*:default' list-colors $ls_colors
 
 autoload -Uz compinit
 compinit
 
-# I don't remember
 bindkey -e
-
-# Machine-specific stuff
-if [[ -f ~/etc/init.sh ]]; then
-    source ~/etc/init.sh
-fi
