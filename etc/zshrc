@@ -123,7 +123,7 @@ compinit
 # I don't remember
 bindkey -e
 
-# Any machine-specific stuff not under version control
-if [[ -f ~/local.rc ]]; then
-    source ~/local.rc
+# Machine-specific stuff
+if [[ -f ~/etc/init.sh ]]; then
+    source ~/etc/init.sh
 fi
