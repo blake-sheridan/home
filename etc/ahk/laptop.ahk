@@ -115,3 +115,16 @@ tile(f4_id,    0, 0.33,   0, 0.5)
 tile(f5_id, 0.33, 0.66,   0, 0.5)
 tile(f6_id, 0.66, 1.00,   0, 0.5)
 return
+
+#z::
+WinExist("ahk_class Shell_TrayWnd")
+	t := !t
+
+	If (t = "1") {
+		WinHide, ahk_class Shell_TrayWnd
+		WinHide, Start ahk_class Button
+	} Else {
+		WinShow, ahk_class Shell_TrayWnd
+		WinShow, Start ahk_class Button
+	}
+return
