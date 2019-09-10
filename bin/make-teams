@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import random
+import sys
+
+try:
+    number_of_teams = int(sys.argv[1])
+    names = sys.argv[2:]
+except (IndexError, ValueError):
+    exit('Usage: {} <#teams> <names>...'.format(sys.argv[0]))
+
+random.shuffle(names)
+
+teams = [[] for _ in range(number_of_teams)]
+
+for (i, name) in enumerate(names):
+    teams[i % len(teams)].append(name)
+
+for (i, members) in enumerate(teams, 1):
+    print('Team ', i, ':', sep='')
+    for name in members:
+        print(' ', name)

@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+"""Print the current version of a package on PyPI."""
+
+import http.client
+import json
+import sys
+
+
+def main():
+    try:
+        project_name = sys.argv[1]
+    except IndexError:
+        exit(f'Usage: {sys.argv[0]} <project>')
+
+    print(get_project(project_name)['info']['version'])
+
+
+def get_project(name: str) -> dict:
+    connection = http.client.HTTPSConnection('pypi.org')
+    path = f'/pypi/{name}/json'
+    while True:
+        connection.request('GET', path)
+        with connection.getresponse() as response:
+            if response.status == 200:
+                return json.load(response)
+            elif response.status == 301:
+                # Handle redirects for project aliases
+                location = response.headers['Location']
+                path = location[location.index('/pypi/'):]
+            else:
+                raise NotImplementedError(response.status, response.read())
+
+
+if __name__ == '__main__':
+    main()
