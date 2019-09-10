@@ -2,9 +2,10 @@
 
 alias ap='ack --python'
 alias cb='cd $OLDPWD'
+alias d='git diff'
 alias e='emacs -nw'
-alias f='find -name'
 alias g='git'
+alias fr='find-replace'
 # Delete all merged branches
 alias gdmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 alias l='ls'
@@ -19,19 +20,20 @@ alias pe='pipenv'
 alias pei='pipenv install'
 alias peid='pipenv install --dev'
 alias pes='pipenv shell'
+alias psd='python3 setup.py develop'
 alias s='git status'
 # Change to the current Python environment's site-packages/ directory
 alias sp='cd $(python3 -c '\''for x in filter(lambda x: x.endswith("site-packages"), __import__("sys").path): print(x)'\'')'
 alias sudo='sudo '
-alias t='tail -f'
+alias v='less'
 alias x='pytest --disable-warnings -x'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-setopt ALIASES
-setopt ALWAYS_LAST_PROMPT
+#setopt ALIASES
+#setopt ALWAYS_LAST_PROMPT
 setopt AUTO_CD
 setopt AUTO_NAME_DIRS
 setopt AUTO_LIST
@@ -39,6 +41,7 @@ setopt AUTO_MENU
 setopt AUTO_PUSHD
 setopt BAD_PATTERN
 unsetopt BEEP
+setopt CHASE_DOTS
 setopt COMPLETE_IN_WORD
 setopt CORRECT
 setopt EQUALS
@@ -49,6 +52,7 @@ setopt LIST_PACKED
 setopt LIST_TYPES
 setopt NOTIFY
 setopt NULL_GLOB
+setopt PATH_DIRS
 setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
 setopt WARN_CREATE_GLOBAL
