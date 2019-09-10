@@ -1,0 +1,259 @@
+#!/usr/bin/env python3
+
+import os
+import re
+import sys
+import termios
+import tty
+
+IGNORE_DIRECTORIES = frozenset(('__pycache__',))
+IGNORE_DOT_FILES = True
+INDENTATION = b''
+LINES_AFTER = 2
+LINES_BEFORE = 3
+
+try:
+    PATTERN = sys.argv[1]
+    REPLACEMENT = sys.argv[2]
+except IndexError:
+    print('USAGE:', sys.argv[0], '<pattern>', '<replacement>', '[path]', file=sys.stderr)
+    sys.exit(1)
+
+try:
+    PATH = sys.argv[3]
+except IndexError:
+    PATH = '.'
+
+RE = re.compile(PATTERN)
+
+
+class Candidate:
+    __slots__ = ('match', 'apply')
+
+    def __init__(self, match):
+        self.match = match
+        self.apply = None
+
+
+def read_character(file=sys.stdin) -> str:
+    old = termios.tcgetattr(file)
+    try:
+        tty.setcbreak(file)
+        return file.read(1)
+    finally:
+        termios.tcsetattr(file, termios.TCSADRAIN, old)
+
+
+def visit_directory(path: str):
+    directories = []
+    files = []
+
+    for entry in os.scandir(path):
+        if IGNORE_DOT_FILES and entry.name[0] == '.':
+            continue
+
+        if entry.is_dir():
+            if entry.name not in IGNORE_DIRECTORIES:
+                directories.append(entry)
+        elif entry.is_file():
+            files.append(entry)
+
+    for entry in files:
+        visit_file(entry.path)
+
+    for entry in directories:
+        visit_directory(entry.path)
+
+
+def visit_file(path: str):
+    with open(path) as file:
+        try:
+            text = file.read()
+        except UnicodeDecodeError:
+            return  # Not a text file
+
+    buffer = sys.stdout.buffer
+
+    candidate_list = [Candidate(match) for match in RE.finditer(text)]
+    candidate_index = 0
+
+    do_all = False
+    do_help = False
+    do_none = False
+    do_quit = False
+
+    first = True
+
+    while candidate_index < len(candidate_list) and not do_quit:
+        candidate = candidate_list[candidate_index]
+        candidate_index += 1
+
+        if do_all:
+            candidate.apply = True
+            continue
+
+        if do_none:
+            candidate.apply = False
+            continue
+
+        if first:
+            first = False
+            buffer.write(b'\x1B[1m')
+            buffer.write(path.encode())
+            buffer.write(b'\x1B[0m')
+            buffer.write(b'\n')
+            buffer.flush()
+
+        (start, end) = candidate.match.span()
+
+        lines_before = []
+        lines_after = []
+
+        try:
+            line_start = text.rindex('\n', 0, start) + 1
+        except ValueError:
+            line_start = 0
+        else:
+            context_line_end = line_start - 1
+
+            for _ in range(LINES_BEFORE):
+                try:
+                    context_line_start = text.rindex('\n', 0, context_line_end) + 1
+                except ValueError:
+                    lines_before.append(text[:context_line_end])
+                    break
+                else:
+                    lines_before.append(text[context_line_start: context_line_end])
+                    context_line_end = context_line_start - 1
+
+            lines_before.reverse()
+
+        try:
+            line_end = text.index('\n', end)
+        except ValueError:
+            line_end = len(text)
+        else:
+            context_line_start = line_end + 1
+
+            for i in range(LINES_AFTER):
+                try:
+                    context_line_end = text.index('\n', context_line_start)
+                except ValueError:
+                    lines_after.append(text[context_line_start:])
+                    break
+                else:
+                    lines_after.append(text[context_line_start: context_line_end])
+                    context_line_start = context_line_end + 1
+
+        for line in lines_before:
+            buffer.write(INDENTATION)
+            buffer.write(line.encode())
+            buffer.write(b'\n')
+
+        buffer.write(INDENTATION)
+        buffer.write(text[line_start: start].encode())
+        buffer.write(b'\x1B[31m')
+        buffer.write(text[start: end].encode())
+        buffer.write(b'\x1B[0m')
+        buffer.write(text[end: line_end].encode())
+        buffer.write(b'\n')
+
+        buffer.write(INDENTATION)
+        buffer.write(text[line_start: start].encode())
+        buffer.write(b'\x1B[32m')
+        buffer.write(REPLACEMENT.encode())
+        buffer.write(b'\x1B[0m')
+        buffer.write(text[end: line_end].encode())
+        buffer.write(b'\n')
+
+        for line in lines_after:
+            buffer.write(INDENTATION)
+            buffer.write(line.encode())
+            buffer.write(b'\n')
+
+        buffer.write(b'\x1B[2m')
+        buffer.write(b'Replace [y,n,q,a,d,?]? ')
+        buffer.write(b'\x1B[0m')
+        buffer.flush()
+
+        c = None
+        while c is None:
+            try:
+                c = read_character()
+            except KeyboardInterrupt:
+                buffer.write(b'\n')
+                raise
+
+            if c == 'y':
+                candidate.apply = True
+            elif c == 'n':
+                candidate.apply = False
+            elif c == 'q':
+                do_quit = True
+            elif c == 'a':
+                do_all = True
+                candidate.apply = True
+            elif c == 'd':
+                do_none = True
+            elif c == 'g':
+                raise NotImplementedError
+            elif c == 'j':
+                raise NotImplementedError
+            elif c == 'J':
+                raise NotImplementedError
+            elif c == 'k':
+                raise NotImplementedError
+            elif c == 'K':
+                raise NotImplementedError
+            elif c == '?':
+                do_help = True
+            else:
+                c = None
+
+        buffer.write(c.encode())
+        buffer.write(b'\n')
+        buffer.flush()
+
+        if do_help:
+            do_help = False
+            candidate_index -= 1
+
+            buffer.write(b'\x1B[1;31m')
+            buffer.write(b'y - replace this match\n')
+            buffer.write(b'n - do not replace this match\n')
+            buffer.write(b'q - quit; do not replace this match or any of the remaining ones\n')
+            buffer.write(b'a - replace this match and all later matches in the file\n')
+            buffer.write(b'd - do not replace this match or any of the later matches in the file\n')
+            buffer.write(b'g - select a match to go to\n')
+            buffer.write(b'j - leave this match undecided, see next undecided match\n')
+            buffer.write(b'J - leave this match undecided, see next match\n')
+            buffer.write(b'k - leave this match undecided, see previous undecided match\n')
+            buffer.write(b'K - leave this match undecided, see previous match\n')
+            buffer.write(b'? - print help\n')
+            buffer.write(b'\x1B[0m')
+            buffer.flush()
+
+    if any(candidate.apply for candidate in candidate_list):
+        with open(path, 'w') as file:
+            index = 0
+
+            for candidate in candidate_list:
+                if candidate.apply:
+                    file.write(text[index: candidate.match.start()])
+                    file.write(REPLACEMENT)
+                    index = candidate.match.end()
+
+            file.write(text[index:])
+
+    if do_quit:
+        sys.exit(0)
+
+
+if __name__ == '__main__':
+    try:
+        try:
+            visit_directory(PATH)
+        except NotADirectoryError:
+            visit_file(PATH)
+    except KeyboardInterrupt:
+        pass
