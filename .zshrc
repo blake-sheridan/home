@@ -8,6 +8,7 @@ alias g='git'
 alias fr='find-replace'
 # Delete all merged branches
 alias gdmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias h='head'
 alias l='ls'
 alias ls='LC_COLLATE=C ls --color=auto --group-directories-first --hide="LICENSE*" --hide="__pycache__" -p'
 alias lsa='ls -A'
@@ -26,6 +27,7 @@ alias s='git status'
 alias sp='cd $(python3 -c '\''for x in filter(lambda x: x.endswith("site-packages"), __import__("sys").path): print(x)'\'')'
 alias sudo='sudo '
 alias v='less'
+alias w='pwd'
 alias x='pytest --disable-warnings -x'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -118,10 +120,6 @@ ls_colors=(
     '*COPYING'='38;5;238'
     '*LICENSE'='38;5;238'
     '*LICENSE.txt'='38;5;238'
-
-    '*README'='38;5;238'
-    '*README.md'='38;5;238'
-    '*README.txt'='38;5;238'
 )
 
 export LS_COLORS=${(j/:/)ls_colors}
@@ -138,12 +136,30 @@ RPS1="%F{23}%*"
 SAVEHIST=$HISTSIZE
 
 # Automatic `ls` after changing the working directory
-#chpwd() { ls }
+chpwd() { ls }
+
+autoload -Uz compinit
+autoload -U colors && colors
+autoload -Uz vcs_info
+
+compinit
+
+bindkey -e
+
+precmd() { vcs_info }
 
 zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*:default' list-colors $ls_colors
 
-autoload -Uz compinit
-compinit
+# %r root
+# %S path relative to root
+# %b branch
+# %m stashes
+# %u unstaged changes
+# %c staged changes
+#zstyle ':vcs_info:git:*' formats "%r / %S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
+zstyle ':vcs_info:git:*' formats "%r %S%{$fg[grey]%} %{$fg[grey]%}%b%{$reset_color%}%m%u%c%{$reset_color%}"
 
-bindkey -e
+PROMPT="${vcs_info_msg_0_}
+%F{4}>%f "
+#RPROMPT='%F{27}${PWD/#$HOME/~} %F{1}%m %F{3}${vcs_info_msg_0_} %F{23}%*'
