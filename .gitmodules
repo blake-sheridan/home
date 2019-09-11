@@ -1,3 +1,12 @@
 [submodule "src/cpython"]
 	path = src/cpython
 	url = https://github.com/python/cpython.git
+[submodule "src/AutoML"]
+	path = src/AutoML
+	url = git@github.com:qeexo/AutoML.git
+[submodule "src/CommonSense"]
+	path = src/CommonSense
+	url = git@github.com:qeexo/CommonSense.git
+[submodule "src/EmbeddedML"]
+	path = src/EmbeddedML
+	url = git@github.com:qeexo/embedded_ml.git
