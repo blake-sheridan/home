@@ -127,12 +127,6 @@ export PATH=~/bin:$PATH
 
 HISTFILE=~/.zsh_history
 HISTSIZE=99999
-if ((${#SSH_TTY[@]})); then
-    PS1="%F{4}%m:%~%f "
-else
-    PS1="%F{4}%~%f "
-fi
-RPS1="%F{23}%*"
 SAVEHIST=$HISTSIZE
 
 # Automatic `ls` after changing the working directory
@@ -146,10 +140,11 @@ compinit
 
 bindkey -e
 
+# PROMPT
+
 precmd() { vcs_info }
 
-zstyle :compinstall filename '~/.zshrc'
-zstyle ':completion:*:default' list-colors $ls_colors
+zstyle ':vcs_info::*' enable git
 
 # %r root
 # %S path relative to root
@@ -157,9 +152,17 @@ zstyle ':completion:*:default' list-colors $ls_colors
 # %m stashes
 # %u unstaged changes
 # %c staged changes
-#zstyle ':vcs_info:git:*' formats "%r / %S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
-zstyle ':vcs_info:git:*' formats "%r %S%{$fg[grey]%} %{$fg[grey]%}%b%{$reset_color%}%m%u%c%{$reset_color%}"
+#zstyle ':vcs_info:git*' formats "%{$fg[grey]%}%s %{$reset_color%}%r/%S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
+#zstyle ':vcs_info:git*' formats "%r/%S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
+zstyle ':vcs_info:git*' actionformats "%r/%S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
 
-PROMPT="${vcs_info_msg_0_}
-%F{4}>%f "
-#RPROMPT='%F{27}${PWD/#$HOME/~} %F{1}%m %F{3}${vcs_info_msg_0_} %F{23}%*'
+#vcs_info  # For the initial PROMPT
+
+if ((${#SSH_TTY[@]})); then
+    PS1="%F{4}%m:%~%f "
+else
+    PS1="%F{4}%~%f "
+fi
+PROMPT="
+%F{23}%*${reset_color%} ${vcs_info_msg_0_}
+${PS1}"
