@@ -5,29 +5,34 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 #SingleInstance Force
 
 
-run_last_command(terminal_id) {
-    ; Run the last command in a terminal again
+browser_again(window) {
     WinGet saved_id, , A
-
-    WinActivate ahk_id %terminal_id%
-    Send {Up}{Enter}
-
+    WinActivate ahk_id %window_id%
+    Send ^R
     WinActivate ahk_id %saved_id%
 }
 
+terminal_again(window_id) {
+    WinGet saved_id, , A
+    WinActivate ahk_id %window_id%
+    Send ^P{Enter}
+    WinActivate ahk_id %saved_id%
+}
 
 tile(window_id, x_start, x_stop, y_start, y_stop) {
     ; Tile a window using subranges of the current desktop
     SysGet workarea_, MonitorWorkArea
 
+    ; MsgBox %x_start% %x_stop% %y_start% %y_stop%
+
     workarea_width  :=  workarea_Right - workarea_Left
     workarea_height := workarea_Bottom - workarea_Top
 
-    width  := (x_stop - x_start) * workarea_width
-    height := (y_stop - y_start) * workarea_height
+    width  := (x_stop - x_start) / 100 * workarea_width
+    height := (y_stop - y_start) / 100 * workarea_height
 
-    x := workarea_Left + (x_start * workarea_width)
-    y :=  workarea_Top + (y_start * workarea_height)
+    x := workarea_Left + (x_start / 100 * workarea_width)
+    y :=  workarea_Top + (y_start / 100 * workarea_height)
 
     if window_id
         WinMove ahk_id %window_id%, , %x%, %y%, %width%, %height%
@@ -91,40 +96,21 @@ return
 
 
 ^F1::
-run_last_command(f1_id)
+tile(f4_id,  0,  33,   0,  50)
+tile(f5_id,  0,  33,  50, 100)
+tile(f1_id, 33,  66,   0, 100)
+tile(f3_id, 66, 100,   0,  50)
+tile(f2_id, 66, 100,  50, 100)
 return
 
 ^F2::
-run_last_command(f2_id)
+terminal_again(f2_id)
 return
 
 ^F3::
-run_last_command(f3_id)
+terminal_again(f3_id)
 return
-
-
-; Grid is a 3x2 matrix:
-; f4 | f5 | f6
-; f1 | f2 | f3
 
 ^F4::
-tile(f1_id,    0, 0.33, 0.5,   1)
-tile(f2_id, 0.33, 0.66, 0.5,   1)
-tile(f3_id, 0.66, 1.00, 0.5,   1)
-tile(f4_id,    0, 0.33,   0, 0.5)
-tile(f5_id, 0.33, 0.66,   0, 0.5)
-tile(f6_id, 0.66, 1.00,   0, 0.5)
-return
-
-#z::
-WinExist("ahk_class Shell_TrayWnd")
-	t := !t
-
-	If (t = "1") {
-		WinHide, ahk_class Shell_TrayWnd
-		WinHide, Start ahk_class Button
-	} Else {
-		WinShow, ahk_class Shell_TrayWnd
-		WinShow, Start ahk_class Button
-	}
+browser_again(f4_id)
 return
