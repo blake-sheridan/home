@@ -36,6 +36,7 @@ alias .....='cd ../../../..'
 
 #setopt ALIASES
 #setopt ALWAYS_LAST_PROMPT
+setopt APPEND_HISTORY
 setopt AUTO_CD
 setopt AUTO_NAME_DIRS
 setopt AUTO_LIST
@@ -43,13 +44,17 @@ setopt AUTO_MENU
 setopt AUTO_PUSHD
 setopt BAD_PATTERN
 unsetopt BEEP
+unsetopt CDABLE_VARS
 setopt CHASE_DOTS
 setopt COMPLETE_IN_WORD
-setopt CORRECT
+#setopt CORRECT
 setopt EQUALS
 setopt EXTENDED_GLOB
 setopt EXTENDED_HISTORY
+setopt HASH_LIST_ALL
 setopt HIST_IGNORE_DUPS
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
 setopt LIST_PACKED
 setopt LIST_TYPES
 setopt NOTIFY
@@ -57,6 +62,8 @@ setopt NULL_GLOB
 setopt PATH_DIRS
 setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
+setopt PUSHD_IGNORE_DUPS
+setopt SHARE_HISTORY
 setopt WARN_CREATE_GLOBAL
 
 ls_colors=(
