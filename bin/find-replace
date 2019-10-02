@@ -8,6 +8,7 @@ import tty
 
 IGNORE_DIRECTORIES = frozenset(('__pycache__',))
 IGNORE_DOT_FILES = True
+IGNORE_EXTENSIONS = frozenset(('.csv',))
 INDENTATION = b''
 LINES_AFTER = 2
 LINES_BEFORE = 3
@@ -66,6 +67,9 @@ def visit_directory(path: str):
 
 
 def visit_file(path: str):
+    if os.path.splitext(path)[1] in IGNORE_EXTENSIONS:
+        return
+
     with open(path) as file:
         try:
             text = file.read()
