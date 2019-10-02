@@ -45,7 +45,7 @@ setopt BAD_PATTERN
 unsetopt BEEP
 setopt CHASE_DOTS
 setopt COMPLETE_IN_WORD
-setopt CORRECT
+unsetopt CORRECT
 setopt EQUALS
 setopt EXTENDED_GLOB
 setopt EXTENDED_HISTORY
