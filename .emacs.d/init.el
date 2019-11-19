@@ -63,3 +63,6 @@ There are two things you can do about this warning:
 ;(load-theme 'solarized-light t)
 
 (setq vc-follow-symlinks nil)
+
+;; Display current line and column number
+(setq column-number-mode t)
