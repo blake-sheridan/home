@@ -15,7 +15,7 @@ alias lsa='ls -A'
 alias lsla='ls -la'
 # Kill any suspended processes
 alias ks='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
-alias p='python3'
+alias p='python3.7'
 alias pc='pre-commit run --all-files'
 alias pe='pipenv'
 alias pei='pipenv install'
@@ -152,27 +152,8 @@ zstyle ':completion:*:default' list-colors $ls_colors
 
 # PROMPT
 
-precmd() { vcs_info }
-
-zstyle ':vcs_info::*' enable git
-
-# %r root
-# %S path relative to root
-# %b branch
-# %m stashes
-# %u unstaged changes
-# %c staged changes
-#zstyle ':vcs_info:git*' formats "%{$fg[grey]%}%s %{$reset_color%}%r/%S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
-#zstyle ':vcs_info:git*' formats "%r/%S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
-zstyle ':vcs_info:git*' actionformats "%r/%S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
-
-#vcs_info  # For the initial PROMPT
-
 if ((${#SSH_TTY[@]})); then
     PS1="%F{4}%m:%~%f "
 else
     PS1="%F{4}%~%f "
 fi
-PROMPT="
-%F{23}%*${reset_color%} ${vcs_info_msg_0_}
-${PS1}"

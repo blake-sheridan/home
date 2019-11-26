@@ -5,17 +5,22 @@
 .config/
 .eclipse/
 .dmrc
+.gem/
 .gnupg/
 .keras/
 .lesshst
 .local/
 .node_repl_history
+.npm/
 .oracle_jre_usage/
 .qeexo-auto-ml/
 .psql_history
+.pyarmor_capsule.zip*
 .python_history
+.rediscli_history
 .rnd
 .theano/
+.travis/
 .viminfo
 .virtualenvs
 .xsession-errors
@@ -26,6 +31,8 @@
 .zshenv
 .zsh_history
 
+__pycache__/
+Downloads/
 backup/
 exp/
 tmp/
