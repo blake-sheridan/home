@@ -47,7 +47,7 @@ unsetopt BEEP
 unsetopt CDABLE_VARS
 setopt CHASE_DOTS
 setopt COMPLETE_IN_WORD
-#setopt CORRECT
+unsetopt CORRECT
 setopt EQUALS
 setopt EXTENDED_GLOB
 setopt EXTENDED_HISTORY
@@ -146,9 +146,6 @@ autoload -Uz vcs_info
 compinit
 
 bindkey -e
-
-zstyle :compinstall filename '~/.zshrc'
-zstyle ':completion:*:default' list-colors $ls_colors
 
 # PROMPT
 

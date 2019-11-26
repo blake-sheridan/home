@@ -19,6 +19,7 @@
 .python_history
 .rediscli_history
 .rnd
+.ssh/
 .theano/
 .travis/
 .viminfo
@@ -32,7 +33,9 @@
 .zsh_history
 
 __pycache__/
-Downloads/
+Desktop
+Documents
+Downloads
 backup/
 exp/
 tmp/
