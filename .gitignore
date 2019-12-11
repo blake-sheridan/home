@@ -1,5 +1,6 @@
 .Xauthority
 .automation_config
+.automl/
 .bash_history
 .cache/
 .config/
