@@ -5,6 +5,7 @@
 .config/
 .eclipse/
 .dmrc
+.erlang.cookie
 .gem/
 .gnupg/
 .keras/
@@ -15,7 +16,7 @@
 .oracle_jre_usage/
 .qeexo-auto-ml/
 .psql_history
-.pyarmor_capsule.zip*
+.pyarmor*
 .python_history
 .rediscli_history
 .rnd
