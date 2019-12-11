@@ -17,6 +17,7 @@ lf = log --follow
 lp = log -p
 p = pull
 pr = pull --rebase
+psu = !git push --set-upstream origin $(git branch | grep \\* | cut -d ' ' -f2)
 ra = rebase --abort
 rc = rebase --continue
 rh = reset HEAD --
