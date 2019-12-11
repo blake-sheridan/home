@@ -45,5 +45,8 @@ abbrevCommit = true
 [push]
 default = simple
 
+[rebase]
+abbreviateCommands = true
+
 [user]
 name = Blake Sheridan
