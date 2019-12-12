@@ -19,6 +19,7 @@
 .nv/
 .oracle_jre_usage/
 .qeexo-auto-ml/
+.poetry/
 .psql_history
 .pki/
 .pyarmor*

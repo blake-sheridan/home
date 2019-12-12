@@ -130,7 +130,7 @@ ls_colors=(
 )
 
 export LS_COLORS=${(j/:/)ls_colors}
-export PATH=~/bin:$PATH
+export PATH="~/bin:~/.poetry/bin:$PATH"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=99999
