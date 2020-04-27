@@ -1,0 +1,127 @@
+#!/usr/bin/env python3
+
+from __future__ import annotations
+
+import os
+import subprocess
+import sys
+
+
+def main():
+    try:
+        (_, command, *rest) = sys.argv
+    except ValueError:
+        exit(f'Usage: {sys.argv[0]} (select|focus|tile) ...')
+
+    display = Display()
+
+    if command in ('select', 'focus'):
+        try:
+            (name,) = rest
+        except ValueError:
+            exit(f'Usage: {sys.argv[0]} {command} <name>')
+
+        if command == 'select':
+            display.do_select(name)
+        else:
+            display.do_focus(name)
+
+    elif command == 'tile':
+        try:
+            (x_spec, y_spec) = rest
+        except ValueError:
+            exit(f'Usage: {sys.argv[0]} tile <x_spec> <y_spec>')
+
+        try:
+            (x_lower, x_upper) = _eval_tile_spec(x_spec)
+        except ValueError as e:
+            exit(f'Invalid x_spec {x_spec!r} — {e}')
+        try:
+            (y_lower, y_upper) = _eval_tile_spec(y_spec)
+        except ValueError:
+            exit(f'Invalid y_spec {y_spec!r} — {e}')
+
+        display.do_tile(x_lower, x_upper,
+                        y_lower, y_upper)
+
+    else:
+        exit(f'Invalid command {command!r}')
+
+
+class Display:
+    """An object representing an X display."""
+
+    def __init__(self):
+        """Default constructor — use the current display."""
+        self._display = os.environ['DISPLAY']
+
+    # Commands
+
+    def do_select(self, key: str) -> None:
+        result = subprocess.run(['xdotool', 'selectwindow'], stdout=subprocess.PIPE)
+        window_id = int(result.stdout.decode())
+
+        with open(self._get_path(key), 'wb') as file:
+            file.write(b'%d' % window_id)
+
+    def do_focus(self, key: str) -> None:
+        with open(self._get_path(key), 'rb') as file:
+            window_id = int(file.read())
+
+        subprocess.run(['xdotool', 'windowactivate', str(window_id)])
+
+    def do_tile(self,
+                x_lower: float, x_upper: float,
+                y_lower: float, y_upper: float) -> None:
+
+        assert x_lower < x_upper
+        assert y_lower < y_upper
+
+        output = subprocess.check_output(['xprop', '-display', self._display, '-root', '_NET_WORKAREA'])
+
+        # Example output:
+        # _NET_WORKAREA(CARDINAL) = 70, 27, 3770, 1573, 70, 27, 3770, 1573
+        parts = output.split(b'=', 1)[1].split(b',')
+        start_x = int(parts[0])
+        start_y = int(parts[1])
+        total_width = int(parts[2])
+        total_height = int(parts[3])
+
+        x = start_x + int(x_lower * total_width)
+        y = start_y + int(y_lower * total_height)
+        width = int((x_upper - x_lower) * total_width)
+        height = int((y_upper - y_lower) * total_height)
+
+        subprocess.run(['xdotool', 'getactivewindow',
+                        'windowmove', str(x), str(y),
+                        'windowsize', str(width), str(height)])
+
+    # Helpers
+
+    def _get_path(self, key: str) -> str:
+        return os.path.join(os.environ['XDG_RUNTIME_DIR'], f'ui-{self._display}-{key}.id')
+
+
+def _eval_tile_spec(raw: str) -> Tuple[float, float]:
+    try:
+        (lower_string, upper_string) = raw.split(':')
+    except ValueError:
+        raise ValueError('Tile spec must be of the form "x:y"') from None
+
+    try:
+        lower_percent = float(lower_string)
+        upper_percent = float(upper_string)
+    except ValueError:
+        raise ValueError('Tile spec bounds must be parsable as floats')
+
+    if lower_percent >= upper_percent:
+        raise ValueError('Tile spec lower must be < upper')
+
+    lower = lower_percent / 100
+    upper = upper_percent / 100
+
+    return (lower, upper)
+
+
+if __name__ == '__main__':
+    main()
