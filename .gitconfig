@@ -39,7 +39,7 @@ requireForce = false
 status = always
 
 [core]
-editor = emacs
+editor = emacs -nw
 
 [log]
 abbrevCommit = true
