@@ -26,9 +26,11 @@ ri = rebase --interactive
 s = status
 sh = show
 st = status --untracked-files=no
+stu = stash --include-untracked
 su = submodule update
 sui = submodule update --init
 suir = submodule update --init --recursive
+wtf = !git log $(git merge-base --octopus $(git log -1 --merges --pretty=format:%P)).. --boundary --graph --pretty=oneline --abbrev-commit
 
 [clean]
 requireForce = false
