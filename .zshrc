@@ -63,7 +63,7 @@ setopt PATH_DIRS
 setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
 setopt PUSHD_IGNORE_DUPS
-setopt SHARE_HISTORY
+unsetopt SHARE_HISTORY
 setopt WARN_CREATE_GLOBAL
 
 ls_colors=(
