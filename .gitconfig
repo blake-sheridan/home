@@ -7,6 +7,7 @@ blr = branch --list --remote
 c = checkout
 cm = commit --message
 co = checkout
+cod = checkout develop
 com = checkout master
 cp = checkout --patch
 d = diff
