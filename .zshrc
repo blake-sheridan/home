@@ -3,8 +3,11 @@
 alias ap='ack --python'
 alias cb='cd $OLDPWD'
 alias d='git diff'
+function du-sort() { du -a "$1" | sort -n -r | head -n 5 }
+function docker-bash() { docker run --rm -it "$1" bash }
 alias e='emacs -nw'
 alias g='git'
+alias f='find . -name'
 alias fr='find-replace'
 # Delete all merged branches
 alias gdmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
@@ -38,7 +41,7 @@ alias .....='cd ../../../..'
 #setopt ALWAYS_LAST_PROMPT
 setopt APPEND_HISTORY
 setopt AUTO_CD
-setopt AUTO_NAME_DIRS
+unsetopt AUTO_NAME_DIRS
 setopt AUTO_LIST
 setopt AUTO_MENU
 setopt AUTO_PUSHD
@@ -154,3 +157,8 @@ if ((${#SSH_TTY[@]})); then
 else
     PS1="%F{4}%~%f "
 fi
+
+export EDITOR='emacs -nw'
+
+# added by travis gem
+[ ! -s /home/blake/.travis/travis.sh ] || source /home/blake/.travis/travis.sh

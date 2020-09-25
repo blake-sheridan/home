@@ -3,9 +3,11 @@
 .automl/
 .bash_history
 .cache/
+.choosewm/
 .config/
 .eclipse/
 .dmrc
+.docker/
 .erlang.cookie
 .gem/
 .gnome/
@@ -22,11 +24,15 @@
 .poetry/
 .psql_history
 .pki/
+.pulse-cookie
 .pyarmor*
 .python_history
 .rediscli_history
 .rnd
 .ssh/
+.steam/
+.steampath
+.steampid
 .theano/
 .travis/
 .viminfo
@@ -36,6 +42,7 @@
 .sudo_as_admin_successful
 .wget-hsts
 .zcompdump
+.zoom
 .zshenv
 .zsh_history
 
@@ -46,5 +53,8 @@ Downloads
 backup/
 exp/
 keys/
+snap/
 tmp/
+Steam/
+VirtualBox VMs/
 work/

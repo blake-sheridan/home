@@ -116,3 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 [ -r /home/blake/.byobu/prompt ] && . /home/blake/.byobu/prompt   #byobu-prompt#
+
+# added by travis gem
+[ ! -s /home/blake/.travis/travis.sh ] || source /home/blake/.travis/travis.sh
