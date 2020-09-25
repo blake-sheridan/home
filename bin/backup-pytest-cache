@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+import os
+import shutil
+
+BACKUP_NAME = '.pytest_cache_backup'
+
+try:
+    shutil.rmtree(BACKUP_NAME)
+except FileNotFoundError:
+    pass
+
+shutil.copytree('.pytest_cache', BACKUP_NAME)
+
