@@ -52,4 +52,5 @@ default = simple
 abbreviateCommands = true
 
 [user]
-name = Blake Sheridan
+	name = Blake Sheridan
+	email = blake.m.sheridan@gmail.com
