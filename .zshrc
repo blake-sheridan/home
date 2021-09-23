@@ -166,3 +166,10 @@ export EDITOR='emacs -nw'
 
 # added by travis gem
 [ ! -s /home/blake/.travis/travis.sh ] || source /home/blake/.travis/travis.sh
+
+# Add some useful variables in WSL
+if (( ${+WSL_DISTRO_NAME} )); then
+    WINDOWS_HOME="/mnt/c/Users/blake"
+    DESKTOP="${WINDOWS_HOME}/Desktop"
+    DOCUMENTS="${WINDOWS_HOME}/Documents"
+fi
