@@ -69,3 +69,16 @@ There are two things you can do about this warning:
 
 ;; Display current line and column number
 (setq column-number-mode t)
+
+;; backup in one place. flat, no tree structure
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+
+;; no lockfiles, screwing up react
+(setq create-lockfiles nil)
+
+;; YAML
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+ (add-hook 'yaml-mode-hook
+      '(lambda ()
+        (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
