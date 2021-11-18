@@ -137,7 +137,7 @@ ls_colors=(
 )
 
 export LS_COLORS=${(j/:/)ls_colors}
-export PATH="~/bin:~/.poetry/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.poetry/bin:$PATH"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=99999
@@ -168,8 +168,9 @@ export EDITOR='emacs -nw'
 [ ! -s /home/blake/.travis/travis.sh ] || source /home/blake/.travis/travis.sh
 
 # Add some useful variables in WSL
-if (( ${+WSL_DISTRO_NAME} )); then
-    WINDOWS_HOME="/mnt/c/Users/blake"
-    DESKTOP="${WINDOWS_HOME}/Desktop"
-    DOCUMENTS="${WINDOWS_HOME}/Documents"
+if [ ! -z "$WSL_DISTRO_NAME" ]; then
+    export WINDOWS_HOME="/mnt/c/Users/blake"
+    export DESKTOP="${WINDOWS_HOME}/Desktop"
+    export DOCUMENTS="${WINDOWS_HOME}/Documents"
+    export DOWNLOADS="${WINDOWS_HOME}/Downloads"
 fi
