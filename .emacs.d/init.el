@@ -49,7 +49,7 @@ There are two things you can do about this warning:
  '(lisp-indent-offset 2)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(package-selected-packages (quote (solarized-theme)))
+ '(package-selected-packages (quote (go-mode solarized-theme)))
  '(safe-local-variable-values (quote ((tab-always-indent))))
  '(show-trailing-whitespace t)
  '(standard-indent 2)
@@ -82,3 +82,12 @@ There are two things you can do about this warning:
  (add-hook 'yaml-mode-hook
       '(lambda ()
         (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+(add-to-list 'package-archives
+'("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+'("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+
+;; Go
+(require 'go-mode)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
