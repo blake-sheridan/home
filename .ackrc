@@ -1,3 +1,5 @@
 --break
 --heading
+--ignore-dir=.mypy_cache
+--ignore-dir=.next
 --type-set=llvm=.ll

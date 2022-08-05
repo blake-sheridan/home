@@ -49,7 +49,7 @@ There are two things you can do about this warning:
  '(lisp-indent-offset 2)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(package-selected-packages (quote (go-mode solarized-theme)))
+ '(package-selected-packages (quote (ahk-mode go-mode solarized-theme)))
  '(safe-local-variable-values (quote ((tab-always-indent))))
  '(show-trailing-whitespace t)
  '(standard-indent 2)

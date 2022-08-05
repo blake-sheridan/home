@@ -40,7 +40,10 @@ requireForce = false
 status = always
 
 [core]
+autocrlf= false
 editor = emacs -nw
+fileMode = false
+whitespace = cr-at-eol
 
 [log]
 abbrevCommit = true
@@ -51,6 +54,14 @@ default = simple
 [rebase]
 abbreviateCommands = true
 
+[stash]
+showPatch = true
+showStat = true
+
 [user]
-	name = Blake Sheridan
-	email = blake.m.sheridan@gmail.com
+name = Blake Sheridan
+email = blake.m.sheridan@gmail.com
+
+# Enforce SSH
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

@@ -8,9 +8,10 @@ function docker-bash() { docker run --rm -it "$1" bash }
 alias e='emacs -nw'
 alias g='git'
 alias f='find . -name'
+alias felocal="rm ~/frontend/apps/howl-web/.env.local"
+alias festaging="cp ~/env.local ~/frontend/apps/howl-web/.env.local"
 alias fr='find-replace'
-# Delete all merged branches
-alias gdmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias git-delete-local-branches="git for-each-ref --format '%(refname:short)' refs/heads | grep -v 'master\|main' | xargs git branch -D"
 alias h='head'
 alias l='ls'
 alias ls='LC_COLLATE=C ls --color=auto --group-directories-first --hide="LICENSE*" --hide="__pycache__" -p'
@@ -18,7 +19,7 @@ alias lsa='ls -A'
 alias lsla='ls -la'
 # Kill any suspended processes
 alias ks='kill -s KILL ${${(v)jobstates##*:*:}%=*}'
-alias p='python3.7'
+alias p='python3.8'
 alias pc='pre-commit run --all-files'
 alias pe='pipenv'
 alias pei='pipenv install'
@@ -77,16 +78,9 @@ ls_colors=(
     ex='38;5;1'                 # executable files
     ln='3;33'                   # symbolic link
     mh='0'                      # multihardlink
-    no='5'                      # normal text
     or='9;38;5;160;48;5;235'    # orphaned link
-    ow='38;5;33;48;5;235'       # world writable directories without sticky bit set
-    pi='1;38;5;136;48;5;230'    # fifo
     rs='0'                      # reset
-    sg='38;5;230;48;5;136'      # setgid
     so='1;38;5;136;48;5;230'    # socket
-    st='38;5;230;48;5;33'       # directories with sticky bit set but not world writable
-    su='38;5;230;48;5;160'      # setuid
-    tw='38;5;230;48;5;64'       # world writable directories with sticky bit set
 
     '*@test'='38;5;84'
 
@@ -137,7 +131,7 @@ ls_colors=(
 )
 
 export LS_COLORS=${(j/:/)ls_colors}
-export PATH="$HOME/bin:$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=99999
@@ -174,3 +168,12 @@ if [ ! -z "$WSL_DISTRO_NAME" ]; then
     export DOCUMENTS="${WINDOWS_HOME}/Documents"
     export DOWNLOADS="${WINDOWS_HOME}/Downloads"
 fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
+export PATH="/usr/local/go/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
