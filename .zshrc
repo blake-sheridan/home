@@ -68,7 +68,7 @@ setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
 setopt PUSHD_IGNORE_DUPS
 unsetopt SHARE_HISTORY
-setopt WARN_CREATE_GLOBAL
+unsetopt WARN_CREATE_GLOBAL
 
 ls_colors=(
     bd='1;38;5;244;48;5;230'    # block device
